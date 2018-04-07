@@ -87,6 +87,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeliveryMenu.Designer.vb">
+      <DependentUpon>DeliveryMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainPage.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DeliveryMenu.resx">
+      <DependentUpon>DeliveryMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.vb</DependentUpon>
     </EmbeddedResource>
