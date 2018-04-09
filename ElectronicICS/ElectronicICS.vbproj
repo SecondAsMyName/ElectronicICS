@@ -144,6 +144,9 @@
     <EmbeddedResource Include="OrderCart.resx">
       <DependentUpon>OrderCart.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentPage.resx">
+      <DependentUpon>PaymentPage.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
