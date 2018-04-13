@@ -64,6 +64,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -87,6 +88,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DeliveryMenu.Designer.vb">
       <DependentUpon>DeliveryMenu.vb</DependentUpon>
     </Compile>
@@ -121,8 +127,26 @@
     <Compile Include="OrderCart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PaymentPage.Designer.vb">
+      <DependentUpon>PaymentPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentTransPage.Designer.vb">
+      <DependentUpon>PaymentTransPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTransPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PaymentTransPage.resx">
+      <DependentUpon>PaymentTransPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DB.dbml.layout">
+      <DependentUpon>DB.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="DeliveryMenu.resx">
       <DependentUpon>DeliveryMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -138,8 +162,16 @@
     <EmbeddedResource Include="OrderCart.resx">
       <DependentUpon>OrderCart.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentPage.resx">
+      <DependentUpon>PaymentPage.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DB.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -154,6 +186,7 @@
   <ItemGroup>
     <Content Include="ICSDB.mdf" />
     <Content Include="ICSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
@@ -168,6 +201,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
