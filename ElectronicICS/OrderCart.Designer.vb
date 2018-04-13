@@ -27,6 +27,7 @@ Partial Class OrderCart
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -70,11 +71,20 @@ Partial Class OrderCart
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Quantity :"
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(29, 282)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.TabIndex = 5
+        '
         'OrderCart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(706, 519)
+        Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.Label2)
@@ -92,4 +102,5 @@ Partial Class OrderCart
     Friend WithEvents Label2 As Label
     Friend WithEvents ListView1 As ListView
     Friend WithEvents Label3 As Label
+    Friend WithEvents ComboBox2 As ComboBox
 End Class
