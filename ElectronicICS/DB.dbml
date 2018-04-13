@@ -1,3 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ICSDB" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ICSDB.mdf;Integrated Security=True" SettingsObjectName="ElectronicICS.My.MySettings" SettingsPropertyName="ICSDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Delivery" Member="Deliveries">
+    <Type Name="Delivery">
+      <Column Name="DeliveryId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Delivery" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeliveryOrder" Member="DeliveryOrders">
+    <Type Name="DeliveryOrder">
+      <Column Name="DoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DeliveryDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="PurchaseOrder_DeliveryOrder" Member="PurchaseOrder" ThisKey="PoID" OtherKey="PoId" Type="PurchaseOrder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Item" Member="Items">
+    <Type Name="Item">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemDesc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemPrice" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Item_OrderLine" Member="OrderLines" ThisKey="ItemID" OtherKey="ItemId" Type="OrderLine" />
+      <Association Name="Item_PurchaseLine" Member="PurchaseLines" ThisKey="ItemID" OtherKey="ItemID" Type="PurchaseLine" />
+      <Association Name="Item_SupplyLine" Member="SupplyLines" ThisKey="ItemID" OtherKey="PoID" Type="SupplyLine" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HpNo" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[email ]" Member="email_" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Order" Member="Orders" ThisKey="Username" OtherKey="Username" Type="Order" />
+      <Association Name="Security_Account_User" Member="Security_Account" ThisKey="Username" OtherKey="Username" Type="Security_Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OrderDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Delivery" Member="Deliveries" ThisKey="OrderId" OtherKey="OrderId" Type="Delivery" />
+      <Association Name="Order_OrderLine" Member="OrderLines" ThisKey="OrderId" OtherKey="OrderId" Type="OrderLine" />
+      <Association Name="Order_Payment" Member="Payments" ThisKey="OrderId" OtherKey="OrderId" Type="Payment" />
+      <Association Name="User_Order" Member="User" ThisKey="Username" OtherKey="Username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderLine" Member="OrderLines">
+    <Type Name="OrderLine">
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Item_OrderLine" Member="Item" ThisKey="ItemId" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
+      <Association Name="Order_OrderLine" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="PaymentId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaymentType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrderId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Payment" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurchaseLine" Member="PurchaseLines">
+    <Type Name="PurchaseLine">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Item_PurchaseLine" Member="Item" ThisKey="ItemID" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
+      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseOrder" ThisKey="PoID" OtherKey="PoId" Type="PurchaseOrder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurchaseOrder" Member="PurchaseOrders">
+    <Type Name="PurchaseOrder">
+      <Column Name="PoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrderPrice" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Association Name="PurchaseOrder_DeliveryOrder" Member="DeliveryOrders" ThisKey="PoId" OtherKey="PoID" Type="DeliveryOrder" />
+      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseLines" ThisKey="PoId" OtherKey="PoID" Type="PurchaseLine" />
+      <Association Name="Supplier_PurchaseOrder" Member="Supplier" ThisKey="SupplierID" OtherKey="SupplierId" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Security_Account" Member="Security_Accounts">
+    <Type Name="Security_Account">
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Security_Account_User" Member="User" ThisKey="Username" OtherKey="Username" Type="User" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Supplier" Member="Suppliers">
+    <Type Name="Supplier">
+      <Column Name="SupplierId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SupplierName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TelNo" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="Supplier_PurchaseOrder" Member="PurchaseOrders" ThisKey="SupplierId" OtherKey="SupplierID" Type="PurchaseOrder" />
+      <Association Name="Supplier_SupplyLine" Member="SupplyLines" ThisKey="SupplierId" OtherKey="ItemID" Type="SupplyLine" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SupplyLine" Member="SupplyLines">
+    <Type Name="SupplyLine">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Item_SupplyLine" Member="Item" ThisKey="PoID" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
+      <Association Name="Supplier_SupplyLine" Member="Supplier" ThisKey="ItemID" OtherKey="SupplierId" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
 </Database>

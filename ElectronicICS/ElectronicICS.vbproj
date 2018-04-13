@@ -99,6 +99,12 @@
     <Compile Include="DeliveryMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainPage.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -199,11 +205,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ICSDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ICSDB.mdf" />
     <Content Include="ICSDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
