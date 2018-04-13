@@ -42,8 +42,8 @@ Partial Class OrderCart
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -225,18 +225,18 @@ Partial Class OrderCart
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
+        'LogOutToolStripMenuItem
+        '
+        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.LogOutToolStripMenuItem.Text = "Log Out"
+        '
         'Label1
         '
         Me.Label1.Location = New System.Drawing.Point(97, 45)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 23)
         Me.Label1.TabIndex = 0
-        '
-        'LogOutToolStripMenuItem
-        '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.LogOutToolStripMenuItem.Text = "Log Out"
         '
         'OrderCart
         '
