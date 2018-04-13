@@ -22,18 +22,11 @@ Partial Class PaymentPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lstOrderCart = New System.Windows.Forms.ListView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblOrderCartCount = New System.Windows.Forms.Label()
+        Me.lstOrderCart = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
-        '
-        'lstOrderCart
-        '
-        Me.lstOrderCart.Location = New System.Drawing.Point(26, 46)
-        Me.lstOrderCart.Name = "lstOrderCart"
-        Me.lstOrderCart.Size = New System.Drawing.Size(459, 158)
-        Me.lstOrderCart.TabIndex = 2
-        Me.lstOrderCart.UseCompatibleStateImageBehavior = False
         '
         'Label1
         '
@@ -53,22 +46,38 @@ Partial Class PaymentPage
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Pick 1 to be able to process tranasction."
         '
+        'lblOrderCartCount
+        '
+        Me.lblOrderCartCount.Location = New System.Drawing.Point(26, 258)
+        Me.lblOrderCartCount.Name = "lblOrderCartCount"
+        Me.lblOrderCartCount.Size = New System.Drawing.Size(100, 23)
+        Me.lblOrderCartCount.TabIndex = 6
+        '
+        'lstOrderCart
+        '
+        Me.lstOrderCart.FormattingEnabled = True
+        Me.lstOrderCart.Location = New System.Drawing.Point(16, 43)
+        Me.lstOrderCart.Name = "lstOrderCart"
+        Me.lstOrderCart.Size = New System.Drawing.Size(486, 160)
+        Me.lstOrderCart.TabIndex = 7
+        '
         'PaymentPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 299)
+        Me.Controls.Add(Me.lstOrderCart)
+        Me.Controls.Add(Me.lblOrderCartCount)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lstOrderCart)
         Me.Name = "PaymentPage"
         Me.Text = "PaymentPage"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lstOrderCart As ListView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents lblOrderCartCount As Label
+    Friend WithEvents lstOrderCart As ListBox
 End Class
