@@ -42,8 +42,9 @@ Partial Class OrderCart
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -155,7 +156,7 @@ Partial Class OrderCart
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(493, 391)
+        Me.Button2.Location = New System.Drawing.Point(495, 351)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(100, 34)
         Me.Button2.TabIndex = 14
@@ -164,7 +165,7 @@ Partial Class OrderCart
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(493, 333)
+        Me.Button3.Location = New System.Drawing.Point(495, 298)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(100, 36)
         Me.Button3.TabIndex = 15
@@ -225,18 +226,27 @@ Partial Class OrderCart
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'Label1
-        '
-        Me.Label1.Location = New System.Drawing.Point(97, 45)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 23)
-        Me.Label1.TabIndex = 0
-        '
         'LogOutToolStripMenuItem
         '
         Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
         Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.LogOutToolStripMenuItem.Text = "Log Out"
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(118, 45)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.TabIndex = 0
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(495, 401)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(100, 34)
+        Me.Button5.TabIndex = 23
+        Me.Button5.Text = "Back"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'OrderCart
         '
@@ -244,6 +254,7 @@ Partial Class OrderCart
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(628, 477)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
@@ -298,4 +309,5 @@ Partial Class OrderCart
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button5 As Button
 End Class
