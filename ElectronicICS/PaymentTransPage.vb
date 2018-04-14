@@ -24,11 +24,6 @@
 
         Dim db As New DBDataContext()
         db.Payments.InsertOnSubmit(payment)
-        Try
-            db.SubmitChanges()
-        Catch err As Exception
-            MessageBox.Show("Error. Please Try Again.")
-        End Try
 
         Dim order As New Order
         With order
@@ -40,6 +35,10 @@
         Catch err As Exception
             MessageBox.Show("Error. Please Try Again.")
         End Try
+
+        MessageBox.Show("Payment has been paid", "Payment Transaction Successful.")
+
+
     End Sub
 
     Private Sub PaymentTransPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -58,9 +57,16 @@
         Dim totalprice As Double = Convert.ToDouble(cart.Sum)
         lblPrice.Text = totalprice.ToString("0.00")
 
+
+
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-        Me.Close()
+        Dim answer As DialogResult
+        answer = MessageBox.Show("Cancel Transaction?", "Form Closing", MessageBoxButtons.OKCancel)
+        If answer = DialogResult.OK Then
+            Me.Close()
+        Else
+        End If
     End Sub
 End Class
