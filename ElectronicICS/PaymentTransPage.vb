@@ -16,7 +16,7 @@
         With payment
             .PaymentId = CInt(lblPayID.Text)
             .PaymentType = paymenttype
-            ' .Price
+            .Price = CDec(lblPrice.Text)
             .PaymentDate = System.DateTime.Now
             .Remarks = rtbRemarks.Text
             .OrderId = CInt(cboOrderID.Text)
@@ -44,10 +44,11 @@
 
     Private Sub PaymentTransPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim db As New DBDataContext()
-        Dim order = From o In db.Orders
-        cboOrderID.DataSource = order
+        Dim orderLines = From o In db.OrderLines
+        cboOrderID.DataSource = orderLines
         cboOrderID.DisplayMember = "OrderId"
         cboOrderID.ValueMember = "OrderId"
+
 
         Dim paymentID As Integer
 
