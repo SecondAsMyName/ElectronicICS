@@ -37,37 +37,39 @@ Partial Class MainPage
         '
         'btnDeliveryMenu
         '
-        Me.btnDeliveryMenu.Location = New System.Drawing.Point(187, 142)
-        Me.btnDeliveryMenu.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDeliveryMenu.Location = New System.Drawing.Point(140, 115)
         Me.btnDeliveryMenu.Name = "btnDeliveryMenu"
-        Me.btnDeliveryMenu.Size = New System.Drawing.Size(100, 28)
+        Me.btnDeliveryMenu.Size = New System.Drawing.Size(75, 23)
         Me.btnDeliveryMenu.TabIndex = 0
         Me.btnDeliveryMenu.Text = "Delivery"
         Me.btnDeliveryMenu.UseVisualStyleBackColor = True
         '
         'btnOrderForm
         '
-        Me.btnOrderForm.Location = New System.Drawing.Point(62, 89)
+        Me.btnOrderForm.Location = New System.Drawing.Point(46, 72)
+        Me.btnOrderForm.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnOrderForm.Name = "btnOrderForm"
-        Me.btnOrderForm.Size = New System.Drawing.Size(75, 23)
+        Me.btnOrderForm.Size = New System.Drawing.Size(56, 19)
         Me.btnOrderForm.TabIndex = 1
         Me.btnOrderForm.Text = "Order"
         Me.btnOrderForm.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(187, 89)
+        Me.Button2.Location = New System.Drawing.Point(140, 72)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(56, 19)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(62, 147)
+        Me.Button3.Location = New System.Drawing.Point(46, 119)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(56, 19)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
@@ -78,53 +80,53 @@ Partial Class MainPage
         Me.mnu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsdaToolStripMenuItem, Me.mnuAcc})
         Me.mnu.Location = New System.Drawing.Point(0, 0)
         Me.mnu.Name = "mnu"
-        Me.mnu.Size = New System.Drawing.Size(379, 28)
+        Me.mnu.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.mnu.Size = New System.Drawing.Size(284, 24)
         Me.mnu.TabIndex = 4
         Me.mnu.Text = "MenuStrip1"
         '
         'AsdaToolStripMenuItem
         '
         Me.AsdaToolStripMenuItem.Name = "AsdaToolStripMenuItem"
-        Me.AsdaToolStripMenuItem.Size = New System.Drawing.Size(59, 24)
+        Me.AsdaToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
         Me.AsdaToolStripMenuItem.Text = "Order"
         '
         'mnuAcc
         '
         Me.mnuAcc.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAccProfile, Me.mnuAccLogout, Me.ExitToolStripMenuItem})
         Me.mnuAcc.Name = "mnuAcc"
-        Me.mnuAcc.Size = New System.Drawing.Size(99, 24)
+        Me.mnuAcc.Size = New System.Drawing.Size(84, 20)
         Me.mnuAcc.Text = "My Account"
         '
         'mnuAccProfile
         '
         Me.mnuAccProfile.Name = "mnuAccProfile"
-        Me.mnuAccProfile.Size = New System.Drawing.Size(216, 26)
+        Me.mnuAccProfile.Size = New System.Drawing.Size(156, 22)
         Me.mnuAccProfile.Text = "Account Profile"
         '
         'mnuAccLogout
         '
         Me.mnuAccLogout.Name = "mnuAccLogout"
-        Me.mnuAccLogout.Size = New System.Drawing.Size(216, 26)
+        Me.mnuAccLogout.Size = New System.Drawing.Size(156, 22)
         Me.mnuAccLogout.Text = "Log Out"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'MainPage
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 321)
+        Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnOrderForm)
         Me.Controls.Add(Me.btnDeliveryMenu)
         Me.Controls.Add(Me.mnu)
         Me.MainMenuStrip = Me.mnu
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MainPage"
         Me.Text = "ElectronicICS"
         Me.mnu.ResumeLayout(False)
