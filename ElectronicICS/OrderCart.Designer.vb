@@ -24,7 +24,6 @@ Partial Class OrderCart
     Private Sub InitializeComponent()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -44,6 +43,7 @@ Partial Class OrderCart
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstOrderCart = New System.Windows.Forms.ListBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -63,14 +63,6 @@ Partial Class OrderCart
         Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Item Name :"
-        '
-        'ListView1
-        '
-        Me.ListView1.Location = New System.Drawing.Point(251, 45)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(213, 406)
-        Me.ListView1.TabIndex = 3
-        Me.ListView1.UseCompatibleStateImageBehavior = False
         '
         'Label3
         '
@@ -238,12 +230,21 @@ Partial Class OrderCart
         Me.Label1.Size = New System.Drawing.Size(100, 23)
         Me.Label1.TabIndex = 0
         '
+        'lstOrderCart
+        '
+        Me.lstOrderCart.FormattingEnabled = True
+        Me.lstOrderCart.Location = New System.Drawing.Point(256, 49)
+        Me.lstOrderCart.Name = "lstOrderCart"
+        Me.lstOrderCart.Size = New System.Drawing.Size(209, 381)
+        Me.lstOrderCart.TabIndex = 23
+        '
         'OrderCart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(628, 477)
+        Me.Controls.Add(Me.lstOrderCart)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
@@ -260,7 +261,6 @@ Partial Class OrderCart
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label1)
@@ -278,7 +278,6 @@ Partial Class OrderCart
     End Sub
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents Label3 As Label
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label4 As Label
@@ -298,4 +297,5 @@ Partial Class OrderCart
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
+    Friend WithEvents lstOrderCart As ListBox
 End Class
