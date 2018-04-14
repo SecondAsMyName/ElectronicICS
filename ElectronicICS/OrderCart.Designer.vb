@@ -28,8 +28,6 @@ Partial Class OrderCart
         Me.cboQuan = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtItemDesc = New System.Windows.Forms.TextBox()
-        Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.btnAddItem = New System.Windows.Forms.Button()
@@ -39,11 +37,13 @@ Partial Class OrderCart
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.txtSysDate = New System.Windows.Forms.TextBox()
-        Me.btnRemove = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lstOrderCart = New System.Windows.Forms.ListBox()
+        Me.lstItemDesc = New System.Windows.Forms.ListBox()
+        Me.lstPrice = New System.Windows.Forms.ListBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +51,7 @@ Partial Class OrderCart
         '
         Me.cboItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboItem.FormattingEnabled = True
-        Me.cboItem.Location = New System.Drawing.Point(12, 85)
+        Me.cboItem.Location = New System.Drawing.Point(12, 71)
         Me.cboItem.Name = "cboItem"
         Me.cboItem.Size = New System.Drawing.Size(158, 21)
         Me.cboItem.TabIndex = 1
@@ -67,7 +67,7 @@ Partial Class OrderCart
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 381)
+        Me.Label3.Location = New System.Drawing.Point(12, 281)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 4
@@ -77,7 +77,8 @@ Partial Class OrderCart
         '
         Me.cboQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboQuan.FormattingEnabled = True
-        Me.cboQuan.Location = New System.Drawing.Point(100, 381)
+        Me.cboQuan.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.cboQuan.Location = New System.Drawing.Point(100, 281)
         Me.cboQuan.Name = "cboQuan"
         Me.cboQuan.Size = New System.Drawing.Size(121, 21)
         Me.cboQuan.TabIndex = 5
@@ -85,7 +86,7 @@ Partial Class OrderCart
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 133)
+        Me.Label4.Location = New System.Drawing.Point(9, 110)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(89, 13)
         Me.Label4.TabIndex = 6
@@ -94,30 +95,11 @@ Partial Class OrderCart
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 333)
+        Me.Label5.Location = New System.Drawing.Point(12, 230)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(106, 13)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Item &Price (per Unit) :"
-        '
-        'txtItemDesc
-        '
-        Me.txtItemDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtItemDesc.Location = New System.Drawing.Point(12, 173)
-        Me.txtItemDesc.Multiline = True
-        Me.txtItemDesc.Name = "txtItemDesc"
-        Me.txtItemDesc.ReadOnly = True
-        Me.txtItemDesc.Size = New System.Drawing.Size(206, 125)
-        Me.txtItemDesc.TabIndex = 8
-        '
-        'txtPrice
-        '
-        Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPrice.Location = New System.Drawing.Point(121, 333)
-        Me.txtPrice.Name = "txtPrice"
-        Me.txtPrice.ReadOnly = True
-        Me.txtPrice.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrice.TabIndex = 9
         '
         'Label6
         '
@@ -139,7 +121,7 @@ Partial Class OrderCart
         '
         'btnAddItem
         '
-        Me.btnAddItem.Location = New System.Drawing.Point(12, 430)
+        Me.btnAddItem.Location = New System.Drawing.Point(15, 340)
         Me.btnAddItem.Name = "btnAddItem"
         Me.btnAddItem.Size = New System.Drawing.Size(75, 23)
         Me.btnAddItem.TabIndex = 13
@@ -200,15 +182,6 @@ Partial Class OrderCart
         Me.txtSysDate.Size = New System.Drawing.Size(100, 20)
         Me.txtSysDate.TabIndex = 19
         '
-        'btnRemove
-        '
-        Me.btnRemove.Location = New System.Drawing.Point(134, 430)
-        Me.btnRemove.Name = "btnRemove"
-        Me.btnRemove.Size = New System.Drawing.Size(87, 23)
-        Me.btnRemove.TabIndex = 21
-        Me.btnRemove.Text = "Remove item "
-        Me.btnRemove.UseVisualStyleBackColor = True
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogOutToolStripMenuItem})
@@ -234,19 +207,53 @@ Partial Class OrderCart
         'lstOrderCart
         '
         Me.lstOrderCart.FormattingEnabled = True
-        Me.lstOrderCart.Location = New System.Drawing.Point(248, 45)
+        Me.lstOrderCart.Location = New System.Drawing.Point(248, 84)
         Me.lstOrderCart.Name = "lstOrderCart"
-        Me.lstOrderCart.Size = New System.Drawing.Size(209, 381)
+        Me.lstOrderCart.Size = New System.Drawing.Size(209, 342)
         Me.lstOrderCart.TabIndex = 23
+        '
+        'lstItemDesc
+        '
+        Me.lstItemDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstItemDesc.FormattingEnabled = True
+        Me.lstItemDesc.HorizontalExtent = 500
+        Me.lstItemDesc.HorizontalScrollbar = True
+        Me.lstItemDesc.ItemHeight = 25
+        Me.lstItemDesc.Location = New System.Drawing.Point(12, 143)
+        Me.lstItemDesc.Name = "lstItemDesc"
+        Me.lstItemDesc.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.lstItemDesc.Size = New System.Drawing.Size(206, 54)
+        Me.lstItemDesc.TabIndex = 24
+        '
+        'lstPrice
+        '
+        Me.lstPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstPrice.FormattingEnabled = True
+        Me.lstPrice.ItemHeight = 25
+        Me.lstPrice.Location = New System.Drawing.Point(124, 221)
+        Me.lstPrice.Name = "lstPrice"
+        Me.lstPrice.SelectionMode = System.Windows.Forms.SelectionMode.None
+        Me.lstPrice.Size = New System.Drawing.Size(97, 29)
+        Me.lstPrice.TabIndex = 25
+        '
+        'Label9
+        '
+        Me.Label9.Location = New System.Drawing.Point(245, 45)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(212, 36)
+        Me.Label9.TabIndex = 26
+        Me.Label9.Text = "* Please double click the list box below to delete cart item"
         '
         'OrderCart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(628, 477)
+        Me.ClientSize = New System.Drawing.Size(628, 445)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lstPrice)
+        Me.Controls.Add(Me.lstItemDesc)
         Me.Controls.Add(Me.lstOrderCart)
-        Me.Controls.Add(Me.btnRemove)
         Me.Controls.Add(Me.txtSysDate)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label8)
@@ -256,8 +263,6 @@ Partial Class OrderCart
         Me.Controls.Add(Me.btnAddItem)
         Me.Controls.Add(Me.txtTotal)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtPrice)
-        Me.Controls.Add(Me.txtItemDesc)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cboQuan)
@@ -283,8 +288,6 @@ Partial Class OrderCart
     Friend WithEvents cboQuan As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtItemDesc As TextBox
-    Friend WithEvents txtPrice As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtTotal As TextBox
     Friend WithEvents btnAddItem As Button
@@ -294,9 +297,11 @@ Partial Class OrderCart
     Friend WithEvents Label8 As Label
     Friend WithEvents txtUser As TextBox
     Friend WithEvents txtSysDate As TextBox
-    Friend WithEvents btnRemove As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
     Friend WithEvents lstOrderCart As ListBox
+    Friend WithEvents lstItemDesc As ListBox
+    Friend WithEvents lstPrice As ListBox
+    Friend WithEvents Label9 As Label
 End Class
