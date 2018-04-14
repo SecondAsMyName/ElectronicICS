@@ -104,6 +104,12 @@
     <Compile Include="DeliveryMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmCreateDelivery.Designer.vb">
+      <DependentUpon>FrmCreateDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateDelivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmCreateDelivery.resx">
+      <DependentUpon>FrmCreateDelivery.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +254,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\delivery.jpg" />
     <None Include="Resources\creditcard.gif" />
     <None Include="Resources\cash.png" />
   </ItemGroup>
