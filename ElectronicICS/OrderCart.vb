@@ -120,4 +120,18 @@
         BindData()
     End Sub
 
+    Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
+        Dim db As New DBDataContext()
+        Dim updateOrderStatus = (From ord In db.Orders
+                                 Where ord.OrderId = OrderID).ToList()(0)
+
+        updateOrderStatus.OrderStatus = "Complete"
+
+        Try
+            db.SubmitChanges()
+            MessageBox.Show("No order submited.")
+        Catch
+            MessageBox.Show("No order submited.")
+        End Try
+    End Sub
 End Class
