@@ -94,20 +94,17 @@
     Private Sub cboItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboItem.SelectedIndexChanged
         Dim db As New DBDataContext()
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
-        Dim desc = From o In db.Items Where o.ItemID = itemID
-        lstItemDesc.DataSource = desc
-        lstItemDesc.DisplayMember = "ItemDesc"
-        lstItemDesc.ValueMember = "ItemDesc"
-        lstPrice.DataSource = desc
-        lstPrice.DisplayMember = "ItemPrice"
-        lstPrice.ValueMember = "ItemPrice"
+        Dim desc = From o In db.Items Where o.ItemID = itemID Select o.ItemDesc
+        txtDesc.Text = desc.FirstOrDefault()
+        Dim price = From o In db.Items Where o.ItemID = itemID Select o.ItemPrice
+        txtPrice.Text = (price.FirstOrDefault()).ToString()
     End Sub
 
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
         'New order and orderline object
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
         Dim quantity As Integer = Integer.Parse(cboQuan.Text)
-        Dim price As Double = Convert.ToDouble(lstPrice.SelectedValue)
+        Dim price As Double = Convert.ToDouble(txtPrice.Text)
         Dim total As Double = (quantity * price)
         Dim orderline As New OrderLine
         With orderline
