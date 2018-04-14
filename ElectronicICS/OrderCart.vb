@@ -29,8 +29,7 @@
     Private Function HasCartItem(id As Integer) As Boolean
         Dim db As New DBDataContext()
         Return db.OrderLines.Any(Function(o) o.OrderId = id)
-        'True records meets the criteria
-        'FALSE records does not meet the criteria
+
     End Function
 
     Private Function getLastID() As Integer
@@ -76,10 +75,15 @@
         txtOrderID.Text = OrderID.ToString(" 0000")
         txtUser.Text = " " & Username
         txtSysDate.Text = System.DateTime.Now.ToString(" dd/mm/yyyy")
+
+        Dim db As New DBDataContext()
+        Dim cart = From o In db.OrderLines Where o.OrderId = OrderID Select o.Subtotal
+        Dim totalprice As Double = Convert.ToDouble(cart.Sum)
+        txtTotal.Text = totalprice.ToString("0.00")
     End Sub
 
     Private Sub OrderCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Username = "kevlim2906"
+        Username = FrmLogin.user.Username
         If OrderID = 0 Then
             OrderID = getLastID()
             AddNewOrder()
@@ -104,11 +108,13 @@
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
         Dim quantity As Integer = Integer.Parse(cboQuan.Text)
         Dim price As Double = Convert.ToDouble(lstPrice.SelectedValue)
+        Dim total As Double = (quantity * price)
         Dim orderline As New OrderLine
         With orderline
             .OrderId = OrderID
             .ItemId = itemID
             .Quantity = quantity
+            .Subtotal = Convert.ToDecimal(total)
         End With
 
         'add new records
@@ -122,8 +128,7 @@
             MessageBox.Show("Same item in cart.")
         End Try
 
-        TotalPrice = TotalPrice + (quantity * price)
-        txtTotal.Text = TotalPrice.ToString("0.00")
+
         ResetForm()
     End Sub
 

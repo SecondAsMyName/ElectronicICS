@@ -41,37 +41,41 @@ Partial Class FrmLogin
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(84, 117)
+        Me.Label1.Location = New System.Drawing.Point(63, 95)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 23)
+        Me.Label1.Size = New System.Drawing.Size(75, 19)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "&User Name :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(84, 159)
+        Me.Label2.Location = New System.Drawing.Point(63, 129)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 17)
+        Me.Label2.Size = New System.Drawing.Size(75, 14)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "&Password :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(190, 118)
+        Me.txtUsername.Location = New System.Drawing.Point(142, 96)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtUsername.MaxLength = 50
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(155, 22)
+        Me.txtUsername.Size = New System.Drawing.Size(117, 20)
         Me.txtUsername.TabIndex = 0
         '
         'lblTitle
         '
         Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(6, 18)
+        Me.lblTitle.Location = New System.Drawing.Point(4, 15)
+        Me.lblTitle.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(456, 72)
+        Me.lblTitle.Size = New System.Drawing.Size(342, 58)
         Me.lblTitle.TabIndex = 4
         Me.lblTitle.Text = "ElectroKary"
         Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -80,27 +84,31 @@ Partial Class FrmLogin
         '
         Me.grTitle.Controls.Add(Me.Label3)
         Me.grTitle.Controls.Add(Me.lblTitle)
-        Me.grTitle.Location = New System.Drawing.Point(12, 12)
+        Me.grTitle.Location = New System.Drawing.Point(9, 10)
+        Me.grTitle.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.grTitle.Name = "grTitle"
-        Me.grTitle.Size = New System.Drawing.Size(469, 100)
+        Me.grTitle.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grTitle.Size = New System.Drawing.Size(352, 81)
         Me.grTitle.TabIndex = 4
         Me.grTitle.TabStop = False
         '
         'Label3
         '
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(290, 74)
+        Me.Label3.Location = New System.Drawing.Point(218, 60)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(172, 23)
+        Me.Label3.Size = New System.Drawing.Size(129, 19)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Electronic Shop Sdn.bhd."
         '
         'mskPassword
         '
-        Me.mskPassword.Location = New System.Drawing.Point(190, 159)
+        Me.mskPassword.Location = New System.Drawing.Point(142, 129)
+        Me.mskPassword.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.mskPassword.Name = "mskPassword"
         Me.mskPassword.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.mskPassword.Size = New System.Drawing.Size(155, 22)
+        Me.mskPassword.Size = New System.Drawing.Size(117, 20)
         Me.mskPassword.TabIndex = 1
         Me.mskPassword.UseSystemPasswordChar = True
         '
@@ -108,9 +116,10 @@ Partial Class FrmLogin
         '
         Me.btnSignin.BackColor = System.Drawing.Color.LightCoral
         Me.btnSignin.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSignin.Location = New System.Drawing.Point(220, 187)
+        Me.btnSignin.Location = New System.Drawing.Point(165, 152)
+        Me.btnSignin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSignin.Name = "btnSignin"
-        Me.btnSignin.Size = New System.Drawing.Size(82, 30)
+        Me.btnSignin.Size = New System.Drawing.Size(62, 24)
         Me.btnSignin.TabIndex = 2
         Me.btnSignin.Text = "Sign &In"
         Me.btnSignin.UseVisualStyleBackColor = False
@@ -120,9 +129,10 @@ Partial Class FrmLogin
         Me.btnSignup.BackColor = System.Drawing.Color.LightCoral
         Me.btnSignup.CausesValidation = False
         Me.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSignup.Location = New System.Drawing.Point(220, 237)
+        Me.btnSignup.Location = New System.Drawing.Point(165, 193)
+        Me.btnSignup.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnSignup.Name = "btnSignup"
-        Me.btnSignup.Size = New System.Drawing.Size(82, 30)
+        Me.btnSignup.Size = New System.Drawing.Size(62, 24)
         Me.btnSignup.TabIndex = 3
         Me.btnSignup.Text = "Sign &Up"
         Me.btnSignup.UseVisualStyleBackColor = False
@@ -131,9 +141,10 @@ Partial Class FrmLogin
         '
         Me.btnExit.CausesValidation = False
         Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnExit.Location = New System.Drawing.Point(392, 231)
+        Me.btnExit.Location = New System.Drawing.Point(294, 188)
+        Me.btnExit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(82, 30)
+        Me.btnExit.Size = New System.Drawing.Size(62, 24)
         Me.btnExit.TabIndex = 4
         Me.btnExit.TabStop = False
         Me.btnExit.Text = "E&xit"
@@ -143,9 +154,10 @@ Partial Class FrmLogin
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(248, 220)
+        Me.Label4.Location = New System.Drawing.Point(186, 179)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(24, 17)
+        Me.Label4.Size = New System.Drawing.Size(18, 13)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Or"
         '
@@ -157,13 +169,13 @@ Partial Class FrmLogin
         'FrmLogin
         '
         Me.AcceptButton = Me.btnSignin
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.CancelButton = Me.btnExit
         Me.CausesValidation = False
-        Me.ClientSize = New System.Drawing.Size(490, 281)
+        Me.ClientSize = New System.Drawing.Size(368, 228)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnSignup)
@@ -174,6 +186,7 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FrmLogin"
         Me.Text = "Sign &Out"
         Me.grTitle.ResumeLayout(False)
