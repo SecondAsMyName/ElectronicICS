@@ -2431,7 +2431,7 @@ Partial Public Class [Order]
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderStatus", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderStatus", DbType:="NVarChar(50)")>  _
 	Public Property OrderStatus() As String
 		Get
 			Return Me._OrderStatus

@@ -22,6 +22,9 @@ Partial Class OrderCart
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.cboItem = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -40,11 +43,14 @@ Partial Class OrderCart
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lstOrderCart = New System.Windows.Forms.ListBox()
         Me.lstItemDesc = New System.Windows.Forms.ListBox()
         Me.lstPrice = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtOrderID = New System.Windows.Forms.TextBox()
+        Me.dgvOrderCart = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cboItem
@@ -77,7 +83,7 @@ Partial Class OrderCart
         '
         Me.cboQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboQuan.FormattingEnabled = True
-        Me.cboQuan.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.cboQuan.Items.AddRange(New Object() {"--Select--", "1", "2", "3", "4", "5"})
         Me.cboQuan.Location = New System.Drawing.Point(100, 281)
         Me.cboQuan.Name = "cboQuan"
         Me.cboQuan.Size = New System.Drawing.Size(121, 21)
@@ -104,7 +110,7 @@ Partial Class OrderCart
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(492, 212)
+        Me.Label6.Location = New System.Drawing.Point(600, 221)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 13)
         Me.Label6.TabIndex = 11
@@ -113,7 +119,7 @@ Partial Class OrderCart
         'txtTotal
         '
         Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTotal.Location = New System.Drawing.Point(493, 239)
+        Me.txtTotal.Location = New System.Drawing.Point(603, 249)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(100, 20)
@@ -130,7 +136,7 @@ Partial Class OrderCart
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(493, 391)
+        Me.btnSubmit.Location = New System.Drawing.Point(603, 361)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(100, 34)
         Me.btnSubmit.TabIndex = 14
@@ -139,7 +145,7 @@ Partial Class OrderCart
         '
         'btnCal
         '
-        Me.btnCal.Location = New System.Drawing.Point(493, 333)
+        Me.btnCal.Location = New System.Drawing.Point(603, 291)
         Me.btnCal.Name = "btnCal"
         Me.btnCal.Size = New System.Drawing.Size(100, 36)
         Me.btnCal.TabIndex = 15
@@ -149,7 +155,7 @@ Partial Class OrderCart
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(495, 45)
+        Me.Label7.Location = New System.Drawing.Point(600, 93)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 13)
         Me.Label7.TabIndex = 16
@@ -158,7 +164,7 @@ Partial Class OrderCart
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(492, 133)
+        Me.Label8.Location = New System.Drawing.Point(602, 156)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(59, 13)
         Me.Label8.TabIndex = 17
@@ -167,7 +173,7 @@ Partial Class OrderCart
         'txtUser
         '
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUser.Location = New System.Drawing.Point(493, 86)
+        Me.txtUser.Location = New System.Drawing.Point(603, 120)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.ReadOnly = True
         Me.txtUser.Size = New System.Drawing.Size(100, 20)
@@ -176,7 +182,7 @@ Partial Class OrderCart
         'txtSysDate
         '
         Me.txtSysDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSysDate.Location = New System.Drawing.Point(493, 162)
+        Me.txtSysDate.Location = New System.Drawing.Point(603, 187)
         Me.txtSysDate.Name = "txtSysDate"
         Me.txtSysDate.ReadOnly = True
         Me.txtSysDate.Size = New System.Drawing.Size(100, 20)
@@ -187,7 +193,7 @@ Partial Class OrderCart
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogOutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(628, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(727, 24)
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -203,14 +209,6 @@ Partial Class OrderCart
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 23)
         Me.Label1.TabIndex = 0
-        '
-        'lstOrderCart
-        '
-        Me.lstOrderCart.FormattingEnabled = True
-        Me.lstOrderCart.Location = New System.Drawing.Point(248, 84)
-        Me.lstOrderCart.Name = "lstOrderCart"
-        Me.lstOrderCart.Size = New System.Drawing.Size(209, 342)
-        Me.lstOrderCart.TabIndex = 23
         '
         'lstItemDesc
         '
@@ -244,16 +242,68 @@ Partial Class OrderCart
         Me.Label9.TabIndex = 26
         Me.Label9.Text = "* Please double click the list box below to delete cart item"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(600, 43)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(22, 13)
+        Me.Label10.TabIndex = 27
+        Me.Label10.Text = "Id :"
+        '
+        'txtOrderID
+        '
+        Me.txtOrderID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtOrderID.Location = New System.Drawing.Point(628, 43)
+        Me.txtOrderID.Name = "txtOrderID"
+        Me.txtOrderID.ReadOnly = True
+        Me.txtOrderID.Size = New System.Drawing.Size(77, 20)
+        Me.txtOrderID.TabIndex = 28
+        '
+        'dgvOrderCart
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvOrderCart.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvOrderCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.MidnightBlue
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvOrderCart.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvOrderCart.Location = New System.Drawing.Point(248, 93)
+        Me.dgvOrderCart.Name = "dgvOrderCart"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvOrderCart.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvOrderCart.Size = New System.Drawing.Size(330, 332)
+        Me.dgvOrderCart.TabIndex = 29
+        '
         'OrderCart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(628, 445)
+        Me.ClientSize = New System.Drawing.Size(727, 445)
+        Me.Controls.Add(Me.dgvOrderCart)
+        Me.Controls.Add(Me.txtOrderID)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lstPrice)
         Me.Controls.Add(Me.lstItemDesc)
-        Me.Controls.Add(Me.lstOrderCart)
         Me.Controls.Add(Me.txtSysDate)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label8)
@@ -275,9 +325,9 @@ Partial Class OrderCart
         Me.ForeColor = System.Drawing.Color.MidnightBlue
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "OrderCart"
-        Me.Text = "OrderCart"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -300,8 +350,10 @@ Partial Class OrderCart
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
-    Friend WithEvents lstOrderCart As ListBox
     Friend WithEvents lstItemDesc As ListBox
     Friend WithEvents lstPrice As ListBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtOrderID As TextBox
+    Friend WithEvents dgvOrderCart As DataGridView
 End Class
