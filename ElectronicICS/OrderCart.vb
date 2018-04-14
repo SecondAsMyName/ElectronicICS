@@ -83,7 +83,7 @@
     End Sub
 
     Private Sub OrderCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Username = FrmLogin.user.Username
+        Username = MainPage.customer.Username
         If OrderID = 0 Then
             OrderID = getLastID()
             AddNewOrder()

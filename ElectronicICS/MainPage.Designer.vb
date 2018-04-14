@@ -27,10 +27,11 @@ Partial Class MainPage
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.mnu = New System.Windows.Forms.MenuStrip()
-        Me.mnuAcc = New System.Windows.Forms.ToolStripMenuItem()
         Me.AsdaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuAcc = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAccProfile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAccLogout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -81,18 +82,18 @@ Partial Class MainPage
         Me.mnu.TabIndex = 4
         Me.mnu.Text = "MenuStrip1"
         '
-        'mnuAcc
-        '
-        Me.mnuAcc.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAccProfile, Me.mnuAccLogout})
-        Me.mnuAcc.Name = "mnuAcc"
-        Me.mnuAcc.Size = New System.Drawing.Size(99, 24)
-        Me.mnuAcc.Text = "My Account"
-        '
         'AsdaToolStripMenuItem
         '
         Me.AsdaToolStripMenuItem.Name = "AsdaToolStripMenuItem"
         Me.AsdaToolStripMenuItem.Size = New System.Drawing.Size(59, 24)
         Me.AsdaToolStripMenuItem.Text = "Order"
+        '
+        'mnuAcc
+        '
+        Me.mnuAcc.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAccProfile, Me.mnuAccLogout, Me.ExitToolStripMenuItem})
+        Me.mnuAcc.Name = "mnuAcc"
+        Me.mnuAcc.Size = New System.Drawing.Size(99, 24)
+        Me.mnuAcc.Text = "My Account"
         '
         'mnuAccProfile
         '
@@ -105,6 +106,12 @@ Partial Class MainPage
         Me.mnuAccLogout.Name = "mnuAccLogout"
         Me.mnuAccLogout.Size = New System.Drawing.Size(216, 26)
         Me.mnuAccLogout.Text = "Log Out"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'MainPage
         '
@@ -136,4 +143,5 @@ Partial Class MainPage
     Friend WithEvents mnuAcc As ToolStripMenuItem
     Friend WithEvents mnuAccProfile As ToolStripMenuItem
     Friend WithEvents mnuAccLogout As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class

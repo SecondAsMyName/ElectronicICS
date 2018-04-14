@@ -1,5 +1,5 @@
 ﻿Public Class FrmLogin
-    Public user As Security_Account
+    Private user As Security_Account
     Private Sub BtnSignin_Click(sender As Object, e As EventArgs) Handles btnSignin.Click
         Dim username As String = txtUsername.Text
         Dim password As String = mskPassword.Text
@@ -10,11 +10,14 @@
 
         If AuthenticateUser(username, password) Then
             If String.Compare(user.Role, "Staff", True) = 0 Then
+                FrmMainpageStaff.staff = AuthorizeUser()
                 FrmMainpageStaff.Show()
             ElseIf String.Compare(user.Role, "Customer", True) = 0 Then
+                MainPage.customer = AuthorizeUser()
                 MainPage.Show()
             ElseIf String.Compare(user.Role, "Admin", True) = 0 Then
-
+                FrmMainpageStaff.staff = AuthorizeUser()
+                FrmMainpageStaff.Show()
             End If
 
             Me.Close()
@@ -47,6 +50,12 @@
 
         user = sc
         Return True
+    End Function
+
+    Private Function AuthorizeUser As User
+        Dim db As New DBDataContext
+        Dim loginuser As User = db.Users.FirstOrDefault(Function(o) o.Username = user.Username)
+        Return loginuser
     End Function
 
     Private Sub ResetForm()
