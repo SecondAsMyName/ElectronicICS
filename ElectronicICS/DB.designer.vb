@@ -55,12 +55,6 @@ Partial Public Class DBDataContext
     End Sub
   Partial Private Sub DeleteUser(instance As User)
     End Sub
-  Partial Private Sub InsertOrder(instance As [Order])
-    End Sub
-  Partial Private Sub UpdateOrder(instance As [Order])
-    End Sub
-  Partial Private Sub DeleteOrder(instance As [Order])
-    End Sub
   Partial Private Sub InsertOrderLine(instance As OrderLine)
     End Sub
   Partial Private Sub UpdateOrderLine(instance As OrderLine)
@@ -102,6 +96,12 @@ Partial Public Class DBDataContext
   Partial Private Sub UpdateSupplyLine(instance As SupplyLine)
     End Sub
   Partial Private Sub DeleteSupplyLine(instance As SupplyLine)
+    End Sub
+  Partial Private Sub InsertOrder(instance As [Order])
+    End Sub
+  Partial Private Sub UpdateOrder(instance As [Order])
+    End Sub
+  Partial Private Sub DeleteOrder(instance As [Order])
     End Sub
   #End Region
 	
@@ -154,12 +154,6 @@ Partial Public Class DBDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property Orders() As System.Data.Linq.Table(Of [Order])
-		Get
-			Return Me.GetTable(Of [Order])
-		End Get
-	End Property
-	
 	Public ReadOnly Property OrderLines() As System.Data.Linq.Table(Of OrderLine)
 		Get
 			Return Me.GetTable(Of OrderLine)
@@ -199,6 +193,12 @@ Partial Public Class DBDataContext
 	Public ReadOnly Property SupplyLines() As System.Data.Linq.Table(Of SupplyLine)
 		Get
 			Return Me.GetTable(Of SupplyLine)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Orders() As System.Data.Linq.Table(Of [Order])
+		Get
+			Return Me.GetTable(Of [Order])
 		End Get
 	End Property
 End Class
@@ -999,238 +999,6 @@ Partial Public Class User
 	Private Sub detach_Orders(ByVal entity As [Order])
 		Me.SendPropertyChanging
 		entity.User = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[Order]")>  _
-Partial Public Class [Order]
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _OrderId As Integer
-	
-	Private _OrderDate As Date
-	
-	Private _OrderDesc As String
-	
-	Private _Username As String
-	
-	Private _Deliveries As EntitySet(Of Delivery)
-	
-	Private _OrderLines As EntitySet(Of OrderLine)
-	
-	Private _Payments As EntitySet(Of Payment)
-	
-	Private _User As EntityRef(Of User)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnOrderIdChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnOrderIdChanged()
-    End Sub
-    Partial Private Sub OnOrderDateChanging(value As Date)
-    End Sub
-    Partial Private Sub OnOrderDateChanged()
-    End Sub
-    Partial Private Sub OnOrderDescChanging(value As String)
-    End Sub
-    Partial Private Sub OnOrderDescChanged()
-    End Sub
-    Partial Private Sub OnUsernameChanging(value As String)
-    End Sub
-    Partial Private Sub OnUsernameChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._Deliveries = New EntitySet(Of Delivery)(AddressOf Me.attach_Deliveries, AddressOf Me.detach_Deliveries)
-		Me._OrderLines = New EntitySet(Of OrderLine)(AddressOf Me.attach_OrderLines, AddressOf Me.detach_OrderLines)
-		Me._Payments = New EntitySet(Of Payment)(AddressOf Me.attach_Payments, AddressOf Me.detach_Payments)
-		Me._User = CType(Nothing, EntityRef(Of User))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderId", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
-	Public Property OrderId() As Integer
-		Get
-			Return Me._OrderId
-		End Get
-		Set
-			If ((Me._OrderId = value)  _
-						= false) Then
-				Me.OnOrderIdChanging(value)
-				Me.SendPropertyChanging
-				Me._OrderId = value
-				Me.SendPropertyChanged("OrderId")
-				Me.OnOrderIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderDate", DbType:="Date NOT NULL")>  _
-	Public Property OrderDate() As Date
-		Get
-			Return Me._OrderDate
-		End Get
-		Set
-			If ((Me._OrderDate = value)  _
-						= false) Then
-				Me.OnOrderDateChanging(value)
-				Me.SendPropertyChanging
-				Me._OrderDate = value
-				Me.SendPropertyChanged("OrderDate")
-				Me.OnOrderDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderDesc", DbType:="NVarChar(50)")>  _
-	Public Property OrderDesc() As String
-		Get
-			Return Me._OrderDesc
-		End Get
-		Set
-			If (String.Equals(Me._OrderDesc, value) = false) Then
-				Me.OnOrderDescChanging(value)
-				Me.SendPropertyChanging
-				Me._OrderDesc = value
-				Me.SendPropertyChanged("OrderDesc")
-				Me.OnOrderDescChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Username", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property Username() As String
-		Get
-			Return Me._Username
-		End Get
-		Set
-			If (String.Equals(Me._Username, value) = false) Then
-				If Me._User.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUsernameChanging(value)
-				Me.SendPropertyChanging
-				Me._Username = value
-				Me.SendPropertyChanged("Username")
-				Me.OnUsernameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Order_Delivery", Storage:="_Deliveries", ThisKey:="OrderId", OtherKey:="OrderId")>  _
-	Public Property Deliveries() As EntitySet(Of Delivery)
-		Get
-			Return Me._Deliveries
-		End Get
-		Set
-			Me._Deliveries.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Order_OrderLine", Storage:="_OrderLines", ThisKey:="OrderId", OtherKey:="OrderId")>  _
-	Public Property OrderLines() As EntitySet(Of OrderLine)
-		Get
-			Return Me._OrderLines
-		End Get
-		Set
-			Me._OrderLines.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Order_Payment", Storage:="_Payments", ThisKey:="OrderId", OtherKey:="OrderId")>  _
-	Public Property Payments() As EntitySet(Of Payment)
-		Get
-			Return Me._Payments
-		End Get
-		Set
-			Me._Payments.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="User_Order", Storage:="_User", ThisKey:="Username", OtherKey:="Username", IsForeignKey:=true)>  _
-	Public Property User() As User
-		Get
-			Return Me._User.Entity
-		End Get
-		Set
-			Dim previousValue As User = Me._User.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._User.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._User.Entity = Nothing
-					previousValue.Orders.Remove(Me)
-				End If
-				Me._User.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.Orders.Add(Me)
-					Me._Username = value.Username
-				Else
-					Me._Username = CType(Nothing, String)
-				End If
-				Me.SendPropertyChanged("User")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_Deliveries(ByVal entity As Delivery)
-		Me.SendPropertyChanging
-		entity.[Order] = Me
-	End Sub
-	
-	Private Sub detach_Deliveries(ByVal entity As Delivery)
-		Me.SendPropertyChanging
-		entity.[Order] = Nothing
-	End Sub
-	
-	Private Sub attach_OrderLines(ByVal entity As OrderLine)
-		Me.SendPropertyChanging
-		entity.[Order] = Me
-	End Sub
-	
-	Private Sub detach_OrderLines(ByVal entity As OrderLine)
-		Me.SendPropertyChanging
-		entity.[Order] = Nothing
-	End Sub
-	
-	Private Sub attach_Payments(ByVal entity As Payment)
-		Me.SendPropertyChanging
-		entity.[Order] = Me
-	End Sub
-	
-	Private Sub detach_Payments(ByVal entity As Payment)
-		Me.SendPropertyChanging
-		entity.[Order] = Nothing
 	End Sub
 End Class
 
@@ -2529,5 +2297,259 @@ Partial Public Class SupplyLine
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[Order]")>  _
+Partial Public Class [Order]
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _OrderId As Integer
+	
+	Private _OrderDate As Date
+	
+	Private _OrderDesc As String
+	
+	Private _Username As String
+	
+	Private _OrderStatus As String
+	
+	Private _Deliveries As EntitySet(Of Delivery)
+	
+	Private _OrderLines As EntitySet(Of OrderLine)
+	
+	Private _Payments As EntitySet(Of Payment)
+	
+	Private _User As EntityRef(Of User)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnOrderIdChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnOrderIdChanged()
+    End Sub
+    Partial Private Sub OnOrderDateChanging(value As Date)
+    End Sub
+    Partial Private Sub OnOrderDateChanged()
+    End Sub
+    Partial Private Sub OnOrderDescChanging(value As String)
+    End Sub
+    Partial Private Sub OnOrderDescChanged()
+    End Sub
+    Partial Private Sub OnUsernameChanging(value As String)
+    End Sub
+    Partial Private Sub OnUsernameChanged()
+    End Sub
+    Partial Private Sub OnOrderStatusChanging(value As String)
+    End Sub
+    Partial Private Sub OnOrderStatusChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._Deliveries = New EntitySet(Of Delivery)(AddressOf Me.attach_Deliveries, AddressOf Me.detach_Deliveries)
+		Me._OrderLines = New EntitySet(Of OrderLine)(AddressOf Me.attach_OrderLines, AddressOf Me.detach_OrderLines)
+		Me._Payments = New EntitySet(Of Payment)(AddressOf Me.attach_Payments, AddressOf Me.detach_Payments)
+		Me._User = CType(Nothing, EntityRef(Of User))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderId", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property OrderId() As Integer
+		Get
+			Return Me._OrderId
+		End Get
+		Set
+			If ((Me._OrderId = value)  _
+						= false) Then
+				Me.OnOrderIdChanging(value)
+				Me.SendPropertyChanging
+				Me._OrderId = value
+				Me.SendPropertyChanged("OrderId")
+				Me.OnOrderIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderDate", DbType:="Date NOT NULL")>  _
+	Public Property OrderDate() As Date
+		Get
+			Return Me._OrderDate
+		End Get
+		Set
+			If ((Me._OrderDate = value)  _
+						= false) Then
+				Me.OnOrderDateChanging(value)
+				Me.SendPropertyChanging
+				Me._OrderDate = value
+				Me.SendPropertyChanged("OrderDate")
+				Me.OnOrderDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderDesc", DbType:="NVarChar(50)")>  _
+	Public Property OrderDesc() As String
+		Get
+			Return Me._OrderDesc
+		End Get
+		Set
+			If (String.Equals(Me._OrderDesc, value) = false) Then
+				Me.OnOrderDescChanging(value)
+				Me.SendPropertyChanging
+				Me._OrderDesc = value
+				Me.SendPropertyChanged("OrderDesc")
+				Me.OnOrderDescChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Username", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property Username() As String
+		Get
+			Return Me._Username
+		End Get
+		Set
+			If (String.Equals(Me._Username, value) = false) Then
+				If Me._User.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUsernameChanging(value)
+				Me.SendPropertyChanging
+				Me._Username = value
+				Me.SendPropertyChanged("Username")
+				Me.OnUsernameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrderStatus", DbType:="NVarChar(50)")>  _
+	Public Property OrderStatus() As String
+		Get
+			Return Me._OrderStatus
+		End Get
+		Set
+			If (String.Equals(Me._OrderStatus, value) = false) Then
+				Me.OnOrderStatusChanging(value)
+				Me.SendPropertyChanging
+				Me._OrderStatus = value
+				Me.SendPropertyChanged("OrderStatus")
+				Me.OnOrderStatusChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Order_Delivery", Storage:="_Deliveries", ThisKey:="OrderId", OtherKey:="OrderId")>  _
+	Public Property Deliveries() As EntitySet(Of Delivery)
+		Get
+			Return Me._Deliveries
+		End Get
+		Set
+			Me._Deliveries.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Order_OrderLine", Storage:="_OrderLines", ThisKey:="OrderId", OtherKey:="OrderId")>  _
+	Public Property OrderLines() As EntitySet(Of OrderLine)
+		Get
+			Return Me._OrderLines
+		End Get
+		Set
+			Me._OrderLines.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Order_Payment", Storage:="_Payments", ThisKey:="OrderId", OtherKey:="OrderId")>  _
+	Public Property Payments() As EntitySet(Of Payment)
+		Get
+			Return Me._Payments
+		End Get
+		Set
+			Me._Payments.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="User_Order", Storage:="_User", ThisKey:="Username", OtherKey:="Username", IsForeignKey:=true)>  _
+	Public Property User() As User
+		Get
+			Return Me._User.Entity
+		End Get
+		Set
+			Dim previousValue As User = Me._User.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._User.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._User.Entity = Nothing
+					previousValue.Orders.Remove(Me)
+				End If
+				Me._User.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.Orders.Add(Me)
+					Me._Username = value.Username
+				Else
+					Me._Username = CType(Nothing, String)
+				End If
+				Me.SendPropertyChanged("User")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_Deliveries(ByVal entity As Delivery)
+		Me.SendPropertyChanging
+		entity.[Order] = Me
+	End Sub
+	
+	Private Sub detach_Deliveries(ByVal entity As Delivery)
+		Me.SendPropertyChanging
+		entity.[Order] = Nothing
+	End Sub
+	
+	Private Sub attach_OrderLines(ByVal entity As OrderLine)
+		Me.SendPropertyChanging
+		entity.[Order] = Me
+	End Sub
+	
+	Private Sub detach_OrderLines(ByVal entity As OrderLine)
+		Me.SendPropertyChanging
+		entity.[Order] = Nothing
+	End Sub
+	
+	Private Sub attach_Payments(ByVal entity As Payment)
+		Me.SendPropertyChanging
+		entity.[Order] = Me
+	End Sub
+	
+	Private Sub detach_Payments(ByVal entity As Payment)
+		Me.SendPropertyChanging
+		entity.[Order] = Nothing
 	End Sub
 End Class
