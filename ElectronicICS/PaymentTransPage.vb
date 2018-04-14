@@ -49,13 +49,14 @@
         cboOrderID.DisplayMember = "OrderId"
         cboOrderID.ValueMember = "OrderId"
 
-
         Dim paymentID As Integer
-
         lblPayID.Text = CType(nextPayID, String)
         paymentID = nextPayID
         nextPayID += 1
 
+        Dim cart = From o In db.OrderLines Where o.OrderId = OrderID Select o.Subtotal
+        Dim totalprice As Double = Convert.ToDouble(cart.Sum)
+        lblPrice.Text = totalprice.ToString("0.00")
 
     End Sub
 
