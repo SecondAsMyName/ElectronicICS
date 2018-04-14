@@ -25,7 +25,8 @@ Partial Class PaymentPage
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblOrderCartCount = New System.Windows.Forms.Label()
-        Me.lstOrderCart = New System.Windows.Forms.ListBox()
+        Me.dgvOrderCart = New System.Windows.Forms.DataGridView()
+        CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -53,25 +54,32 @@ Partial Class PaymentPage
         Me.lblOrderCartCount.Size = New System.Drawing.Size(100, 23)
         Me.lblOrderCartCount.TabIndex = 6
         '
-        'lstOrderCart
+        'dgvOrderCart
         '
-        Me.lstOrderCart.FormattingEnabled = True
-        Me.lstOrderCart.Location = New System.Drawing.Point(16, 43)
-        Me.lstOrderCart.Name = "lstOrderCart"
-        Me.lstOrderCart.Size = New System.Drawing.Size(486, 160)
-        Me.lstOrderCart.TabIndex = 7
+        Me.dgvOrderCart.AllowUserToAddRows = False
+        Me.dgvOrderCart.AllowUserToDeleteRows = False
+        Me.dgvOrderCart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvOrderCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvOrderCart.Location = New System.Drawing.Point(16, 44)
+        Me.dgvOrderCart.Name = "dgvOrderCart"
+        Me.dgvOrderCart.ReadOnly = True
+        Me.dgvOrderCart.Size = New System.Drawing.Size(473, 163)
+        Me.dgvOrderCart.TabIndex = 7
         '
         'PaymentPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(514, 299)
-        Me.Controls.Add(Me.lstOrderCart)
+        Me.Controls.Add(Me.dgvOrderCart)
         Me.Controls.Add(Me.lblOrderCartCount)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "PaymentPage"
         Me.Text = "PaymentPage"
+        CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -79,5 +87,5 @@ Partial Class PaymentPage
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblOrderCartCount As Label
-    Friend WithEvents lstOrderCart As ListBox
+    Friend WithEvents dgvOrderCart As DataGridView
 End Class
