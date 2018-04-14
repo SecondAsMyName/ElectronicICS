@@ -224,6 +224,7 @@
   <ItemGroup>
     <Content Include="ICSDB.mdf" />
     <Content Include="ICSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
