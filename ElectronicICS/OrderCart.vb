@@ -129,7 +129,7 @@
 
         Try
             db.SubmitChanges()
-            MessageBox.Show("No order submited.")
+            MessageBox.Show("Order submited.")
         Catch
             MessageBox.Show("No order submited.")
         End Try
