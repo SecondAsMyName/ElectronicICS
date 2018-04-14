@@ -9,7 +9,14 @@
         End If
 
         If AuthenticateUser(username, password) Then
-            MainPage.Show()
+            If String.Compare(user.Role, "Staff", True) = 0 Then
+                FrmMainpageStaff.Show()
+            ElseIf String.Compare(user.Role, "Customer", True) = 0 Then
+                MainPage.Show()
+            ElseIf String.Compare(user.Role, "Admin", True) = 0 Then
+
+            End If
+
             Me.Close()
         Else
             ResetForm()

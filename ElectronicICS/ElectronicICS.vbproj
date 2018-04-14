@@ -110,6 +110,12 @@
     <Compile Include="FrmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmMainpageStaff.Designer.vb">
+      <DependentUpon>FrmMainpageStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainpageStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainPage.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainpageStaff.resx">
+      <DependentUpon>FrmMainpageStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentHistoryPage.resx">
       <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
