@@ -176,4 +176,8 @@
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
+
+    Private Sub OrderRemarkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrderRemarkToolStripMenuItem.Click
+        OrderRemark.Show()
+    End Sub
 End Class

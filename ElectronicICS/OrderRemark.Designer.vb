@@ -26,12 +26,12 @@ Partial Class OrderRemark
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboOrderId = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtRemark = New System.Windows.Forms.TextBox()
+        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtSysDate
@@ -70,13 +70,14 @@ Partial Class OrderRemark
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Username :"
         '
-        'ComboBox1
+        'cboOrderId
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(26, 49)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 24
+        Me.cboOrderId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboOrderId.FormattingEnabled = True
+        Me.cboOrderId.Location = New System.Drawing.Point(26, 49)
+        Me.cboOrderId.Name = "cboOrderId"
+        Me.cboOrderId.Size = New System.Drawing.Size(121, 21)
+        Me.cboOrderId.TabIndex = 24
         '
         'Label1
         '
@@ -96,31 +97,31 @@ Partial Class OrderRemark
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "Order Remark :"
         '
-        'TextBox1
+        'txtRemark
         '
-        Me.TextBox1.Location = New System.Drawing.Point(26, 125)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(307, 196)
-        Me.TextBox1.TabIndex = 27
+        Me.txtRemark.Location = New System.Drawing.Point(26, 125)
+        Me.txtRemark.Multiline = True
+        Me.txtRemark.Name = "txtRemark"
+        Me.txtRemark.Size = New System.Drawing.Size(307, 196)
+        Me.txtRemark.TabIndex = 27
         '
-        'Button1
+        'btnSubmit
         '
-        Me.Button1.Location = New System.Drawing.Point(364, 223)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 28
-        Me.Button1.Text = "S&ubmit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSubmit.Location = New System.Drawing.Point(364, 223)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(75, 23)
+        Me.btnSubmit.TabIndex = 28
+        Me.btnSubmit.Text = "S&ubmit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnExit
         '
-        Me.Button2.Location = New System.Drawing.Point(364, 277)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 29
-        Me.Button2.Text = "E&xit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnExit.Location = New System.Drawing.Point(364, 277)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
+        Me.btnExit.TabIndex = 29
+        Me.btnExit.Text = "E&xit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'OrderRemark
         '
@@ -128,12 +129,12 @@ Partial Class OrderRemark
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(494, 358)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.btnSubmit)
+        Me.Controls.Add(Me.txtRemark)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboOrderId)
         Me.Controls.Add(Me.txtSysDate)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label8)
@@ -150,10 +151,10 @@ Partial Class OrderRemark
     Friend WithEvents txtUser As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboOrderId As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents txtRemark As TextBox
+    Friend WithEvents btnSubmit As Button
+    Friend WithEvents btnExit As Button
 End Class
