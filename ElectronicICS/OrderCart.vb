@@ -1,14 +1,10 @@
 ﻿Public Class OrderCart
     Private Sub BindData()
-        Dim orderID As Integer
-        Dim username As String
-
         Dim db As New DBDataContext()
 
-        Dim rs = From o In db.OrderLines
-                 Where o.OrderId = orderID
+        Dim rs = From o In db.Items
 
-        lstOrderCart.DataSource = rs
+
 
 
     End Sub
