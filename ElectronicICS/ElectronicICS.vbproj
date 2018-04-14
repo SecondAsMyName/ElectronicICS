@@ -227,6 +227,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\creditcard.gif" />
+    <None Include="Resources\cash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

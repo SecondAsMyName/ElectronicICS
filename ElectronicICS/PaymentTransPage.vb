@@ -1,43 +1,64 @@
 ﻿Public Class PaymentTransPage
+    Private OrderID As Integer = 0
+
     Private Shared nextPayID As Integer = 1000
 
-    Private Sub PaymentTransPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim orderID As Integer
-        Dim paymentID As Integer
-        Dim paymentType As String
-        Dim totalPrice As Decimal = 0.00D
-        Dim price As Decimal
-        Dim quantity As Integer
-        Dim paymentDate As DateTime = DateTime.Now
-        Dim remarks As String
+    Private Sub btnPay_Click(sender As Object, e As EventArgs) Handles btnPay.Click
+        Dim payment As New Payment
+        Dim paymenttype As String = Nothing
 
-        orderID = CInt(lblOrderID.Text)
+        If radCash.Checked Then
+            paymenttype = radCash.Text.ToString
+        ElseIf radCreditCard.Checked Then
+            paymenttype = radCreditCard.Text.ToString
+        End If
+
+        With payment
+            .PaymentId = CInt(lblPayID.Text)
+            .PaymentType = paymenttype
+            ' .Price
+            .PaymentDate = System.DateTime.Now
+            .Remarks = rtbRemarks.Text
+            .OrderId = CInt(cboOrderID.Text)
+        End With
+
+        Dim db As New DBDataContext()
+        db.Payments.InsertOnSubmit(payment)
+        Try
+            db.SubmitChanges()
+        Catch err As Exception
+            MessageBox.Show("Error. Please Try Again.")
+        End Try
+
+        Dim order As New Order
+        With order
+            .OrderStatus = "Paid"
+        End With
+
+        Try
+            db.SubmitChanges()
+        Catch err As Exception
+            MessageBox.Show("Error. Please Try Again.")
+        End Try
+    End Sub
+
+    Private Sub PaymentTransPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim db As New DBDataContext()
+        Dim order = From o In db.Orders
+        cboOrderID.DataSource = order
+        cboOrderID.DisplayMember = "OrderId"
+        cboOrderID.ValueMember = "OrderId"
+
+        Dim paymentID As Integer
+
         lblPayID.Text = CType(nextPayID, String)
         paymentID = nextPayID
         nextPayID += 1
-        totalPrice = price * quantity
-        totalPrice = CDec(lblPrice.Text)
-        remarks = rtbRemarks.Text
 
 
-        Dim p As New Payment()
-        p.OrderId = orderID
-        p.PaymentId = paymentID
-        If CBool(p.PaymentType) = radCash.Checked Then
-            p.PaymentType = radCash.Text
-        ElseIf CBool(p.PaymentType) = radCreditCard.Checked Then
-            paymentType = radCreditCard.Text
-        End If
-        p.Price = totalPrice
-        p.PaymentDate = paymentDate
-        p.Remarks = remarks
+    End Sub
 
-        Dim db As New DBDataContext()
-        db.Payments.InsertOnSubmit(p)
-        db.SubmitChanges()
-
-        Dim o As New Order()
-        o.OrderStatus = "Paid"
-        db.SubmitChanges()
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
     End Sub
 End Class
