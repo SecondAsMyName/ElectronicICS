@@ -92,6 +92,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="DB.designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +138,12 @@
     <Compile Include="OrderCart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PaymentHistoryPage.Designer.vb">
+      <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentHistoryPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PaymentPage.Designer.vb">
       <DependentUpon>PaymentPage.vb</DependentUpon>
     </Compile>
@@ -153,6 +160,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentHistoryPage.resx">
+      <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentTransPage.resx">
       <DependentUpon>PaymentTransPage.vb</DependentUpon>
