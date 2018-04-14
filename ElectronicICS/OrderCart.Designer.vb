@@ -110,7 +110,7 @@ Partial Class OrderCart
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(600, 221)
+        Me.Label6.Location = New System.Drawing.Point(551, 221)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 13)
         Me.Label6.TabIndex = 11
@@ -119,7 +119,7 @@ Partial Class OrderCart
         'txtTotal
         '
         Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTotal.Location = New System.Drawing.Point(603, 249)
+        Me.txtTotal.Location = New System.Drawing.Point(554, 250)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(100, 20)
@@ -136,7 +136,7 @@ Partial Class OrderCart
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(603, 361)
+        Me.btnSubmit.Location = New System.Drawing.Point(554, 351)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(100, 34)
         Me.btnSubmit.TabIndex = 14
@@ -145,7 +145,7 @@ Partial Class OrderCart
         '
         'btnCal
         '
-        Me.btnCal.Location = New System.Drawing.Point(603, 291)
+        Me.btnCal.Location = New System.Drawing.Point(554, 292)
         Me.btnCal.Name = "btnCal"
         Me.btnCal.Size = New System.Drawing.Size(100, 36)
         Me.btnCal.TabIndex = 15
@@ -155,7 +155,7 @@ Partial Class OrderCart
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(600, 93)
+        Me.Label7.Location = New System.Drawing.Point(549, 93)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 13)
         Me.Label7.TabIndex = 16
@@ -164,7 +164,7 @@ Partial Class OrderCart
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(602, 156)
+        Me.Label8.Location = New System.Drawing.Point(551, 158)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(59, 13)
         Me.Label8.TabIndex = 17
@@ -173,7 +173,7 @@ Partial Class OrderCart
         'txtUser
         '
         Me.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUser.Location = New System.Drawing.Point(603, 120)
+        Me.txtUser.Location = New System.Drawing.Point(552, 119)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.ReadOnly = True
         Me.txtUser.Size = New System.Drawing.Size(100, 20)
@@ -182,7 +182,7 @@ Partial Class OrderCart
         'txtSysDate
         '
         Me.txtSysDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSysDate.Location = New System.Drawing.Point(603, 187)
+        Me.txtSysDate.Location = New System.Drawing.Point(554, 185)
         Me.txtSysDate.Name = "txtSysDate"
         Me.txtSysDate.ReadOnly = True
         Me.txtSysDate.Size = New System.Drawing.Size(100, 20)
@@ -193,7 +193,7 @@ Partial Class OrderCart
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogOutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(727, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(678, 24)
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -245,7 +245,7 @@ Partial Class OrderCart
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(600, 43)
+        Me.Label10.Location = New System.Drawing.Point(549, 45)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(22, 13)
         Me.Label10.TabIndex = 27
@@ -254,7 +254,7 @@ Partial Class OrderCart
         'txtOrderID
         '
         Me.txtOrderID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtOrderID.Location = New System.Drawing.Point(628, 43)
+        Me.txtOrderID.Location = New System.Drawing.Point(577, 43)
         Me.txtOrderID.Name = "txtOrderID"
         Me.txtOrderID.ReadOnly = True
         Me.txtOrderID.Size = New System.Drawing.Size(77, 20)
@@ -289,7 +289,7 @@ Partial Class OrderCart
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvOrderCart.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvOrderCart.Size = New System.Drawing.Size(330, 332)
+        Me.dgvOrderCart.Size = New System.Drawing.Size(270, 332)
         Me.dgvOrderCart.TabIndex = 29
         '
         'OrderCart
@@ -297,7 +297,7 @@ Partial Class OrderCart
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(727, 445)
+        Me.ClientSize = New System.Drawing.Size(678, 445)
         Me.Controls.Add(Me.dgvOrderCart)
         Me.Controls.Add(Me.txtOrderID)
         Me.Controls.Add(Me.Label10)
