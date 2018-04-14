@@ -121,7 +121,7 @@ Partial Class OrderCart
         '
         'btnAddItem
         '
-        Me.btnAddItem.Location = New System.Drawing.Point(15, 340)
+        Me.btnAddItem.Location = New System.Drawing.Point(143, 333)
         Me.btnAddItem.Name = "btnAddItem"
         Me.btnAddItem.Size = New System.Drawing.Size(75, 23)
         Me.btnAddItem.TabIndex = 13
