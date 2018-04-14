@@ -82,7 +82,7 @@ Partial Class OrderCart
         '
         Me.cboQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboQuan.FormattingEnabled = True
-        Me.cboQuan.Items.AddRange(New Object() {"--Select--", "1", "2", "3", "4", "5"})
+        Me.cboQuan.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
         Me.cboQuan.Location = New System.Drawing.Point(100, 281)
         Me.cboQuan.Name = "cboQuan"
         Me.cboQuan.Size = New System.Drawing.Size(121, 21)

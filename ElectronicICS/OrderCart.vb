@@ -26,6 +26,13 @@
         'FALSE records does not meet the criteria
     End Function
 
+    Private Function HasCartItem(id As Integer) As Boolean
+        Dim db As New DBDataContext()
+        Return db.OrderLines.Any(Function(o) o.OrderId = id)
+        'True records meets the criteria
+        'FALSE records does not meet the criteria
+    End Function
+
     Private Function getLastID() As Integer
         Dim db As New DBDataContext()
         Dim getId = From o In db.Orders Select o.OrderId
@@ -117,21 +124,50 @@
 
         TotalPrice = TotalPrice + (quantity * price)
         txtTotal.Text = TotalPrice.ToString("0.00")
-        BindData()
+        ResetForm()
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-        Dim db As New DBDataContext()
-        Dim updateOrderStatus = (From ord In db.Orders
-                                 Where ord.OrderId = OrderID).ToList()(0)
+        If (HasCartItem(OrderID) = False) Then
+            MessageBox.Show("No item ordered.")
+        Else
+            Dim db As New DBDataContext()
+            Dim updateOrderStatus = (From ord In db.Orders
+                                     Where ord.OrderId = OrderID).ToList()(0)
 
-        updateOrderStatus.OrderStatus = "Complete"
+            updateOrderStatus.OrderStatus = "Complete"
+
+            Try
+                db.SubmitChanges()
+                MessageBox.Show("Order submited.")
+            Catch
+                MessageBox.Show("No order submited.")
+            End Try
+            Me.Close()
+        End If
+
+    End Sub
+
+    Private Sub dgvOrderCart_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvOrderCart.CellDoubleClick
+        Dim i As Integer = e.RowIndex
+        Dim id As Integer
+        If i > -1 Then
+            id = CInt(dgvOrderCart.Rows(i).Cells(0).Value)
+        Else
+            MessageBox.Show("No cart item selected.")
+        End If
+
+        Dim db As New DBDataContext()
+        Dim deleteCartItem = (From cart In db.OrderLines
+                              Where cart.OrderId = OrderID And cart.ItemId = id).ToList()(0)
+
+        db.OrderLines.DeleteOnSubmit(deleteCartItem)
 
         Try
             db.SubmitChanges()
-            MessageBox.Show("Order submited.")
         Catch
-            MessageBox.Show("No order submited.")
+            MessageBox.Show("No cart item removed.")
         End Try
+        ResetForm()
     End Sub
 End Class
