@@ -29,8 +29,7 @@
     Private Function HasCartItem(id As Integer) As Boolean
         Dim db As New DBDataContext()
         Return db.OrderLines.Any(Function(o) o.OrderId = id)
-        'True records meets the criteria
-        'FALSE records does not meet the criteria
+
     End Function
 
     Private Function getLastID() As Integer
