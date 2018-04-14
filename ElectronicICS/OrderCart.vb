@@ -116,10 +116,8 @@
         End Try
 
         TotalPrice = TotalPrice + (quantity * price)
+        txtTotal.Text = TotalPrice.ToString("0.00")
         BindData()
     End Sub
 
-    Private Sub btnCal_Click(sender As Object, e As EventArgs) Handles btnCal.Click
-        txtTotal.Text = TotalPrice.ToString("0.00")
-    End Sub
 End Class
