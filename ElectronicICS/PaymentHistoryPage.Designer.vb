@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PaymentHistoryPage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,12 @@ Partial Class PaymentHistoryPage
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblPayHistoryCount = New System.Windows.Forms.Label()
-        Me.lstPaymentHistory = New System.Windows.Forms.ListBox()
+        Me.dgvPaymentHistory = New System.Windows.Forms.DataGridView()
+        CType(Me.dgvPaymentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -43,24 +44,31 @@ Partial Class PaymentHistoryPage
         Me.lblPayHistoryCount.Size = New System.Drawing.Size(184, 28)
         Me.lblPayHistoryCount.TabIndex = 2
         '
-        'lstPaymentHistory
+        'dgvPaymentHistory
         '
-        Me.lstPaymentHistory.FormattingEnabled = True
-        Me.lstPaymentHistory.Location = New System.Drawing.Point(16, 43)
-        Me.lstPaymentHistory.Name = "lstPaymentHistory"
-        Me.lstPaymentHistory.Size = New System.Drawing.Size(592, 186)
-        Me.lstPaymentHistory.TabIndex = 3
+        Me.dgvPaymentHistory.AllowUserToAddRows = False
+        Me.dgvPaymentHistory.AllowUserToDeleteRows = False
+        Me.dgvPaymentHistory.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPaymentHistory.Location = New System.Drawing.Point(15, 38)
+        Me.dgvPaymentHistory.Name = "dgvPaymentHistory"
+        Me.dgvPaymentHistory.ReadOnly = True
+        Me.dgvPaymentHistory.Size = New System.Drawing.Size(570, 183)
+        Me.dgvPaymentHistory.TabIndex = 3
         '
         'PaymentHistoryPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(613, 274)
-        Me.Controls.Add(Me.lstPaymentHistory)
+        Me.Controls.Add(Me.dgvPaymentHistory)
         Me.Controls.Add(Me.lblPayHistoryCount)
         Me.Controls.Add(Me.Label1)
         Me.Name = "PaymentHistoryPage"
         Me.Text = "PaymentHistory"
+        CType(Me.dgvPaymentHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -68,5 +76,5 @@ Partial Class PaymentHistoryPage
 
     Friend WithEvents Label1 As Label
     Friend WithEvents lblPayHistoryCount As Label
-    Friend WithEvents lstPaymentHistory As ListBox
+    Friend WithEvents dgvPaymentHistory As DataGridView
 End Class
