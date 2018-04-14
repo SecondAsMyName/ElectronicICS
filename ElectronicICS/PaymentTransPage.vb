@@ -1,4 +1,5 @@
 ﻿Public Class PaymentTransPage
+    Private Shared nextPayID As Integer = 1000
 
     Private Sub PaymentTransPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim orderID As Integer
@@ -10,9 +11,10 @@
         Dim paymentDate As DateTime = DateTime.Now
         Dim remarks As String
 
-
         orderID = CInt(lblOrderID.Text)
-        paymentID = CInt(lblPayID.Text)
+        lblPayID.Text = CType(nextPayID, String)
+        paymentID = nextPayID
+        nextPayID += 1
         totalPrice = price * quantity
         totalPrice = CDec(lblPrice.Text)
         remarks = rtbRemarks.Text
