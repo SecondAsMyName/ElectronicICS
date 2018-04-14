@@ -22,18 +22,21 @@ Partial Class FrmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.grTitle = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.mskPassword = New System.Windows.Forms.MaskedTextBox()
         Me.btnSignin = New System.Windows.Forms.Button()
         Me.btnSignup = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.errLogin = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.grTitle.SuspendLayout()
+        CType(Me.errLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -54,13 +57,13 @@ Partial Class FrmLogin
         Me.Label2.Text = "&Password :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox1
+        'txtUsername
         '
-        Me.TextBox1.Location = New System.Drawing.Point(190, 118)
-        Me.TextBox1.MaxLength = 50
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(155, 22)
-        Me.TextBox1.TabIndex = 0
+        Me.txtUsername.Location = New System.Drawing.Point(190, 118)
+        Me.txtUsername.MaxLength = 50
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(155, 22)
+        Me.txtUsername.TabIndex = 0
         '
         'lblTitle
         '
@@ -92,14 +95,14 @@ Partial Class FrmLogin
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Electronic Shop Sdn.bhd."
         '
-        'MaskedTextBox1
+        'mskPassword
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(190, 159)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(155, 22)
-        Me.MaskedTextBox1.TabIndex = 1
-        Me.MaskedTextBox1.UseSystemPasswordChar = True
+        Me.mskPassword.Location = New System.Drawing.Point(190, 159)
+        Me.mskPassword.Name = "mskPassword"
+        Me.mskPassword.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+        Me.mskPassword.Size = New System.Drawing.Size(155, 22)
+        Me.mskPassword.TabIndex = 1
+        Me.mskPassword.UseSystemPasswordChar = True
         '
         'btnSignin
         '
@@ -115,6 +118,7 @@ Partial Class FrmLogin
         'btnSignup
         '
         Me.btnSignup.BackColor = System.Drawing.Color.LightCoral
+        Me.btnSignup.CausesValidation = False
         Me.btnSignup.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSignup.Location = New System.Drawing.Point(220, 237)
         Me.btnSignup.Name = "btnSignup"
@@ -125,6 +129,7 @@ Partial Class FrmLogin
         '
         'btnExit
         '
+        Me.btnExit.CausesValidation = False
         Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.Location = New System.Drawing.Point(392, 231)
         Me.btnExit.Name = "btnExit"
@@ -144,27 +149,35 @@ Partial Class FrmLogin
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Or"
         '
+        'errLogin
+        '
+        Me.errLogin.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
+        Me.errLogin.ContainerControl = Me
+        '
         'FrmLogin
         '
         Me.AcceptButton = Me.btnSignin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.CancelButton = Me.btnExit
+        Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(490, 281)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnSignup)
         Me.Controls.Add(Me.btnSignin)
-        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.Controls.Add(Me.mskPassword)
         Me.Controls.Add(Me.grTitle)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.KeyPreview = True
         Me.Name = "FrmLogin"
         Me.Text = "Sign &Out"
         Me.grTitle.ResumeLayout(False)
+        CType(Me.errLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -172,13 +185,14 @@ Partial Class FrmLogin
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtUsername As TextBox
     Friend WithEvents lblTitle As Label
     Friend WithEvents grTitle As GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents mskPassword As MaskedTextBox
     Friend WithEvents btnSignin As Button
     Friend WithEvents btnSignup As Button
     Friend WithEvents btnExit As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents errLogin As ErrorProvider
 End Class
