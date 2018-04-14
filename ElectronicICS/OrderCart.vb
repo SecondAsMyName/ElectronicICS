@@ -96,6 +96,7 @@
         'New order and orderline object
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
         Dim quantity As Integer = Integer.Parse(cboQuan.Text)
+        Dim price As Double = Convert.ToDouble(lstPrice.SelectedValue)
         Dim orderline As New OrderLine
         With orderline
             .OrderId = OrderID
@@ -114,6 +115,7 @@
             MessageBox.Show("Same item in cart.")
         End Try
 
+        TotalPrice = TotalPrice + (quantity * price)
         BindData()
     End Sub
 
