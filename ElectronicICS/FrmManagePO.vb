@@ -8,6 +8,7 @@
                  Where (status = "All" Or PO.Remarks = status)
 
         dgvPo.DataSource = rs
+        dgvPo.Columns.Remove("Supplier")
     End Sub
     Private Sub FrmManagePO_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         cboStatus.SelectedIndex = 0
@@ -15,6 +16,7 @@
 
     Private Sub BtnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
         FrmCreatePO.ShowDialog(Me)
+        BindData()
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -61,7 +63,8 @@
     End Sub
 
     Private Sub DgvPo_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPo.CellDoubleClick
-
+        FrmViewPO.ShowDialog(Me)
+        BindData()
     End Sub
 
     Private Sub DgvPo_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPo.CellClick
