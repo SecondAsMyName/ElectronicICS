@@ -361,10 +361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICSDB.mdf" />
-    <Content Include="ICSDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ICSDB.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\Order-now.png" />
     <None Include="Resources\LIMKAHHIM.jpg" />
     <None Include="Resources\LogoMakr_9T5ghY.png" />
