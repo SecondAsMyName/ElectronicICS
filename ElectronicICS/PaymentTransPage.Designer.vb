@@ -37,8 +37,12 @@ Partial Class PaymentTransPage
         Me.radCash = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.mnuTransMenu = New System.Windows.Forms.MenuStrip()
+        Me.PaymentHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PaymentHistoryToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mnuTransMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox2
@@ -65,7 +69,7 @@ Partial Class PaymentTransPage
         '
         Me.cboOrderID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboOrderID.FormattingEnabled = True
-        Me.cboOrderID.Location = New System.Drawing.Point(90, 18)
+        Me.cboOrderID.Location = New System.Drawing.Point(90, 37)
         Me.cboOrderID.Name = "cboOrderID"
         Me.cboOrderID.Size = New System.Drawing.Size(121, 21)
         Me.cboOrderID.TabIndex = 28
@@ -73,7 +77,7 @@ Partial Class PaymentTransPage
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 18)
+        Me.Label5.Location = New System.Drawing.Point(12, 37)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 27
@@ -82,7 +86,7 @@ Partial Class PaymentTransPage
         'lblPrice
         '
         Me.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblPrice.Location = New System.Drawing.Point(90, 267)
+        Me.lblPrice.Location = New System.Drawing.Point(90, 278)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(150, 24)
         Me.lblPrice.TabIndex = 26
@@ -90,14 +94,14 @@ Partial Class PaymentTransPage
         'lblPayID
         '
         Me.lblPayID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblPayID.Location = New System.Drawing.Point(90, 68)
+        Me.lblPayID.Location = New System.Drawing.Point(90, 79)
         Me.lblPayID.Name = "lblPayID"
         Me.lblPayID.Size = New System.Drawing.Size(150, 24)
         Me.lblPayID.TabIndex = 25
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(377, 419)
+        Me.btnExit.Location = New System.Drawing.Point(377, 440)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 42)
         Me.btnExit.TabIndex = 24
@@ -106,7 +110,7 @@ Partial Class PaymentTransPage
         '
         'btnPay
         '
-        Me.btnPay.Location = New System.Drawing.Point(248, 419)
+        Me.btnPay.Location = New System.Drawing.Point(248, 440)
         Me.btnPay.Name = "btnPay"
         Me.btnPay.Size = New System.Drawing.Size(77, 42)
         Me.btnPay.TabIndex = 23
@@ -115,7 +119,7 @@ Partial Class PaymentTransPage
         '
         'rtbRemarks
         '
-        Me.rtbRemarks.Location = New System.Drawing.Point(90, 308)
+        Me.rtbRemarks.Location = New System.Drawing.Point(90, 324)
         Me.rtbRemarks.Name = "rtbRemarks"
         Me.rtbRemarks.Size = New System.Drawing.Size(362, 96)
         Me.rtbRemarks.TabIndex = 22
@@ -124,7 +128,7 @@ Partial Class PaymentTransPage
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 314)
+        Me.Label4.Location = New System.Drawing.Point(12, 324)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 21
@@ -133,7 +137,7 @@ Partial Class PaymentTransPage
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 268)
+        Me.Label3.Location = New System.Drawing.Point(12, 278)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 20
@@ -173,17 +177,40 @@ Partial Class PaymentTransPage
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 69)
+        Me.Label1.Location = New System.Drawing.Point(12, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Payment ID :"
         '
+        'mnuTransMenu
+        '
+        Me.mnuTransMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PaymentHistoryToolStripMenuItem, Me.PaymentHistoryToolStripMenuItem1})
+        Me.mnuTransMenu.Location = New System.Drawing.Point(0, 0)
+        Me.mnuTransMenu.Name = "mnuTransMenu"
+        Me.mnuTransMenu.Size = New System.Drawing.Size(497, 24)
+        Me.mnuTransMenu.TabIndex = 32
+        Me.mnuTransMenu.Text = "MenuStrip1"
+        '
+        'PaymentHistoryToolStripMenuItem
+        '
+        Me.PaymentHistoryToolStripMenuItem.Name = "PaymentHistoryToolStripMenuItem"
+        Me.PaymentHistoryToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.PaymentHistoryToolStripMenuItem.Text = "Go Back"
+        '
+        'PaymentHistoryToolStripMenuItem1
+        '
+        Me.PaymentHistoryToolStripMenuItem1.Name = "PaymentHistoryToolStripMenuItem1"
+        Me.PaymentHistoryToolStripMenuItem1.Size = New System.Drawing.Size(107, 20)
+        Me.PaymentHistoryToolStripMenuItem1.Text = "Payment History"
+        '
         'PaymentTransPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(497, 494)
+        Me.Controls.Add(Me.mnuTransMenu)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cboOrderID)
@@ -200,9 +227,11 @@ Partial Class PaymentTransPage
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "PaymentTransPage"
-        Me.Text = "PaymentTransPage"
+        Me.Text = "Payment Transaction Page"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mnuTransMenu.ResumeLayout(False)
+        Me.mnuTransMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -223,4 +252,7 @@ Partial Class PaymentTransPage
     Friend WithEvents radCash As RadioButton
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents mnuTransMenu As MenuStrip
+    Friend WithEvents PaymentHistoryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PaymentHistoryToolStripMenuItem1 As ToolStripMenuItem
 End Class

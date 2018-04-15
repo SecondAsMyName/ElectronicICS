@@ -198,6 +198,12 @@
     <Compile Include="PaymentTransPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PaymentTransReport.Designer.vb">
+      <DependentUpon>PaymentTransReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTransReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PendingOrder.Designer.vb">
       <DependentUpon>PendingOrder.vb</DependentUpon>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentTransPage.resx">
       <DependentUpon>PaymentTransPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentTransReport.resx">
+      <DependentUpon>PaymentTransReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PendingOrder.resx">
       <DependentUpon>PendingOrder.vb</DependentUpon>

@@ -5,6 +5,10 @@
     End Sub
 
     Private Sub dgvOrderCart_DoubleClick(sender As Object, e As EventArgs) Handles dgvOrderCart.DoubleClick
-        PaymentTransPage.ShowDialog(Me)
+        PaymentTransPage.ShowDialog()
+    End Sub
+
+    Private Sub GoBackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoBackToolStripMenuItem.Click
+        MainPage.ShowDialog()
     End Sub
 End Class

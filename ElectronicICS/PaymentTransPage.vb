@@ -75,4 +75,12 @@
         Dim price = From o In db.OrderLines Where o.OrderId = orderID Select o.Subtotal
         lblPrice.Text = (price.FirstOrDefault()).ToString()
     End Sub
+
+    Private Sub PaymentHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem.Click
+        PaymentPage.ShowDialog()
+    End Sub
+
+    Private Sub PaymentHistoryToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem1.Click
+        PaymentHistoryPage.ShowDialog()
+    End Sub
 End Class

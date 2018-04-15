@@ -24,9 +24,12 @@ Partial Class PaymentPage
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblOrderCartCount = New System.Windows.Forms.Label()
         Me.dgvOrderCart = New System.Windows.Forms.DataGridView()
+        Me.mnuPaymentMenu = New System.Windows.Forms.MenuStrip()
+        Me.GoBackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mnuPaymentMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -41,18 +44,11 @@ Partial Class PaymentPage
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 228)
+        Me.Label2.Location = New System.Drawing.Point(16, 235)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(197, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Pick 1 to be able to process tranasction."
-        '
-        'lblOrderCartCount
-        '
-        Me.lblOrderCartCount.Location = New System.Drawing.Point(26, 258)
-        Me.lblOrderCartCount.Name = "lblOrderCartCount"
-        Me.lblOrderCartCount.Size = New System.Drawing.Size(100, 23)
-        Me.lblOrderCartCount.TabIndex = 6
         '
         'dgvOrderCart
         '
@@ -62,30 +58,60 @@ Partial Class PaymentPage
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvOrderCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOrderCart.Location = New System.Drawing.Point(16, 44)
+        Me.dgvOrderCart.Location = New System.Drawing.Point(16, 56)
         Me.dgvOrderCart.Name = "dgvOrderCart"
         Me.dgvOrderCart.ReadOnly = True
         Me.dgvOrderCart.Size = New System.Drawing.Size(473, 163)
         Me.dgvOrderCart.TabIndex = 7
         '
+        'mnuPaymentMenu
+        '
+        Me.mnuPaymentMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoBackToolStripMenuItem})
+        Me.mnuPaymentMenu.Location = New System.Drawing.Point(0, 0)
+        Me.mnuPaymentMenu.Name = "mnuPaymentMenu"
+        Me.mnuPaymentMenu.Size = New System.Drawing.Size(514, 24)
+        Me.mnuPaymentMenu.TabIndex = 9
+        Me.mnuPaymentMenu.Text = "MenuStrip1"
+        '
+        'GoBackToolStripMenuItem
+        '
+        Me.GoBackToolStripMenuItem.Name = "GoBackToolStripMenuItem"
+        Me.GoBackToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.GoBackToolStripMenuItem.Text = "Go back"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(16, 30)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 10
+        Me.Label3.Text = "Order List"
+        '
         'PaymentPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(514, 299)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.mnuPaymentMenu)
         Me.Controls.Add(Me.dgvOrderCart)
-        Me.Controls.Add(Me.lblOrderCartCount)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "PaymentPage"
-        Me.Text = "PaymentPage"
+        Me.Text = "Payment Page(Order List)"
         CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mnuPaymentMenu.ResumeLayout(False)
+        Me.mnuPaymentMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblOrderCartCount As Label
     Friend WithEvents dgvOrderCart As DataGridView
+    Friend WithEvents mnuPaymentMenu As MenuStrip
+    Friend WithEvents GoBackToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label3 As Label
 End Class
