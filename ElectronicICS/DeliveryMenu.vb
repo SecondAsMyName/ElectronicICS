@@ -19,6 +19,7 @@
     End Sub
 
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
-
+        FrmReportDelivery.Show(Me)
+        Me.Visible = False
     End Sub
 End Class
