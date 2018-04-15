@@ -210,6 +210,12 @@
     <Compile Include="OrderHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="OrderMenu.Designer.vb">
+      <DependentUpon>OrderMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrderMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OrderRemark.Designer.vb">
       <DependentUpon>OrderRemark.vb</DependentUpon>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderHistory.resx">
       <DependentUpon>OrderHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderMenu.resx">
+      <DependentUpon>OrderMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderRemark.resx">
       <DependentUpon>OrderRemark.vb</DependentUpon>
@@ -356,8 +365,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\LogoMakr_9T5ghY.png" />
+    <None Include="Resources\Order-now.png" />
     <None Include="Resources\LIMKAHHIM.jpg" />
+    <None Include="Resources\LogoMakr_9T5ghY.png" />
     <None Include="Resources\warehouse-inventory2.png" />
     <None Include="Resources\purchase-order2.jpg" />
     <None Include="Resources\purchase-order1.jpg" />
