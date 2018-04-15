@@ -171,11 +171,11 @@
 
     End Sub
 
-    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+    Private Sub BtnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
 
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
 End Class
