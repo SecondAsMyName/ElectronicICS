@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub btnOrderForm_Click(sender As Object, e As EventArgs) Handles btnOrderForm.Click
-        OrderCart.ShowDialog()
+        OrderMenu.ShowDialog()
     End Sub
 
     Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
