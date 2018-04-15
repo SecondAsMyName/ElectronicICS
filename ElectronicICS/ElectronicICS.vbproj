@@ -152,6 +152,18 @@
     <Compile Include="FrmManageStock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmOrderChecking.Designer.vb">
+      <DependentUpon>FrmOrderChecking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOrderChecking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportDelivery.Designer.vb">
+      <DependentUpon>FrmReportDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportDelivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmSignUp.Designer.vb">
       <DependentUpon>FrmSignUp.vb</DependentUpon>
     </Compile>
@@ -168,6 +180,12 @@
       <DependentUpon>FrmSplashMainMenu.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmSplashMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrackDelivery.Designer.vb">
+      <DependentUpon>FrmTrackDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrackDelivery.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUpdateDelivery.Designer.vb">
@@ -287,6 +305,12 @@
     <EmbeddedResource Include="FrmManageStock.resx">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOrderChecking.resx">
+      <DependentUpon>FrmOrderChecking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportDelivery.resx">
+      <DependentUpon>FrmReportDelivery.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSignUp.resx">
       <DependentUpon>FrmSignUp.vb</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSplashMainMenu.resx">
       <DependentUpon>FrmSplashMainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrackDelivery.resx">
+      <DependentUpon>FrmTrackDelivery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateDelivery.resx">
       <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
@@ -400,6 +427,9 @@
     <None Include="Resources\delivery.jpg" />
     <None Include="Resources\creditcard.gif" />
     <None Include="Resources\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FrmTrackDelivery\lblOrderID\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
