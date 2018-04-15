@@ -57,6 +57,7 @@ Partial Class PaymentPage
         Me.dgvOrderCart.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvOrderCart.BackgroundColor = System.Drawing.Color.White
         Me.dgvOrderCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvOrderCart.Location = New System.Drawing.Point(16, 56)
         Me.dgvOrderCart.Name = "dgvOrderCart"
