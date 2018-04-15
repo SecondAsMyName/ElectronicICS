@@ -104,6 +104,12 @@
     <Compile Include="DeliveryMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmCreateItem.Designer.vb">
+      <DependentUpon>FrmCreateItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -114,6 +120,18 @@
       <DependentUpon>FrmMainpageStaff.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmMainpageStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageStock.Designer.vb">
+      <DependentUpon>FrmManageStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManageStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateItem.Designer.vb">
+      <DependentUpon>FrmUpdateItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdateItem.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainPage.vb">
@@ -164,11 +182,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmCreateItem.resx">
+      <DependentUpon>FrmCreateItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainpageStaff.resx">
       <DependentUpon>FrmMainpageStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageStock.resx">
+      <DependentUpon>FrmManageStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateItem.resx">
+      <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentHistoryPage.resx">
       <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
@@ -236,6 +263,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\purchase-order1.jpg" />
+    <None Include="Resources\warehouse-inventory1.png" />
+    <None Include="Resources\purchase-order.jpg" />
+    <None Include="Resources\warehouse-inventory.png" />
+    <None Include="Resources\Report.png" />
     <None Include="Resources\creditcard.gif" />
     <None Include="Resources\cash.png" />
   </ItemGroup>
