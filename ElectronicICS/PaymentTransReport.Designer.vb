@@ -50,14 +50,14 @@ Partial Class PaymentTransReport
         '
         Me.dgvReport.BackgroundColor = System.Drawing.Color.White
         Me.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReport.Location = New System.Drawing.Point(24, 70)
+        Me.dgvReport.Location = New System.Drawing.Point(24, 72)
         Me.dgvReport.Name = "dgvReport"
-        Me.dgvReport.Size = New System.Drawing.Size(581, 191)
+        Me.dgvReport.Size = New System.Drawing.Size(688, 238)
         Me.dgvReport.TabIndex = 6
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(530, 267)
+        Me.btnExit.Location = New System.Drawing.Point(596, 342)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 8
@@ -66,7 +66,7 @@ Partial Class PaymentTransReport
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(345, 267)
+        Me.btnPrint.Location = New System.Drawing.Point(387, 342)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 23)
         Me.btnPrint.TabIndex = 7
@@ -91,7 +91,7 @@ Partial Class PaymentTransReport
         Me.mnuTransReport.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoBackToolStripMenuItem})
         Me.mnuTransReport.Location = New System.Drawing.Point(0, 0)
         Me.mnuTransReport.Name = "mnuTransReport"
-        Me.mnuTransReport.Size = New System.Drawing.Size(654, 24)
+        Me.mnuTransReport.Size = New System.Drawing.Size(724, 24)
         Me.mnuTransReport.TabIndex = 9
         Me.mnuTransReport.Text = "MenuStrip1"
         '
@@ -103,7 +103,7 @@ Partial Class PaymentTransReport
         '
         'btnGenerate
         '
-        Me.btnGenerate.Location = New System.Drawing.Point(439, 267)
+        Me.btnGenerate.Location = New System.Drawing.Point(490, 342)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(75, 23)
         Me.btnGenerate.TabIndex = 10
@@ -112,7 +112,7 @@ Partial Class PaymentTransReport
         '
         'lblCount
         '
-        Me.lblCount.Location = New System.Drawing.Point(30, 272)
+        Me.lblCount.Location = New System.Drawing.Point(45, 347)
         Me.lblCount.Name = "lblCount"
         Me.lblCount.Size = New System.Drawing.Size(100, 23)
         Me.lblCount.TabIndex = 11
@@ -122,7 +122,7 @@ Partial Class PaymentTransReport
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(654, 302)
+        Me.ClientSize = New System.Drawing.Size(724, 402)
         Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnExit)

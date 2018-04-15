@@ -23,11 +23,11 @@ Partial Class PaymentPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvOrderCart = New System.Windows.Forms.DataGridView()
         Me.mnuPaymentMenu = New System.Windows.Forms.MenuStrip()
         Me.GoBackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuPaymentMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -41,15 +41,6 @@ Partial Class PaymentPage
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Order Cart :"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 235)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(197, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Pick 1 to be able to process tranasction."
-        '
         'dgvOrderCart
         '
         Me.dgvOrderCart.AllowUserToAddRows = False
@@ -62,7 +53,7 @@ Partial Class PaymentPage
         Me.dgvOrderCart.Location = New System.Drawing.Point(16, 56)
         Me.dgvOrderCart.Name = "dgvOrderCart"
         Me.dgvOrderCart.ReadOnly = True
-        Me.dgvOrderCart.Size = New System.Drawing.Size(473, 163)
+        Me.dgvOrderCart.Size = New System.Drawing.Size(667, 227)
         Me.dgvOrderCart.TabIndex = 7
         '
         'mnuPaymentMenu
@@ -70,7 +61,7 @@ Partial Class PaymentPage
         Me.mnuPaymentMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoBackToolStripMenuItem})
         Me.mnuPaymentMenu.Location = New System.Drawing.Point(0, 0)
         Me.mnuPaymentMenu.Name = "mnuPaymentMenu"
-        Me.mnuPaymentMenu.Size = New System.Drawing.Size(514, 24)
+        Me.mnuPaymentMenu.Size = New System.Drawing.Size(714, 24)
         Me.mnuPaymentMenu.TabIndex = 9
         Me.mnuPaymentMenu.Text = "MenuStrip1"
         '
@@ -89,16 +80,25 @@ Partial Class PaymentPage
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Order List"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(16, 296)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(197, 13)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "Pick 1 to be able to process tranasction."
+        '
         'PaymentPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(514, 299)
+        Me.ClientSize = New System.Drawing.Size(714, 318)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.mnuPaymentMenu)
         Me.Controls.Add(Me.dgvOrderCart)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "PaymentPage"
         Me.Text = "Payment Page(Order List)"
@@ -110,9 +110,9 @@ Partial Class PaymentPage
 
     End Sub
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents dgvOrderCart As DataGridView
     Friend WithEvents mnuPaymentMenu As MenuStrip
     Friend WithEvents GoBackToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 End Class
