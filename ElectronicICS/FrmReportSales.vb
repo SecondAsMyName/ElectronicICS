@@ -54,13 +54,13 @@ Public Class FrmReportSales
         Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromPassDate And o.OrderDate < toPassDate Select o.OrderId, o.OrderDesc, o.OrderDate, o.Username
 
         Dim body As New StringBuilder()
-        body.AppendLine("Order ID  Description                 Date           Customer")
-        body.AppendLine("--------  --------------------------  -----------    --------")
+        body.AppendLine("Order ID  Description                 Date                        Customer")
+        body.AppendLine("--------  --------------------------  ------------------------    --------")
         Dim cnt As Integer = 0
 
         For Each orders In order
             cnt += 1
-            body.AppendFormat("{0,5},{1,5},{2,5},{3,5}" & vbNewLine, orders.OrderId, orders.OrderDesc, orders.OrderDate, orders.Username)
+            body.AppendFormat("{0,8},{1,27},{2,25},{3,15}" & vbNewLine, orders.OrderId, orders.OrderDesc, orders.OrderDate, orders.Username)
             body.AppendLine("")
         Next
         body.AppendLine()
