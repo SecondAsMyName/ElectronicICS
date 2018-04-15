@@ -12,10 +12,6 @@
         lblItemCount.Text = rs.Count().ToString("0 Item(s)")
     End Sub
 
-    Private Sub FrmManageStock_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FrmMainpageStaff.Show()
-    End Sub
-
     Private Sub FrmManageStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BindData()
     End Sub
