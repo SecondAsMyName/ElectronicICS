@@ -89,5 +89,25 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property purchase_order() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("purchase-order", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property warehouse_inventory() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("warehouse-inventory", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

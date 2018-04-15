@@ -22,7 +22,6 @@ Partial Class FrmMainpageStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMainpageStaff))
         Me.mnuStaff = New System.Windows.Forms.MenuStrip()
         Me.mnusHome = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnusMS = New System.Windows.Forms.ToolStripMenuItem()
@@ -164,7 +163,7 @@ Partial Class FrmMainpageStaff
         'pcPurchaseOrder
         '
         Me.pcPurchaseOrder.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pcPurchaseOrder.Image = CType(resources.GetObject("pcPurchaseOrder.Image"), System.Drawing.Image)
+        Me.pcPurchaseOrder.Image = Global.ElectronicICS.My.Resources.Resources.purchase_order
         Me.pcPurchaseOrder.Location = New System.Drawing.Point(138, 31)
         Me.pcPurchaseOrder.Name = "pcPurchaseOrder"
         Me.pcPurchaseOrder.Size = New System.Drawing.Size(120, 90)
@@ -184,7 +183,7 @@ Partial Class FrmMainpageStaff
         'pcManageStock
         '
         Me.pcManageStock.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pcManageStock.Image = CType(resources.GetObject("pcManageStock.Image"), System.Drawing.Image)
+        Me.pcManageStock.Image = Global.ElectronicICS.My.Resources.Resources.warehouse_inventory
         Me.pcManageStock.Location = New System.Drawing.Point(12, 31)
         Me.pcManageStock.Name = "pcManageStock"
         Me.pcManageStock.Size = New System.Drawing.Size(120, 90)
