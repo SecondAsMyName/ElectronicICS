@@ -1,9 +1,8 @@
 ﻿Public Class PaymentTransPage
-    Private OrderID As Integer = 0
-
     Private Shared nextPayID As Integer = 1000
 
     Private Sub btnPay_Click(sender As Object, e As EventArgs) Handles btnPay.Click
+        Dim OrderID As Integer = If(TypeOf cboOrderID.SelectedValue Is Integer, DirectCast(cboOrderID.SelectedValue, Integer), 0)
         Dim payment As New Payment
         Dim paymenttype As String = Nothing
 
@@ -53,7 +52,7 @@
         paymentID = nextPayID
         nextPayID += 1
 
-        Dim cart = From o In db.OrderLines Where o.OrderId = OrderID Select o.Subtotal
+        Dim cart = From ol In db.OrderLines Where ol.OrderId = cboOrderID.SelectedIndex Select ol.Subtotal
         Dim totalprice As Double = Convert.ToDouble(cart.Sum)
         lblPrice.Text = totalprice.ToString("0.00")
 
@@ -68,5 +67,20 @@
             Me.Close()
         Else
         End If
+    End Sub
+
+    Private Sub cboOrderID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboOrderID.SelectedIndexChanged
+        Dim db As New DBDataContext()
+        Dim orderID As Integer = If(TypeOf cboOrderID.SelectedValue Is Integer, DirectCast(cboOrderID.SelectedValue, Integer), 0)
+        Dim price = From o In db.OrderLines Where o.OrderId = orderID Select o.Subtotal
+        lblPrice.Text = (price.FirstOrDefault()).ToString()
+    End Sub
+
+    Private Sub PaymentHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem.Click
+        PaymentPage.ShowDialog()
+    End Sub
+
+    Private Sub PaymentHistoryToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem1.Click
+        PaymentHistoryPage.ShowDialog()
     End Sub
 End Class

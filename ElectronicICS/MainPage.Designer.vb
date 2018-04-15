@@ -24,7 +24,7 @@ Partial Class MainPage
     Private Sub InitializeComponent()
         Me.btnDeliveryMenu = New System.Windows.Forms.Button()
         Me.btnOrderForm = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnPayment = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.mnu = New System.Windows.Forms.MenuStrip()
         Me.AsdaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,6 +32,7 @@ Partial Class MainPage
         Me.mnuAccProfile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAccLogout = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -47,27 +48,27 @@ Partial Class MainPage
         'btnOrderForm
         '
         Me.btnOrderForm.Location = New System.Drawing.Point(46, 72)
-        Me.btnOrderForm.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnOrderForm.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOrderForm.Name = "btnOrderForm"
         Me.btnOrderForm.Size = New System.Drawing.Size(56, 19)
         Me.btnOrderForm.TabIndex = 1
         Me.btnOrderForm.Text = "Order"
         Me.btnOrderForm.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnPayment
         '
-        Me.Button2.Location = New System.Drawing.Point(140, 72)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(56, 19)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnPayment.Location = New System.Drawing.Point(140, 72)
+        Me.btnPayment.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPayment.Name = "btnPayment"
+        Me.btnPayment.Size = New System.Drawing.Size(75, 29)
+        Me.btnPayment.TabIndex = 2
+        Me.btnPayment.Text = "Payment"
+        Me.btnPayment.UseVisualStyleBackColor = True
         '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(46, 119)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(56, 19)
         Me.Button3.TabIndex = 3
@@ -77,7 +78,7 @@ Partial Class MainPage
         'mnu
         '
         Me.mnu.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.mnu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsdaToolStripMenuItem, Me.mnuAcc})
+        Me.mnu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AsdaToolStripMenuItem, Me.PaymentToolStripMenuItem, Me.mnuAcc})
         Me.mnu.Location = New System.Drawing.Point(0, 0)
         Me.mnu.Name = "mnu"
         Me.mnu.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
@@ -116,13 +117,20 @@ Partial Class MainPage
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'PaymentToolStripMenuItem
+        '
+        Me.PaymentToolStripMenuItem.Name = "PaymentToolStripMenuItem"
+        Me.PaymentToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.PaymentToolStripMenuItem.Text = "Payment"
+        '
         'MainPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnPayment)
         Me.Controls.Add(Me.btnOrderForm)
         Me.Controls.Add(Me.btnDeliveryMenu)
         Me.Controls.Add(Me.mnu)
@@ -138,7 +146,7 @@ Partial Class MainPage
 
     Friend WithEvents btnDeliveryMenu As Button
     Friend WithEvents btnOrderForm As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnPayment As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents mnu As MenuStrip
     Friend WithEvents AsdaToolStripMenuItem As ToolStripMenuItem
@@ -146,4 +154,5 @@ Partial Class MainPage
     Friend WithEvents mnuAccProfile As ToolStripMenuItem
     Friend WithEvents mnuAccLogout As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PaymentToolStripMenuItem As ToolStripMenuItem
 End Class
