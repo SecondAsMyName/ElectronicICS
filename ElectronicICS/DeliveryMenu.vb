@@ -7,4 +7,9 @@
         FrmCreateDelivery.Show(Me)
         Me.Visible = False
     End Sub
+
+    Private Sub btnUpdateDelivery_Click(sender As Object, e As EventArgs) Handles btnUpdateDelivery.Click
+        FrmUpdateDelivery.Show(Me)
+        Me.Visible = False
+    End Sub
 End Class

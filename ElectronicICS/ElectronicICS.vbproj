@@ -164,6 +164,12 @@
     <Compile Include="FrmReportSales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmUpdateDelivery.Designer.vb">
+      <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdateDelivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUpdateItem.Designer.vb">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportSales.resx">
       <DependentUpon>FrmReportSales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateDelivery.resx">
+      <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
