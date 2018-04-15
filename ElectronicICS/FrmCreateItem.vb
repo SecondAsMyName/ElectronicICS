@@ -36,6 +36,36 @@ Public Class FrmCreateItem
             Return
         End If
 
+        Dim cen As Decimal = 0.00D
+        If txtPriceCen.Text <> "" Then
+            If txtPriceCen.Text.Length = 1 Then
+                cen = CDec(txtPriceCen.Text) / 10
+            Else
+                cen = CDec(txtPriceCen.Text) / 100
+            End If
+        End If
+
+        Dim newItem As New Item
+        With newItem
+            .ItemID = CInt(lblItemID.Text)
+            .ItemName = txtName.Text
+            .ItemDesc = txtDesc.Text
+            .ItemPrice = CDec(txtPrice.Text) + cen
+            .Quantity = CInt(txtQuantity.Text)
+        End With
+
+        Dim db As New DBDataContext()
+        db.Items.InsertOnSubmit(newItem)
+
+        Try
+            db.SubmitChanges()
+            Dim s As String = String.Format("Item [{0}] Added.", newItem.ItemID)
+            MessageBox.Show(s, "Add Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            BtnCancel_Click(Nothing, Nothing)
+        Catch ex As Exception
+            MessageBox.Show("Error encounter. Item not inserted.", "Add Fail", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End Try
 
     End Sub
 
@@ -74,7 +104,7 @@ Public Class FrmCreateItem
     Private Sub TxtDesc_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtDesc.Validating
         Dim desc As String = txtDesc.Text
 
-        If name = "" Then
+        If desc = "" Then
             err.SetError(txtDesc, "Please enter item's description.")
             e.Cancel = True
         Else
@@ -85,7 +115,7 @@ Public Class FrmCreateItem
     Private Sub TxtPrice_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrice.Validating
         Dim price As String = txtPrice.Text
 
-        If name = "" Then
+        If price = "" Then
             err.SetError(txtPrice, "Please enter item's price.")
             e.Cancel = True
         Else
@@ -96,7 +126,7 @@ Public Class FrmCreateItem
     Private Sub TxtQuantity_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtQuantity.Validating
         Dim qty As String = txtQuantity.Text
 
-        If name = "" Then
+        If qty = "" Then
             err.SetError(txtQuantity, "Please enter item's quantity.")
             e.Cancel = True
         Else

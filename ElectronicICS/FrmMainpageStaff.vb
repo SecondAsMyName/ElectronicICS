@@ -10,6 +10,10 @@
         MnusMS_Click(Nothing, Nothing)
     End Sub
 
+    Private Sub PaymentTransactionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentTransactionToolStripMenuItem.Click
+        PaymentTransReport.ShowDialog()
+    End Sub
+
     Private Sub MonthlySalesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MonthlySalesToolStripMenuItem.Click
         FrmReportMonthSales.Show()
     End Sub

@@ -7,4 +7,12 @@
     Private Sub btnOrderForm_Click(sender As Object, e As EventArgs) Handles btnOrderForm.Click
         OrderCart.ShowDialog()
     End Sub
+
+    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+        PaymentPage.ShowDialog()
+    End Sub
+
+    Private Sub PaymentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentToolStripMenuItem.Click
+        PaymentPage.ShowDialog()
+    End Sub
 End Class

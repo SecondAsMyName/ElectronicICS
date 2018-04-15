@@ -27,7 +27,7 @@
     End Sub
 
     Private Sub BtnSignup_Click(sender As Object, e As EventArgs) Handles btnSignup.Click
-
+        FrmSignUp.ShowDialog()
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

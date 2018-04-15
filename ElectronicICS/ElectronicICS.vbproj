@@ -134,6 +134,12 @@
     <Compile Include="FrmManageStock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmSignUp.Designer.vb">
+      <DependentUpon>FrmSignUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSignUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmReportMonthSales.Designer.vb">
       <DependentUpon>FrmReportMonthSales.vb</DependentUpon>
     </Compile>
@@ -204,6 +210,12 @@
     <Compile Include="PaymentTransPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PaymentTransReport.Designer.vb">
+      <DependentUpon>PaymentTransReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentTransReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PendingOrder.Designer.vb">
       <DependentUpon>PendingOrder.vb</DependentUpon>
     </Compile>
@@ -227,6 +239,9 @@
     <EmbeddedResource Include="FrmManageStock.resx">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSignUp.resx">
+      <DependentUpon>FrmSignUp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReportMonthSales.resx">
       <DependentUpon>FrmReportMonthSales.vb</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentTransPage.resx">
       <DependentUpon>PaymentTransPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentTransReport.resx">
+      <DependentUpon>PaymentTransReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PendingOrder.resx">
       <DependentUpon>PendingOrder.vb</DependentUpon>
