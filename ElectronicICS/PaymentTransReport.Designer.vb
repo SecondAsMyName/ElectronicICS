@@ -31,6 +31,8 @@ Partial Class PaymentTransReport
         Me.dlgPreviewReport = New System.Windows.Forms.PrintPreviewDialog()
         Me.mnuTransReport = New System.Windows.Forms.MenuStrip()
         Me.GoBackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnGenerate = New System.Windows.Forms.Button()
+        Me.lblCount = New System.Windows.Forms.Label()
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuTransReport.SuspendLayout()
         Me.SuspendLayout()
@@ -64,7 +66,7 @@ Partial Class PaymentTransReport
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(402, 267)
+        Me.btnPrint.Location = New System.Drawing.Point(345, 267)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 23)
         Me.btnPrint.TabIndex = 7
@@ -99,12 +101,30 @@ Partial Class PaymentTransReport
         Me.GoBackToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.GoBackToolStripMenuItem.Text = "Go back"
         '
+        'btnGenerate
+        '
+        Me.btnGenerate.Location = New System.Drawing.Point(439, 267)
+        Me.btnGenerate.Name = "btnGenerate"
+        Me.btnGenerate.Size = New System.Drawing.Size(75, 23)
+        Me.btnGenerate.TabIndex = 10
+        Me.btnGenerate.Text = "&Generate"
+        Me.btnGenerate.UseVisualStyleBackColor = True
+        '
+        'lblCount
+        '
+        Me.lblCount.Location = New System.Drawing.Point(30, 272)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(100, 23)
+        Me.lblCount.TabIndex = 11
+        '
         'PaymentTransReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(654, 302)
+        Me.Controls.Add(Me.lblCount)
+        Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvReport)
@@ -129,4 +149,6 @@ Partial Class PaymentTransReport
     Friend WithEvents dlgPreviewReport As PrintPreviewDialog
     Friend WithEvents mnuTransReport As MenuStrip
     Friend WithEvents GoBackToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnGenerate As Button
+    Friend WithEvents lblCount As Label
 End Class

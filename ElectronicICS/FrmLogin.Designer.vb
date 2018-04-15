@@ -26,7 +26,6 @@ Partial Class FrmLogin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.lblTitle = New System.Windows.Forms.Label()
         Me.grTitle = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.mskPassword = New System.Windows.Forms.MaskedTextBox()
@@ -35,8 +34,10 @@ Partial Class FrmLogin
         Me.btnExit = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.errLogin = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.pcLogo = New System.Windows.Forms.PictureBox()
         Me.grTitle.SuspendLayout()
         CType(Me.errLogin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,21 +67,10 @@ Partial Class FrmLogin
         Me.txtUsername.Size = New System.Drawing.Size(155, 22)
         Me.txtUsername.TabIndex = 0
         '
-        'lblTitle
-        '
-        Me.lblTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(5, 18)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(456, 71)
-        Me.lblTitle.TabIndex = 4
-        Me.lblTitle.Text = "ElectroKary"
-        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'grTitle
         '
         Me.grTitle.Controls.Add(Me.Label3)
-        Me.grTitle.Controls.Add(Me.lblTitle)
+        Me.grTitle.Controls.Add(Me.pcLogo)
         Me.grTitle.Location = New System.Drawing.Point(12, 12)
         Me.grTitle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grTitle.Name = "grTitle"
@@ -91,8 +81,9 @@ Partial Class FrmLogin
         '
         'Label3
         '
+        Me.Label3.BackColor = System.Drawing.SystemColors.Control
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(291, 74)
+        Me.Label3.Location = New System.Drawing.Point(291, 72)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(172, 23)
         Me.Label3.TabIndex = 5
@@ -160,6 +151,17 @@ Partial Class FrmLogin
         Me.errLogin.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.errLogin.ContainerControl = Me
         '
+        'pcLogo
+        '
+        Me.pcLogo.BackColor = System.Drawing.SystemColors.Control
+        Me.pcLogo.Image = Global.ElectronicICS.My.Resources.Resources.LogoMakr_9T5ghY
+        Me.pcLogo.Location = New System.Drawing.Point(6, 0)
+        Me.pcLogo.Name = "pcLogo"
+        Me.pcLogo.Size = New System.Drawing.Size(457, 95)
+        Me.pcLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcLogo.TabIndex = 6
+        Me.pcLogo.TabStop = False
+        '
         'FrmLogin
         '
         Me.AcceptButton = Me.btnSignin
@@ -184,6 +186,7 @@ Partial Class FrmLogin
         Me.Text = "Login"
         Me.grTitle.ResumeLayout(False)
         CType(Me.errLogin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -192,7 +195,6 @@ Partial Class FrmLogin
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents txtUsername As TextBox
-    Friend WithEvents lblTitle As Label
     Friend WithEvents grTitle As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents mskPassword As MaskedTextBox
@@ -201,4 +203,5 @@ Partial Class FrmLogin
     Friend WithEvents btnExit As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents errLogin As ErrorProvider
+    Friend WithEvents pcLogo As PictureBox
 End Class
