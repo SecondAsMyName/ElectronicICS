@@ -2,6 +2,9 @@
 Imports System.Text
 
 Public Class FrmReportSales
+    Private fromPassDate As Date
+    Private toPassDate As Date
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
@@ -34,6 +37,8 @@ Public Class FrmReportSales
     End Sub
 
     Private Sub pdReportSales_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles pdReportSales.PrintPage
+        fromPassDate = dtpFrom.Value
+        toPassDate = dtpTo.Value
         ' (1) Fonts 
         Dim fontHeader As New Font("Calibri", 24, FontStyle.Bold)
         Dim fontSubHeader As New Font("Calibri", 12)
@@ -46,18 +51,16 @@ Public Class FrmReportSales
 
         ' (3) Prepare body 
         Dim db As New DBDataContext()
-        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromDate And o.OrderDate < toDate
+        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromPassDate And o.OrderDate < toPassDate Select o.OrderId, o.OrderDesc, o.OrderDate, o.Username
 
         Dim body As New StringBuilder()
-        body.AppendLine("")
-        body.AppendLine("--  ------------   ------------------------")
+        body.AppendLine("Order ID  Description                 Date           Customer")
+        body.AppendLine("--------  --------------------------  -----------    --------")
         Dim cnt As Integer = 0
-        Dim parts As String
 
-        For Each orders In dgvReport.Rows
+        For Each orders In order
             cnt += 1
-            parts = orders.ToString()
-            body.AppendLine(parts)
+            body.AppendFormat("{0,5},{1,5},{2,-5},{3,-5}" & vbNewLine, orders.OrderId, orders.OrderDesc, orders.OrderDate, orders.Username)
         Next
         body.AppendLine()
         body.AppendFormat("{0,2} record(s)", cnt)
