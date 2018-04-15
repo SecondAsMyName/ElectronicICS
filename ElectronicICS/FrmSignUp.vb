@@ -21,10 +21,12 @@
 
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         Dim securityAccount As New Security_Account
+        Dim role As String
+        role = "Customer"
         With securityAccount
             .Username = txtUsername.Text
             .Password = If(mskPassword.MaskCompleted, mskPassword.Text, "")
-            .Role = Trim("Customer")
+            .Role = role.Trim()
         End With
 
         If IsDuplicatedID(securityAccount.Username) Then
