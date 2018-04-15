@@ -302,6 +302,9 @@
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmViewPO.resx">
+      <DependentUpon>FrmViewPO.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderHistory.resx">
       <DependentUpon>OrderHistory.vb</DependentUpon>
     </EmbeddedResource>
