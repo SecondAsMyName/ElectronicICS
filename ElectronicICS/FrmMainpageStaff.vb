@@ -13,4 +13,9 @@
     Private Sub PaymentTransactionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentTransactionToolStripMenuItem.Click
         PaymentTransReport.ShowDialog()
     End Sub
+
+
+    Private Sub SalesReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalesReportToolStripMenuItem.Click
+        FrmReportSales.Show()
+    End Sub
 End Class

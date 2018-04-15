@@ -26,9 +26,9 @@
       <Column Name="ItemDesc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ItemPrice" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
       <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Item_PurchaseLine" Member="PurchaseLines" ThisKey="ItemID" OtherKey="ItemID" Type="PurchaseLine" />
       <Association Name="Item_SupplyLine" Member="SupplyLines" ThisKey="ItemID" OtherKey="PoID" Type="SupplyLine" />
       <Association Name="Item_OrderLine" Member="OrderLines" ThisKey="ItemID" OtherKey="ItemId" Type="OrderLine" />
+      <Association Name="Item_PurchaseLine" Member="PurchaseLines" ThisKey="ItemID" OtherKey="ItemID" Type="PurchaseLine" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">
@@ -54,27 +54,6 @@
       <Association Name="Order_Payment" Member="Order" ThisKey="OrderId" OtherKey="OrderId" Type="Order" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PurchaseLine" Member="PurchaseLines">
-    <Type Name="PurchaseLine">
-      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Item_PurchaseLine" Member="Item" ThisKey="ItemID" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
-      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseOrder" ThisKey="PoID" OtherKey="PoId" Type="PurchaseOrder" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PurchaseOrder" Member="PurchaseOrders">
-    <Type Name="PurchaseOrder">
-      <Column Name="PoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SupplierID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="OrderDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="OrderPrice" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
-      <Association Name="PurchaseOrder_DeliveryOrder" Member="DeliveryOrders" ThisKey="PoId" OtherKey="PoID" Type="DeliveryOrder" />
-      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseLines" ThisKey="PoId" OtherKey="PoID" Type="PurchaseLine" />
-      <Association Name="Supplier_PurchaseOrder" Member="Supplier" ThisKey="SupplierID" OtherKey="SupplierId" Type="Supplier" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Security_Account" Member="Security_Accounts">
     <Type Name="Security_Account">
       <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -90,8 +69,8 @@
       <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TelNo" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="Address" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Association Name="Supplier_PurchaseOrder" Member="PurchaseOrders" ThisKey="SupplierId" OtherKey="SupplierID" Type="PurchaseOrder" />
       <Association Name="Supplier_SupplyLine" Member="SupplyLines" ThisKey="SupplierId" OtherKey="ItemID" Type="SupplyLine" />
+      <Association Name="Supplier_PurchaseOrder" Member="PurchaseOrders" ThisKey="SupplierId" OtherKey="SupplierID" Type="PurchaseOrder" />
     </Type>
   </Table>
   <Table Name="dbo.SupplyLine" Member="SupplyLines">
@@ -124,6 +103,27 @@
       <Association Name="Order_Payment" Member="Payments" ThisKey="OrderId" OtherKey="OrderId" Type="Payment" />
       <Association Name="Order_OrderLine" Member="OrderLines" ThisKey="OrderId" OtherKey="OrderId" Type="OrderLine" />
       <Association Name="User_Order" Member="User" ThisKey="Username" OtherKey="Username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurchaseOrder" Member="PurchaseOrders">
+    <Type Name="PurchaseOrder">
+      <Column Name="PoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="PurchaseOrder_DeliveryOrder" Member="DeliveryOrders" ThisKey="PoId" OtherKey="PoID" Type="DeliveryOrder" />
+      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseLines" ThisKey="PoId" OtherKey="PoID" Type="PurchaseLine" />
+      <Association Name="Supplier_PurchaseOrder" Member="Supplier" ThisKey="SupplierID" OtherKey="SupplierId" Type="Supplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PurchaseLine" Member="PurchaseLines">
+    <Type Name="PurchaseLine">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Item_PurchaseLine" Member="Item" ThisKey="ItemID" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
+      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseOrder" ThisKey="PoID" OtherKey="PoId" Type="PurchaseOrder" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

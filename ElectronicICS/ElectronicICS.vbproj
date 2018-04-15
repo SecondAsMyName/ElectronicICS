@@ -110,10 +110,22 @@
     <Compile Include="FrmCreateDelivery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmCreateDO.Designer.vb">
+      <DependentUpon>FrmCreateDO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateDO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmCreateItem.Designer.vb">
       <DependentUpon>FrmCreateItem.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmCreateItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreatePO.Designer.vb">
+      <DependentUpon>FrmCreatePO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreatePO.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.vb">
@@ -128,16 +140,40 @@
     <Compile Include="FrmMainpageStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmManagePO.Designer.vb">
+      <DependentUpon>FrmManagePO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManagePO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmManageStock.Designer.vb">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmManageStock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmSignUp.Designer.vb">
+      <DependentUpon>FrmSignUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSignUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportSales.Designer.vb">
+      <DependentUpon>FrmReportSales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportSales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUpdateItem.Designer.vb">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmUpdateItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewPO.Designer.vb">
+      <DependentUpon>FrmViewPO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmViewPO.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainPage.vb">
@@ -227,6 +263,12 @@
     <EmbeddedResource Include="FrmManageStock.resx">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSignUp.resx">
+      <DependentUpon>FrmSignUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportSales.resx">
+      <DependentUpon>FrmReportSales.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +350,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\LogoMakr_9T5ghY.png" />
+    <None Include="Resources\LIMKAHHIM.jpg" />
     <None Include="Resources\warehouse-inventory2.png" />
     <None Include="Resources\purchase-order2.jpg" />
     <None Include="Resources\purchase-order1.jpg" />
