@@ -205,4 +205,8 @@
     Private Sub OrderCart_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         OrderCart_Shown(Nothing, Nothing)
     End Sub
+
+    Private Sub OrderHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrderHistoryToolStripMenuItem.Click
+        OrderHistory.Show()
+    End Sub
 End Class
