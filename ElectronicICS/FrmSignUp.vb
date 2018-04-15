@@ -24,7 +24,7 @@
         With securityAccount
             .Username = txtUsername.Text
             .Password = If(mskPassword.MaskCompleted, mskPassword.Text, "")
-            .Role = "Customer"
+            .Role = Trim("Customer")
         End With
 
         If IsDuplicatedID(securityAccount.Username) Then
@@ -40,31 +40,26 @@
             Catch err As Exception
                 MessageBox.Show("No security account created.")
             End Try
-        End If
 
-        Dim gender As String = ""
-        If radMale.Checked = True Then
-            gender = "Male"
-        ElseIf radFemale.Checked = True Then
-            gender = "Female"
-        Else
-            gender = "Male"
-        End If
-        Dim user As New User
-        With user
-            .Username = txtUsername.Text
-            .Name = txtName.Text
-            .Gender = gender
-            .HpNo = txtHpno.Text
-            .email_ = txtEmail.Text
-            .Address = txtaddress.Text
-        End With
+            Dim gender As String = ""
+            If radMale.Checked = True Then
+                gender = "Male"
+            ElseIf radFemale.Checked = True Then
+                gender = "Female"
+            Else
+                gender = "Male"
+            End If
+            Dim user As New User
+            With user
+                .Username = txtUsername.Text
+                .Name = txtName.Text
+                .Gender = gender
+                .HpNo = txtHpno.Text
+                .email_ = txtEmail.Text
+                .Address = txtaddress.Text
+            End With
 
-        If IsDuplicatedID(user.Username) Then
-            MessageBox.Show("Duplicated ID.")
-        Else
             'add new records
-            Dim db As New DBDataContext()
             db.Users.InsertOnSubmit(user)
 
             ' Submit the change to the database.
@@ -73,6 +68,10 @@
             Catch err As Exception
                 MessageBox.Show("No user created.")
             End Try
+
+            Me.Close()
+
         End If
+
     End Sub
 End Class
