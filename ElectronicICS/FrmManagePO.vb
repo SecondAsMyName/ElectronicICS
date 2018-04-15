@@ -10,13 +10,11 @@
         dgvPo.DataSource = rs
     End Sub
     Private Sub FrmManagePO_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        BindData()
+        cboStatus.SelectedIndex = 0
     End Sub
 
     Private Sub BtnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
-        Me.Hide()
         FrmCreatePO.ShowDialog(Me)
-        Me.Show()
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -72,5 +70,9 @@
         If i > -1 Then
             selectedItemID = CInt(dgvPo.Rows(i).Cells(0).Value)
         End If
+    End Sub
+
+    Private Sub cboStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboStatus.SelectedIndexChanged
+        BindData()
     End Sub
 End Class

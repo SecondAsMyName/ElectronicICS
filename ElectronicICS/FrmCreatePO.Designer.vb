@@ -28,14 +28,16 @@ Partial Class FrmCreatePO
         Me.lblPOID = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.gbSupplier = New System.Windows.Forms.GroupBox()
+        Me.txtSupplierDetails = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cboSupplierID = New System.Windows.Forms.ComboBox()
         Me.gbItem = New System.Windows.Forms.GroupBox()
+        Me.dgvItem = New System.Windows.Forms.DataGridView()
         Me.cboItemID = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.dgvItem = New System.Windows.Forms.DataGridView()
-        Me.txtSupplierDetails = New System.Windows.Forms.TextBox()
+        Me.btnCreate = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.gbPo.SuspendLayout()
         Me.gbSupplier.SuspendLayout()
         Me.gbItem.SuspendLayout()
@@ -96,9 +98,18 @@ Partial Class FrmCreatePO
         Me.gbSupplier.Controls.Add(Me.cboSupplierID)
         Me.gbSupplier.Location = New System.Drawing.Point(336, 12)
         Me.gbSupplier.Name = "gbSupplier"
-        Me.gbSupplier.Size = New System.Drawing.Size(386, 238)
+        Me.gbSupplier.Size = New System.Drawing.Size(380, 160)
         Me.gbSupplier.TabIndex = 2
         Me.gbSupplier.TabStop = False
+        '
+        'txtSupplierDetails
+        '
+        Me.txtSupplierDetails.Enabled = False
+        Me.txtSupplierDetails.Location = New System.Drawing.Point(119, 47)
+        Me.txtSupplierDetails.Multiline = True
+        Me.txtSupplierDetails.Name = "txtSupplierDetails"
+        Me.txtSupplierDetails.Size = New System.Drawing.Size(246, 107)
+        Me.txtSupplierDetails.TabIndex = 7
         '
         'Label4
         '
@@ -134,9 +145,21 @@ Partial Class FrmCreatePO
         Me.gbItem.Controls.Add(Me.Label5)
         Me.gbItem.Location = New System.Drawing.Point(12, 118)
         Me.gbItem.Name = "gbItem"
-        Me.gbItem.Size = New System.Drawing.Size(312, 295)
+        Me.gbItem.Size = New System.Drawing.Size(704, 307)
         Me.gbItem.TabIndex = 3
         Me.gbItem.TabStop = False
+        '
+        'dgvItem
+        '
+        Me.dgvItem.AllowUserToAddRows = False
+        Me.dgvItem.AllowUserToDeleteRows = False
+        Me.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvItem.Location = New System.Drawing.Point(9, 60)
+        Me.dgvItem.Name = "dgvItem"
+        Me.dgvItem.ReadOnly = True
+        Me.dgvItem.RowTemplate.Height = 24
+        Me.dgvItem.Size = New System.Drawing.Size(680, 238)
+        Me.dgvItem.TabIndex = 9
         '
         'cboItemID
         '
@@ -156,35 +179,40 @@ Partial Class FrmCreatePO
         Me.Label5.Text = "Item ID:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dgvItem
+        'btnCreate
         '
-        Me.dgvItem.AllowUserToAddRows = False
-        Me.dgvItem.AllowUserToDeleteRows = False
-        Me.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvItem.Location = New System.Drawing.Point(6, 51)
-        Me.dgvItem.Name = "dgvItem"
-        Me.dgvItem.RowTemplate.Height = 24
-        Me.dgvItem.Size = New System.Drawing.Size(300, 238)
-        Me.dgvItem.TabIndex = 9
+        Me.btnCreate.Location = New System.Drawing.Point(17, 431)
+        Me.btnCreate.Name = "btnCreate"
+        Me.btnCreate.Size = New System.Drawing.Size(75, 35)
+        Me.btnCreate.TabIndex = 10
+        Me.btnCreate.Text = "&Create"
+        Me.btnCreate.UseVisualStyleBackColor = True
         '
-        'txtSupplierDetails
+        'btnCancel
         '
-        Me.txtSupplierDetails.Enabled = False
-        Me.txtSupplierDetails.Location = New System.Drawing.Point(119, 47)
-        Me.txtSupplierDetails.Multiline = True
-        Me.txtSupplierDetails.Name = "txtSupplierDetails"
-        Me.txtSupplierDetails.Size = New System.Drawing.Size(246, 107)
-        Me.txtSupplierDetails.TabIndex = 7
+        Me.btnCancel.CausesValidation = False
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancel.Location = New System.Drawing.Point(629, 431)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 35)
+        Me.btnCancel.TabIndex = 11
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'FrmCreatePO
         '
+        Me.AcceptButton = Me.btnCreate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(746, 450)
-        Me.Controls.Add(Me.gbItem)
+        Me.CancelButton = Me.btnCancel
+        Me.ClientSize = New System.Drawing.Size(717, 468)
+        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnCreate)
         Me.Controls.Add(Me.gbSupplier)
         Me.Controls.Add(Me.gbPo)
+        Me.Controls.Add(Me.gbItem)
+        Me.KeyPreview = True
         Me.Name = "FrmCreatePO"
         Me.Text = "Create Purchase Order"
         Me.gbPo.ResumeLayout(False)
@@ -208,6 +236,8 @@ Partial Class FrmCreatePO
     Friend WithEvents gbItem As GroupBox
     Friend WithEvents cboItemID As ComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents dgvItem As DataGridView
     Friend WithEvents txtSupplierDetails As TextBox
+    Friend WithEvents dgvItem As DataGridView
+    Friend WithEvents btnCreate As Button
+    Friend WithEvents btnCancel As Button
 End Class
