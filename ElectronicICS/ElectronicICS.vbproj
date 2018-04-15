@@ -140,10 +140,10 @@
     <Compile Include="FrmSignUp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReportMonthSales.Designer.vb">
-      <DependentUpon>FrmReportMonthSales.vb</DependentUpon>
+    <Compile Include="FrmReportSales.Designer.vb">
+      <DependentUpon>FrmReportSales.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmReportMonthSales.vb">
+    <Compile Include="FrmReportSales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmUpdateItem.Designer.vb">
@@ -242,8 +242,8 @@
     <EmbeddedResource Include="FrmSignUp.resx">
       <DependentUpon>FrmSignUp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportMonthSales.resx">
-      <DependentUpon>FrmReportMonthSales.vb</DependentUpon>
+    <EmbeddedResource Include="FrmReportSales.resx">
+      <DependentUpon>FrmReportSales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>

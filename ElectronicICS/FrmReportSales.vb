@@ -1,6 +1,6 @@
 ﻿Imports System.Globalization
 
-Public Class FrmReportMonthSales
+Public Class FrmReportSales
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub

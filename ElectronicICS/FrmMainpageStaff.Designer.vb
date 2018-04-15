@@ -31,7 +31,8 @@ Partial Class FrmMainpageStaff
         Me.mnusReport = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnusReportSummary = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnusRprtSmmInvValue = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MonthlySalesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DetailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PaymentTransactionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnusMyAcc = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnusMyAccProfile = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnusLogout = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,8 +43,8 @@ Partial Class FrmMainpageStaff
         Me.pcPurchaseOrder = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.pcManageStock = New System.Windows.Forms.PictureBox()
-        Me.DetailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PaymentTransactionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OnDemandReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalesReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuStaff.SuspendLayout()
         CType(Me.pcPurchaseOrder, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,31 +95,36 @@ Partial Class FrmMainpageStaff
         '
         'mnusReport
         '
-        Me.mnusReport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnusReportSummary, Me.DetailToolStripMenuItem})
+        Me.mnusReport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnusReportSummary, Me.DetailToolStripMenuItem, Me.OnDemandReportToolStripMenuItem})
         Me.mnusReport.Name = "mnusReport"
         Me.mnusReport.Size = New System.Drawing.Size(54, 20)
         Me.mnusReport.Text = "Report"
         '
         'mnusReportSummary
         '
-        Me.mnusReportSummary.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnusRprtSmmInvValue, Me.MonthlySalesToolStripMenuItem})
+        Me.mnusReportSummary.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnusRprtSmmInvValue})
         Me.mnusReportSummary.Name = "mnusReportSummary"
-        Me.mnusReportSummary.Size = New System.Drawing.Size(152, 22)
         Me.mnusReportSummary.Size = New System.Drawing.Size(180, 22)
         Me.mnusReportSummary.Text = "Summary"
         '
         'mnusRprtSmmInvValue
         '
         Me.mnusRprtSmmInvValue.Name = "mnusRprtSmmInvValue"
-        Me.mnusRprtSmmInvValue.Size = New System.Drawing.Size(160, 22)
-        Me.mnusRprtSmmInvValue.Size = New System.Drawing.Size(196, 22)
+        Me.mnusRprtSmmInvValue.Size = New System.Drawing.Size(180, 22)
         Me.mnusRprtSmmInvValue.Text = "Inventory Values"
         '
-        'MonthlySalesToolStripMenuItem
+        'DetailToolStripMenuItem
         '
-        Me.MonthlySalesToolStripMenuItem.Name = "MonthlySalesToolStripMenuItem"
-        Me.MonthlySalesToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
-        Me.MonthlySalesToolStripMenuItem.Text = "OnDemandSalesReport"
+        Me.DetailToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PaymentTransactionToolStripMenuItem})
+        Me.DetailToolStripMenuItem.Name = "DetailToolStripMenuItem"
+        Me.DetailToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DetailToolStripMenuItem.Text = "Detail"
+        '
+        'PaymentTransactionToolStripMenuItem
+        '
+        Me.PaymentTransactionToolStripMenuItem.Name = "PaymentTransactionToolStripMenuItem"
+        Me.PaymentTransactionToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.PaymentTransactionToolStripMenuItem.Text = "Payment Transaction"
         '
         'mnusMyAcc
         '
@@ -180,8 +186,6 @@ Partial Class FrmMainpageStaff
         Me.pcPurchaseOrder.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pcPurchaseOrder.Image = Global.ElectronicICS.My.Resources.Resources.purchase_order
         Me.pcPurchaseOrder.Location = New System.Drawing.Point(104, 25)
-        Me.pcPurchaseOrder.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.pcPurchaseOrder.Location = New System.Drawing.Point(104, 25)
         Me.pcPurchaseOrder.Margin = New System.Windows.Forms.Padding(2)
         Me.pcPurchaseOrder.Name = "pcPurchaseOrder"
         Me.pcPurchaseOrder.Size = New System.Drawing.Size(90, 73)
@@ -192,8 +196,6 @@ Partial Class FrmMainpageStaff
         'PictureBox3
         '
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Location = New System.Drawing.Point(224, 25)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PictureBox3.Location = New System.Drawing.Point(224, 25)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox3.Name = "PictureBox3"
@@ -206,8 +208,6 @@ Partial Class FrmMainpageStaff
         Me.pcManageStock.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pcManageStock.Image = Global.ElectronicICS.My.Resources.Resources.warehouse_inventory
         Me.pcManageStock.Location = New System.Drawing.Point(9, 25)
-        Me.pcManageStock.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.pcManageStock.Location = New System.Drawing.Point(9, 25)
         Me.pcManageStock.Margin = New System.Windows.Forms.Padding(2)
         Me.pcManageStock.Name = "pcManageStock"
         Me.pcManageStock.Size = New System.Drawing.Size(90, 73)
@@ -215,18 +215,18 @@ Partial Class FrmMainpageStaff
         Me.pcManageStock.TabIndex = 2
         Me.pcManageStock.TabStop = False
         '
-        'DetailToolStripMenuItem
+        'OnDemandReportToolStripMenuItem
         '
-        Me.DetailToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PaymentTransactionToolStripMenuItem})
-        Me.DetailToolStripMenuItem.Name = "DetailToolStripMenuItem"
-        Me.DetailToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.DetailToolStripMenuItem.Text = "Detail"
+        Me.OnDemandReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalesReportToolStripMenuItem})
+        Me.OnDemandReportToolStripMenuItem.Name = "OnDemandReportToolStripMenuItem"
+        Me.OnDemandReportToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OnDemandReportToolStripMenuItem.Text = "On Demand Report"
         '
-        'PaymentTransactionToolStripMenuItem
+        'SalesReportToolStripMenuItem
         '
-        Me.PaymentTransactionToolStripMenuItem.Name = "PaymentTransactionToolStripMenuItem"
-        Me.PaymentTransactionToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
-        Me.PaymentTransactionToolStripMenuItem.Text = "Payment Transaction"
+        Me.SalesReportToolStripMenuItem.Name = "SalesReportToolStripMenuItem"
+        Me.SalesReportToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalesReportToolStripMenuItem.Text = "Sales Report"
         '
         'FrmMainpageStaff
         '
@@ -242,7 +242,6 @@ Partial Class FrmMainpageStaff
         Me.Controls.Add(Me.pcManageStock)
         Me.Controls.Add(Me.mnuStaff)
         Me.MainMenuStrip = Me.mnuStaff
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmMainpageStaff"
         Me.Text = "Home Page"
@@ -277,5 +276,6 @@ Partial Class FrmMainpageStaff
     Friend WithEvents PurchaseOrderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DetailToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaymentTransactionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MonthlySalesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OnDemandReportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SalesReportToolStripMenuItem As ToolStripMenuItem
 End Class
