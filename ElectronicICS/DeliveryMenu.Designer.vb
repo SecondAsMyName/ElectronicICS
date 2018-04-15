@@ -24,7 +24,7 @@ Partial Class DeliveryMenu
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DeliveryMenu))
         Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnCurrentStatus = New System.Windows.Forms.Button()
+        Me.btnTrackDelivery = New System.Windows.Forms.Button()
         Me.btnReport = New System.Windows.Forms.Button()
         Me.btnUpdateDelivery = New System.Windows.Forms.Button()
         Me.btnCreateOrder = New System.Windows.Forms.Button()
@@ -43,15 +43,15 @@ Partial Class DeliveryMenu
         Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
-        'btnCurrentStatus
+        'btnTrackDelivery
         '
-        Me.btnCurrentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCurrentStatus.Location = New System.Drawing.Point(12, 147)
-        Me.btnCurrentStatus.Name = "btnCurrentStatus"
-        Me.btnCurrentStatus.Size = New System.Drawing.Size(168, 40)
-        Me.btnCurrentStatus.TabIndex = 2
-        Me.btnCurrentStatus.Text = "Current Status"
-        Me.btnCurrentStatus.UseVisualStyleBackColor = True
+        Me.btnTrackDelivery.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrackDelivery.Location = New System.Drawing.Point(12, 147)
+        Me.btnTrackDelivery.Name = "btnTrackDelivery"
+        Me.btnTrackDelivery.Size = New System.Drawing.Size(168, 40)
+        Me.btnTrackDelivery.TabIndex = 2
+        Me.btnTrackDelivery.Text = "Track Delivery"
+        Me.btnTrackDelivery.UseVisualStyleBackColor = True
         '
         'btnReport
         '
@@ -113,7 +113,7 @@ Partial Class DeliveryMenu
         Me.Controls.Add(Me.btnCreateOrder)
         Me.Controls.Add(Me.btnUpdateDelivery)
         Me.Controls.Add(Me.btnReport)
-        Me.Controls.Add(Me.btnCurrentStatus)
+        Me.Controls.Add(Me.btnTrackDelivery)
         Me.Controls.Add(Me.btnExit)
         Me.Name = "DeliveryMenu"
         Me.Text = "Delivery"
@@ -122,7 +122,7 @@ Partial Class DeliveryMenu
 
     End Sub
     Friend WithEvents btnExit As Button
-    Friend WithEvents btnCurrentStatus As Button
+    Friend WithEvents btnTrackDelivery As Button
     Friend WithEvents btnReport As Button
     Friend WithEvents btnUpdateDelivery As Button
     Friend WithEvents btnCreateOrder As Button

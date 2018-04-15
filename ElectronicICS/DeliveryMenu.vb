@@ -13,11 +13,12 @@
         Me.Visible = False
     End Sub
 
-    Private Sub btnCurrentStatus_Click(sender As Object, e As EventArgs) Handles btnCurrentStatus.Click
-
+    Private Sub btnTrackDelivery_Click(sender As Object, e As EventArgs) Handles btnTrackDelivery.Click
+        FrmTrackDelivery.Show(Me)
+        Me.Visible = False
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
 
     End Sub
 End Class
