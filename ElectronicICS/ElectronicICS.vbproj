@@ -339,6 +339,7 @@
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\LogoMakr_9T5ghY.png" />
+    <None Include="Resources\LIMKAHHIM.jpg" />
     <None Include="Resources\warehouse-inventory2.png" />
     <None Include="Resources\purchase-order2.jpg" />
     <None Include="Resources\purchase-order1.jpg" />
