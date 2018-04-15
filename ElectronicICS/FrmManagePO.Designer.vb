@@ -94,7 +94,7 @@ Partial Class FrmManagePO
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(800, 460)
+        Me.ClientSize = New System.Drawing.Size(800, 471)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnCreate)

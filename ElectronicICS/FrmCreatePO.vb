@@ -11,12 +11,15 @@
             .PoId = GetLastID()
             .Remarks = "New"
         End With
+        purchaseLineList.Clear()
         BindDgvItem()
         lblPOID.Text = CType(purchaseOrder.PoId, String)
-        lblDate.Text = System.DateTime.Now.ToString("dd/mm/yyyy")
+        lblDate.Text = System.DateTime.Now.ToString("dd/MM/yyyy")
     End Sub
 
     Private Sub BindDgvItem()
+        dgvItem.Rows.Clear()
+        dgvItem.Columns.Clear()
         Dim dgvColumnItemID As New DataGridViewTextBoxColumn()
         With dgvColumnItemID
             .ReadOnly = True
@@ -172,7 +175,36 @@
     End Sub
 
     Private Sub BtnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        Dim db As New DBDataContext()
+        For Each purchaseLine As PurchaseLine In purchaseLineList
+            If (purchaseLine.Quantity < 1 Or purchaseLine.Price < 0.01D) Then
+                MessageBox.Show("Please enter quantity and price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+            Dim newPurchaseLine As New PurchaseLine
+            With newPurchaseLine
+                .ItemID = purchaseLine.ItemID
+                .PoID = purchaseOrder.PoId
+                .Quantity = purchaseLine.Quantity
+                .Price = purchaseLine.Price
+            End With
 
+            db.PurchaseLines.InsertOnSubmit(newPurchaseLine)
+        Next
+
+        With purchaseOrder
+            .Remarks = "Pending"
+            .OrderDate = System.DateTime.Now
+            .SupplierID = CInt(cboSupplierID.SelectedValue.ToString)
+        End With
+        db.PurchaseOrders.InsertOnSubmit(purchaseOrder)
+        Try
+            db.SubmitChanges()
+            MessageBox.Show(String.Format("Purchase Order [{0}] created.", purchaseOrder.PoId), "Create PO Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show(String.Format("Purchase Order create fail." & vbNewLine & ex.Message), "Create PO Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        Me.Close()
     End Sub
 
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
