@@ -3,8 +3,8 @@
 
     Private Sub BindData()
         Dim db As New DBDataContext()
-        Dim order = From o In db.Orders Where o.Username = Username And o.OrderStatus = "Pending"
-        With dgvPending
+        Dim order = From o In db.Orders Where o.Username = Username And o.OrderStatus = "Complete"
+        With dgvHistory
             .DataSource = order
             .Columns.Remove("User")
         End With
@@ -19,20 +19,6 @@
         Username = MainPage.customer.Username
         lblUser.Text = " " & Username
         BindData()
-    End Sub
-
-    Private Sub dgvPending_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPending.CellDoubleClick
-        Dim i As Integer = e.RowIndex
-        Dim id As Integer
-        If i > -1 Then
-            id = CInt(dgvPending.Rows(i).Cells(0).Value)
-        Else
-            MessageBox.Show("No cart item selected.")
-        End If
-        OrderCart.OrderID = id
-        OrderCart.Activate()
-        OrderCart.Show()
-        Me.Hide()
     End Sub
 
 End Class

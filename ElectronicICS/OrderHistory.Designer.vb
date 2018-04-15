@@ -22,21 +22,22 @@ Partial Class OrderHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgvPending = New System.Windows.Forms.DataGridView()
+        Me.dgvHistory = New System.Windows.Forms.DataGridView()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.dgvPending, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHistory, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dgvPending
+        'dgvHistory
         '
-        Me.dgvPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPending.Location = New System.Drawing.Point(32, 81)
-        Me.dgvPending.Name = "dgvPending"
-        Me.dgvPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvPending.Size = New System.Drawing.Size(415, 250)
-        Me.dgvPending.TabIndex = 7
+        Me.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvHistory.Location = New System.Drawing.Point(32, 81)
+        Me.dgvHistory.Name = "dgvHistory"
+        Me.dgvHistory.ReadOnly = True
+        Me.dgvHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvHistory.Size = New System.Drawing.Size(415, 250)
+        Me.dgvHistory.TabIndex = 7
         '
         'lblCount
         '
@@ -66,19 +67,19 @@ Partial Class OrderHistory
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(472, 385)
-        Me.Controls.Add(Me.dgvPending)
+        Me.Controls.Add(Me.dgvHistory)
         Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.Label1)
         Me.Name = "OrderHistory"
         Me.Text = "OrderHistory"
-        CType(Me.dgvPending, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents dgvPending As DataGridView
+    Friend WithEvents dgvHistory As DataGridView
     Friend WithEvents lblCount As Label
     Friend WithEvents lblUser As Label
     Friend WithEvents Label1 As Label
