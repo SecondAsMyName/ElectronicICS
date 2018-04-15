@@ -6,7 +6,7 @@
         lblDeliveryDate.Text = deliveryDate
         deliveryID = getLastID()
         lblDeliveryID.Text = deliveryID.ToString
-
+        getOrderID()
     End Sub
 
     Private Function getLastID() As Integer
@@ -18,7 +18,7 @@
 
     Private Sub getOrderID()
         Dim db As New DBDataContext()
-        Dim getID = From o In db.Orders Select o.OrderId
+        Dim getID = From o In db.Orders Where o.OrderStatus = "Complete" Select o.OrderId
         ddlOrderID.DataSource = getID
 
     End Sub
