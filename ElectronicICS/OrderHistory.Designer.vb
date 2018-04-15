@@ -22,16 +22,64 @@ Partial Class OrderHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.dgvPending = New System.Windows.Forms.DataGridView()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.lblUser = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        CType(Me.dgvPending, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'dgvPending
+        '
+        Me.dgvPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPending.Location = New System.Drawing.Point(32, 81)
+        Me.dgvPending.Name = "dgvPending"
+        Me.dgvPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvPending.Size = New System.Drawing.Size(415, 250)
+        Me.dgvPending.TabIndex = 7
+        '
+        'lblCount
+        '
+        Me.lblCount.Location = New System.Drawing.Point(32, 343)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(185, 23)
+        Me.lblCount.TabIndex = 6
+        '
+        'lblUser
+        '
+        Me.lblUser.Location = New System.Drawing.Point(114, 29)
+        Me.lblUser.Name = "lblUser"
+        Me.lblUser.Size = New System.Drawing.Size(103, 31)
+        Me.lblUser.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(29, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Order History of : "
         '
         'OrderHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(523, 394)
+        Me.ClientSize = New System.Drawing.Size(472, 385)
+        Me.Controls.Add(Me.dgvPending)
+        Me.Controls.Add(Me.lblCount)
+        Me.Controls.Add(Me.lblUser)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "OrderHistory"
         Me.Text = "OrderHistory"
+        CType(Me.dgvPending, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents dgvPending As DataGridView
+    Friend WithEvents lblCount As Label
+    Friend WithEvents lblUser As Label
+    Friend WithEvents Label1 As Label
 End Class
