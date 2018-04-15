@@ -11,7 +11,8 @@
         PendingOrder.Show()
     End Sub
 
-    Private Sub btnORemark_Click(sender As Object, e As EventArgs) Handles btnORemark.Click
-        OrderRemark.Show()
+
+    Private Sub OrderMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

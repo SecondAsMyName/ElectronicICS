@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class OrderMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,13 @@ Partial Class OrderMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnCart = New System.Windows.Forms.Button()
         Me.btnHis = New System.Windows.Forms.Button()
         Me.btnPend = New System.Windows.Forms.Button()
-        Me.btnORemark = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCart
@@ -55,14 +56,15 @@ Partial Class OrderMenu
         Me.btnPend.Text = "Pending &Order"
         Me.btnPend.UseVisualStyleBackColor = True
         '
-        'btnORemark
+        'PictureBox1
         '
-        Me.btnORemark.Location = New System.Drawing.Point(247, 198)
-        Me.btnORemark.Name = "btnORemark"
-        Me.btnORemark.Size = New System.Drawing.Size(126, 64)
-        Me.btnORemark.TabIndex = 3
-        Me.btnORemark.Text = "Update Order &Remark"
-        Me.btnORemark.UseVisualStyleBackColor = True
+        Me.PictureBox1.Image = Global.ElectronicICS.My.Resources.Resources.Order_now
+        Me.PictureBox1.Location = New System.Drawing.Point(203, 126)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(148, 164)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'OrderMenu
         '
@@ -70,13 +72,14 @@ Partial Class OrderMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(416, 323)
-        Me.Controls.Add(Me.btnORemark)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnPend)
         Me.Controls.Add(Me.btnHis)
         Me.Controls.Add(Me.btnCart)
         Me.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Name = "OrderMenu"
         Me.Text = "OrderMenu"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -84,5 +87,5 @@ Partial Class OrderMenu
     Friend WithEvents btnCart As Button
     Friend WithEvents btnHis As Button
     Friend WithEvents btnPend As Button
-    Friend WithEvents btnORemark As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
