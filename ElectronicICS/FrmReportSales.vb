@@ -45,6 +45,9 @@ Public Class FrmReportSales
                                                 "Prepared by LIMKAHHIM", DateTime.Now)
 
         ' (3) Prepare body 
+        Dim db As New DBDataContext()
+        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromDate And o.OrderDate < toDate
+
         Dim body As New StringBuilder()
         body.AppendLine("")
         body.AppendLine("--  ------------   ------------------------")
