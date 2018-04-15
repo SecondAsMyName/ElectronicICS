@@ -164,6 +164,12 @@
     <Compile Include="FrmReportSales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmSplashMainMenu.Designer.vb">
+      <DependentUpon>FrmSplashMainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSplashMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUpdateDelivery.Designer.vb">
       <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportSales.resx">
       <DependentUpon>FrmReportSales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSplashMainMenu.resx">
+      <DependentUpon>FrmSplashMainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateDelivery.resx">
       <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
