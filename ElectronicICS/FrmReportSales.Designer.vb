@@ -22,6 +22,7 @@ Partial Class FrmReportSales
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmReportSales))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvReport = New System.Windows.Forms.DataGridView()
@@ -31,6 +32,8 @@ Partial Class FrmReportSales
         Me.btnExit = New System.Windows.Forms.Button()
         Me.dtpFrom = New System.Windows.Forms.DateTimePicker()
         Me.dtpTo = New System.Windows.Forms.DateTimePicker()
+        Me.pdReportSales = New System.Drawing.Printing.PrintDocument()
+        Me.ppdReportSales = New System.Windows.Forms.PrintPreviewDialog()
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,7 +114,22 @@ Partial Class FrmReportSales
         Me.dtpTo.Size = New System.Drawing.Size(103, 20)
         Me.dtpTo.TabIndex = 10
         '
-        'FrmReportMonthSales
+        'pdReportSales
+        '
+        Me.pdReportSales.OriginAtMargins = True
+        '
+        'ppdReportSales
+        '
+        Me.ppdReportSales.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.ppdReportSales.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.ppdReportSales.ClientSize = New System.Drawing.Size(400, 300)
+        Me.ppdReportSales.Enabled = True
+        Me.ppdReportSales.Icon = CType(resources.GetObject("ppdReportSales.Icon"), System.Drawing.Icon)
+        Me.ppdReportSales.Name = "ppdReportSales"
+        Me.ppdReportSales.UseAntiAlias = True
+        Me.ppdReportSales.Visible = False
+        '
+        'FrmReportSales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -125,7 +143,7 @@ Partial Class FrmReportSales
         Me.Controls.Add(Me.dgvReport)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "FrmReportMonthSales"
+        Me.Name = "FrmReportSales"
         Me.Text = "On Demand Sales Report"
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -142,4 +160,6 @@ Partial Class FrmReportSales
     Friend WithEvents btnExit As Button
     Friend WithEvents dtpFrom As DateTimePicker
     Friend WithEvents dtpTo As DateTimePicker
+    Friend WithEvents pdReportSales As Printing.PrintDocument
+    Friend WithEvents ppdReportSales As PrintPreviewDialog
 End Class
