@@ -164,6 +164,18 @@
     <Compile Include="FrmReportSales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmSplashMainMenu.Designer.vb">
+      <DependentUpon>FrmSplashMainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSplashMainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateDelivery.Designer.vb">
+      <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdateDelivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmUpdateItem.Designer.vb">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </Compile>
@@ -281,6 +293,12 @@
     <EmbeddedResource Include="FrmReportSales.resx">
       <DependentUpon>FrmReportSales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSplashMainMenu.resx">
+      <DependentUpon>FrmSplashMainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateDelivery.resx">
+      <DependentUpon>FrmUpdateDelivery.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +379,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICSDB.mdf" />
+    <Content Include="ICSDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>ICSDB.mdf</DependentUpon>
+    </Content>
     <None Include="Resources\Order-now.png" />
     <None Include="Resources\LIMKAHHIM.jpg" />
     <None Include="Resources\LogoMakr_9T5ghY.png" />

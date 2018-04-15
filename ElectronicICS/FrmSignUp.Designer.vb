@@ -33,13 +33,13 @@ Partial Class FrmSignUp
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.mskPassword = New System.Windows.Forms.MaskedTextBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.mskEmail = New System.Windows.Forms.MaskedTextBox()
-        Me.mskHpNo = New System.Windows.Forms.MaskedTextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtaddress = New System.Windows.Forms.RichTextBox()
         Me.btnSignUp = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
+        Me.mskPassword = New System.Windows.Forms.MaskedTextBox()
+        Me.txtHpno = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -63,7 +63,7 @@ Partial Class FrmSignUp
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 81)
+        Me.Label3.Location = New System.Drawing.Point(17, 85)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 13)
         Me.Label3.TabIndex = 2
@@ -72,7 +72,7 @@ Partial Class FrmSignUp
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(16, 115)
+        Me.Label4.Location = New System.Drawing.Point(34, 118)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 13)
         Me.Label4.TabIndex = 3
@@ -138,46 +138,25 @@ Partial Class FrmSignUp
         '
         'txtUsername
         '
-        Me.txtUsername.Location = New System.Drawing.Point(94, 47)
+        Me.txtUsername.Location = New System.Drawing.Point(94, 48)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(100, 20)
         Me.txtUsername.TabIndex = 10
         '
-        'TextBox1
+        'txtName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(94, 115)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 12
+        Me.txtName.Location = New System.Drawing.Point(94, 115)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(100, 20)
+        Me.txtName.TabIndex = 12
         '
-        'mskPassword
+        'txtaddress
         '
-        Me.mskPassword.Location = New System.Drawing.Point(94, 81)
-        Me.mskPassword.Name = "mskPassword"
-        Me.mskPassword.Size = New System.Drawing.Size(100, 20)
-        Me.mskPassword.TabIndex = 13
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(94, 222)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(331, 72)
-        Me.RichTextBox1.TabIndex = 15
-        Me.RichTextBox1.Text = ""
-        '
-        'mskEmail
-        '
-        Me.mskEmail.Location = New System.Drawing.Point(94, 307)
-        Me.mskEmail.Name = "mskEmail"
-        Me.mskEmail.Size = New System.Drawing.Size(100, 20)
-        Me.mskEmail.TabIndex = 16
-        '
-        'mskHpNo
-        '
-        Me.mskHpNo.Location = New System.Drawing.Point(94, 187)
-        Me.mskHpNo.Name = "mskHpNo"
-        Me.mskHpNo.Size = New System.Drawing.Size(100, 20)
-        Me.mskHpNo.TabIndex = 17
+        Me.txtaddress.Location = New System.Drawing.Point(94, 222)
+        Me.txtaddress.Name = "txtaddress"
+        Me.txtaddress.Size = New System.Drawing.Size(331, 72)
+        Me.txtaddress.TabIndex = 15
+        Me.txtaddress.Text = ""
         '
         'btnSignUp
         '
@@ -197,19 +176,41 @@ Partial Class FrmSignUp
         Me.btnExit.Text = "E&xit"
         Me.btnExit.UseVisualStyleBackColor = True
         '
+        'mskPassword
+        '
+        Me.mskPassword.Location = New System.Drawing.Point(94, 81)
+        Me.mskPassword.Name = "mskPassword"
+        Me.mskPassword.Size = New System.Drawing.Size(100, 20)
+        Me.mskPassword.TabIndex = 20
+        Me.mskPassword.UseSystemPasswordChar = True
+        '
+        'txtHpno
+        '
+        Me.txtHpno.Location = New System.Drawing.Point(94, 187)
+        Me.txtHpno.Name = "txtHpno"
+        Me.txtHpno.Size = New System.Drawing.Size(100, 20)
+        Me.txtHpno.TabIndex = 21
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(94, 307)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(206, 20)
+        Me.txtEmail.TabIndex = 22
+        '
         'FrmSignUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(502, 395)
+        Me.Controls.Add(Me.txtEmail)
+        Me.Controls.Add(Me.txtHpno)
+        Me.Controls.Add(Me.mskPassword)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnSignUp)
-        Me.Controls.Add(Me.mskHpNo)
-        Me.Controls.Add(Me.mskEmail)
-        Me.Controls.Add(Me.RichTextBox1)
-        Me.Controls.Add(Me.mskPassword)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtaddress)
+        Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -239,11 +240,11 @@ Partial Class FrmSignUp
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents txtUsername As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents mskPassword As MaskedTextBox
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents mskEmail As MaskedTextBox
-    Friend WithEvents mskHpNo As MaskedTextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtaddress As RichTextBox
     Friend WithEvents btnSignUp As Button
     Friend WithEvents btnExit As Button
+    Friend WithEvents mskPassword As MaskedTextBox
+    Friend WithEvents txtHpno As TextBox
+    Friend WithEvents txtEmail As TextBox
 End Class

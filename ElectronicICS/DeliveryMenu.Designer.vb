@@ -25,7 +25,7 @@ Partial Class DeliveryMenu
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DeliveryMenu))
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCurrentStatus = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnReport = New System.Windows.Forms.Button()
         Me.btnUpdateDelivery = New System.Windows.Forms.Button()
         Me.btnCreateOrder = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -46,22 +46,22 @@ Partial Class DeliveryMenu
         'btnCurrentStatus
         '
         Me.btnCurrentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCurrentStatus.Location = New System.Drawing.Point(12, 193)
+        Me.btnCurrentStatus.Location = New System.Drawing.Point(12, 147)
         Me.btnCurrentStatus.Name = "btnCurrentStatus"
         Me.btnCurrentStatus.Size = New System.Drawing.Size(168, 40)
         Me.btnCurrentStatus.TabIndex = 2
         Me.btnCurrentStatus.Text = "Current Status"
         Me.btnCurrentStatus.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnReport
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(12, 147)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(168, 40)
-        Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Assign"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReport.Location = New System.Drawing.Point(12, 193)
+        Me.btnReport.Name = "btnReport"
+        Me.btnReport.Size = New System.Drawing.Size(168, 40)
+        Me.btnReport.TabIndex = 3
+        Me.btnReport.Text = "Report"
+        Me.btnReport.UseVisualStyleBackColor = True
         '
         'btnUpdateDelivery
         '
@@ -112,7 +112,7 @@ Partial Class DeliveryMenu
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCreateOrder)
         Me.Controls.Add(Me.btnUpdateDelivery)
-        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnCurrentStatus)
         Me.Controls.Add(Me.btnExit)
         Me.Name = "DeliveryMenu"
@@ -123,7 +123,7 @@ Partial Class DeliveryMenu
     End Sub
     Friend WithEvents btnExit As Button
     Friend WithEvents btnCurrentStatus As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnReport As Button
     Friend WithEvents btnUpdateDelivery As Button
     Friend WithEvents btnCreateOrder As Button
     Friend WithEvents Label1 As Label
