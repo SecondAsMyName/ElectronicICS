@@ -3,7 +3,7 @@
 
     Private Sub BindData()
         Dim db As New DBDataContext()
-        Dim order = From o In db.Orders Where o.Username = Username
+        Dim order = From o In db.Orders Where o.Username = Username And o.OrderStatus = "Pending"
         cboOrderId.DataSource = order
         cboOrderId.DisplayMember = "OrderId"
         cboOrderId.ValueMember = "OrderId"
@@ -46,5 +46,9 @@
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
+    End Sub
+
+    Private Sub OrderRemark_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        OrderRemark_Load(Nothing, Nothing)
     End Sub
 End Class

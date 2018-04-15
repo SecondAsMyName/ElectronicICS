@@ -1,7 +1,16 @@
 ﻿Public Class OrderCart
-    Private OrderID As Integer = 0
+    Public OrderID As Integer = 0
     Private Username As String
     Private TotalPrice As Double = 0.00
+
+    Private Sub OrderCart_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Username = MainPage.customer.Username
+        If OrderID = 0 Then
+            OrderID = getLastID()
+            AddNewOrder()
+        End If
+        ResetForm()
+    End Sub
 
     Private Sub BindData()
         Dim db As New DBDataContext()
@@ -82,15 +91,6 @@
         txtTotal.Text = totalprice.ToString("0.00")
     End Sub
 
-    Private Sub OrderCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Username = MainPage.customer.Username
-        If OrderID = 0 Then
-            OrderID = getLastID()
-            AddNewOrder()
-        End If
-        ResetForm()
-    End Sub
-
     Private Sub cboItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboItem.SelectedIndexChanged
         Dim db As New DBDataContext()
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
@@ -145,6 +145,7 @@
             Catch
                 MessageBox.Show("No order submited.")
             End Try
+            OrderID = 0
             Me.Close()
         End If
 
@@ -174,10 +175,34 @@
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        OrderID = 0
         Me.Close()
     End Sub
 
     Private Sub OrderRemarkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrderRemarkToolStripMenuItem.Click
+        OrderRemark.Activate()
         OrderRemark.Show()
+    End Sub
+
+    Private Sub OrderCart_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        OrderID = 0
+    End Sub
+
+    Private Sub PendingOrderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PendingOrderToolStripMenuItem.Click
+        PendingOrder.Activate()
+        PendingOrder.Show()
+    End Sub
+
+    Private Sub OrderCart_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        OrderID = 0
+    End Sub
+
+
+    Private Sub OrderCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        OrderCart_Shown(Nothing, Nothing)
+    End Sub
+
+    Private Sub OrderCart_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        OrderCart_Shown(Nothing, Nothing)
     End Sub
 End Class
