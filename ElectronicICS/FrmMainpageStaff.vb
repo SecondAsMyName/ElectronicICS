@@ -9,4 +9,8 @@
     Private Sub PcManageStock_Click(sender As Object, e As EventArgs) Handles pcManageStock.Click
         MnusMS_Click(Nothing, Nothing)
     End Sub
+
+    Private Sub PaymentTransactionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentTransactionToolStripMenuItem.Click
+        PaymentTransReport.ShowDialog()
+    End Sub
 End Class
