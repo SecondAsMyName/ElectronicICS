@@ -254,11 +254,17 @@
     <EmbeddedResource Include="FrmCreateDelivery.resx">
       <DependentUpon>FrmCreateDelivery.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreatePO.resx">
+      <DependentUpon>FrmCreatePO.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainpageStaff.resx">
       <DependentUpon>FrmMainpageStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManagePO.resx">
+      <DependentUpon>FrmManagePO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManageStock.resx">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
