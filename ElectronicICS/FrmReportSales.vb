@@ -60,7 +60,8 @@ Public Class FrmReportSales
 
         For Each orders In order
             cnt += 1
-            body.AppendFormat("{0,5},{1,5},{2,-5},{3,-5}" & vbNewLine, orders.OrderId, orders.OrderDesc, orders.OrderDate, orders.Username)
+            body.AppendFormat("{0,5},{1,5},{2,5},{3,5}" & vbNewLine, orders.OrderId, orders.OrderDesc, orders.OrderDate, orders.Username)
+            body.AppendLine("")
         Next
         body.AppendLine()
         body.AppendFormat("{0,2} record(s)", cnt)
