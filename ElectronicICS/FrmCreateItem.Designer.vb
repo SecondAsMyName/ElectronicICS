@@ -29,15 +29,16 @@ Partial Class FrmCreateItem
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblItemID = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.lblDescription = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblPrice = New System.Windows.Forms.TextBox()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.err = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lblPriceCen = New System.Windows.Forms.TextBox()
-        Me.lblQuantity = New System.Windows.Forms.TextBox()
-        Me.lblName = New System.Windows.Forms.TextBox()
+        Me.txtPriceCen = New System.Windows.Forms.TextBox()
+        Me.txtQuantity = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.btnClear = New System.Windows.Forms.Button()
         CType(Me.err, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,33 +95,33 @@ Partial Class FrmCreateItem
         Me.lblItemID.Size = New System.Drawing.Size(113, 24)
         Me.lblItemID.TabIndex = 6
         '
-        'Button1
+        'btnAdd
         '
-        Me.Button1.Location = New System.Drawing.Point(30, 321)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "&Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnAdd.Location = New System.Drawing.Point(30, 310)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 35)
+        Me.btnAdd.TabIndex = 6
+        Me.btnAdd.Text = "&Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
-        'lblDescription
+        'txtDesc
         '
-        Me.lblDescription.Location = New System.Drawing.Point(111, 97)
-        Me.lblDescription.MaxLength = 50
-        Me.lblDescription.Multiline = True
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(196, 121)
-        Me.lblDescription.TabIndex = 8
+        Me.txtDesc.Location = New System.Drawing.Point(111, 97)
+        Me.txtDesc.MaxLength = 50
+        Me.txtDesc.Multiline = True
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(196, 121)
+        Me.txtDesc.TabIndex = 2
         '
-        'Button2
+        'btnCancel
         '
-        Me.Button2.CausesValidation = False
-        Me.Button2.Location = New System.Drawing.Point(232, 321)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "&Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCancel.CausesValidation = False
+        Me.btnCancel.Location = New System.Drawing.Point(232, 310)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 35)
+        Me.btnCancel.TabIndex = 7
+        Me.btnCancel.Text = "&Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -132,65 +133,77 @@ Partial Class FrmCreateItem
         Me.Label2.Text = "."
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblPrice
+        'txtPrice
         '
-        Me.lblPrice.Location = New System.Drawing.Point(111, 244)
-        Me.lblPrice.MaxLength = 10
-        Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(100, 22)
-        Me.lblPrice.TabIndex = 11
-        Me.lblPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtPrice.Location = New System.Drawing.Point(111, 244)
+        Me.txtPrice.MaxLength = 10
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(100, 22)
+        Me.txtPrice.TabIndex = 3
+        Me.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'err
         '
         Me.err.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.err.ContainerControl = Me
         '
-        'lblPriceCen
+        'txtPriceCen
         '
-        Me.lblPriceCen.Location = New System.Drawing.Point(221, 244)
-        Me.lblPriceCen.MaxLength = 2
-        Me.lblPriceCen.Name = "lblPriceCen"
-        Me.lblPriceCen.Size = New System.Drawing.Size(30, 22)
-        Me.lblPriceCen.TabIndex = 12
+        Me.txtPriceCen.Location = New System.Drawing.Point(221, 244)
+        Me.txtPriceCen.MaxLength = 2
+        Me.txtPriceCen.Name = "txtPriceCen"
+        Me.txtPriceCen.Size = New System.Drawing.Size(30, 22)
+        Me.txtPriceCen.TabIndex = 4
         '
-        'lblQuantity
+        'txtQuantity
         '
-        Me.lblQuantity.Location = New System.Drawing.Point(111, 279)
-        Me.lblQuantity.MaxLength = 10
-        Me.lblQuantity.Name = "lblQuantity"
-        Me.lblQuantity.Size = New System.Drawing.Size(100, 22)
-        Me.lblQuantity.TabIndex = 13
-        Me.lblQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtQuantity.Location = New System.Drawing.Point(111, 279)
+        Me.txtQuantity.MaxLength = 10
+        Me.txtQuantity.Name = "txtQuantity"
+        Me.txtQuantity.Size = New System.Drawing.Size(100, 22)
+        Me.txtQuantity.TabIndex = 5
+        Me.txtQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'lblName
+        'txtName
         '
-        Me.lblName.Location = New System.Drawing.Point(111, 63)
-        Me.lblName.MaxLength = 50
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(196, 22)
-        Me.lblName.TabIndex = 1
+        Me.txtName.Location = New System.Drawing.Point(111, 63)
+        Me.txtName.MaxLength = 50
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(196, 22)
+        Me.txtName.TabIndex = 1
+        '
+        'btnClear
+        '
+        Me.btnClear.CausesValidation = False
+        Me.btnClear.Location = New System.Drawing.Point(148, 310)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 35)
+        Me.btnClear.TabIndex = 11
+        Me.btnClear.Text = "C&lear"
+        Me.btnClear.UseVisualStyleBackColor = True
         '
         'FrmCreateItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(317, 350)
-        Me.Controls.Add(Me.lblQuantity)
-        Me.Controls.Add(Me.lblPriceCen)
-        Me.Controls.Add(Me.lblPrice)
+        Me.ClientSize = New System.Drawing.Size(317, 357)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.txtQuantity)
+        Me.Controls.Add(Me.txtPriceCen)
+        Me.Controls.Add(Me.txtPrice)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.lblDescription)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.txtDesc)
+        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.lblItemID)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.labelName)
-        Me.Controls.Add(Me.lblName)
+        Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label1)
+        Me.KeyPreview = True
         Me.Name = "FrmCreateItem"
         Me.Text = "Add New Item"
         CType(Me.err, System.ComponentModel.ISupportInitialize).EndInit()
@@ -205,13 +218,14 @@ Partial Class FrmCreateItem
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents lblItemID As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents lblDescription As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents txtDesc As TextBox
+    Friend WithEvents btnCancel As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents lblPrice As TextBox
+    Friend WithEvents txtPrice As TextBox
     Friend WithEvents err As ErrorProvider
-    Friend WithEvents lblQuantity As TextBox
-    Friend WithEvents lblPriceCen As TextBox
-    Friend WithEvents lblName As TextBox
+    Friend WithEvents txtQuantity As TextBox
+    Friend WithEvents txtPriceCen As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents btnClear As Button
 End Class
