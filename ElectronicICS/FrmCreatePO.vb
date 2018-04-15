@@ -6,7 +6,7 @@
         BindData()
         cboSupplierID.SelectedIndex = 0
         cboItemID.SelectedIndex = -1
-
+        purchaseOrder = New PurchaseOrder()
         With purchaseOrder
             .PoId = GetLastID()
             .Remarks = "New"
@@ -31,7 +31,7 @@
             .ReadOnly = False
             .HeaderText = "Quantity"
             .Name = "Quantity"
-            .DefaultCellStyle.Format = "N"
+            .DefaultCellStyle.Format = "N0"
         End With
         Dim dgvColumnPrice As New DataGridViewTextBoxColumn
         With dgvColumnPrice
