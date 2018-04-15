@@ -110,6 +110,12 @@
     <Compile Include="FrmCreateDelivery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmCreateDO.Designer.vb">
+      <DependentUpon>FrmCreateDO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateDO.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmCreateItem.Designer.vb">
       <DependentUpon>FrmCreateItem.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,12 @@
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmUpdateItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewPO.Designer.vb">
+      <DependentUpon>FrmViewPO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmViewPO.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainPage.vb">
