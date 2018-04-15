@@ -3,7 +3,11 @@
     Private Sub BindData()
         Dim db As New DBDataContext()
         Dim order = From o In db.Orders Where o.Username = Username And o.OrderStatus = "Pending"
-        dgvPending.DataSource = order
+        With dgvPending
+            .DataSource = order
+            .Columns.Remove("User")
+        End With
+        lblCount.Text = order.Count.ToString("0 record(s).")
     End Sub
 
     Private Sub PendingOrder_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown

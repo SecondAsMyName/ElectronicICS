@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class PendingOrder
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,12 @@ Partial Class PendingOrder
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.dgvPending = New System.Windows.Forms.DataGridView()
-        Me.btnReload = New System.Windows.Forms.Button()
         CType(Me.dgvPending, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,21 +61,11 @@ Partial Class PendingOrder
         Me.dgvPending.Size = New System.Drawing.Size(415, 250)
         Me.dgvPending.TabIndex = 3
         '
-        'btnReload
-        '
-        Me.btnReload.Location = New System.Drawing.Point(373, 337)
-        Me.btnReload.Name = "btnReload"
-        Me.btnReload.Size = New System.Drawing.Size(75, 23)
-        Me.btnReload.TabIndex = 4
-        Me.btnReload.Text = "Reload Page"
-        Me.btnReload.UseVisualStyleBackColor = True
-        '
         'PendingOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(484, 383)
-        Me.Controls.Add(Me.btnReload)
         Me.Controls.Add(Me.dgvPending)
         Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.lblUser)
@@ -93,5 +82,4 @@ Partial Class PendingOrder
     Friend WithEvents lblUser As Label
     Friend WithEvents lblCount As Label
     Friend WithEvents dgvPending As DataGridView
-    Friend WithEvents btnReload As Button
 End Class
