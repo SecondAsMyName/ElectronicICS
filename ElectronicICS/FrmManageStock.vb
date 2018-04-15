@@ -24,6 +24,7 @@
         Dim i As Integer = e.RowIndex
 
         If i > -1 Then
+            FrmUpdateItem.itemID = selectedItemID
             FrmUpdateItem.ShowDialog(Me)
             BindData()
         End If
@@ -49,8 +50,11 @@
 
             Try
                 Dim deleteItem = (From item In db.Items Where item.ItemID = selectedItemID).ToList()(0)
-
                 db.Items.DeleteOnSubmit(deleteItem)
+                db.SubmitChanges()
+
+                Dim msgDelete As String = String.Format("Item [{0}] deleted.", selectedItemID)
+                MessageBox.Show(msgDelete, "Delete success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("The item has been ordered by customer.", "Unable to delete", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             End Try
@@ -69,6 +73,10 @@
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         FrmCreateItem.ShowDialog(Me)
+        BindData()
+    End Sub
+
+    Private Sub TxtName_TextChanged(sender As Object, e As EventArgs) Handles txtName.TextChanged
         BindData()
     End Sub
 End Class

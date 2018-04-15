@@ -54,34 +54,34 @@ Partial Class FrmManageStock
         Me.dgvItems.AllowUserToAddRows = False
         Me.dgvItems.AllowUserToDeleteRows = False
         Me.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvItems.Location = New System.Drawing.Point(12, 78)
+        Me.dgvItems.Location = New System.Drawing.Point(15, 75)
         Me.dgvItems.Name = "dgvItems"
         Me.dgvItems.ReadOnly = True
         Me.dgvItems.RowTemplate.Height = 24
-        Me.dgvItems.Size = New System.Drawing.Size(401, 150)
+        Me.dgvItems.Size = New System.Drawing.Size(731, 320)
         Me.dgvItems.TabIndex = 2
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(15, 291)
+        Me.btnAdd.Location = New System.Drawing.Point(15, 465)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(109, 23)
+        Me.btnAdd.Size = New System.Drawing.Size(109, 33)
         Me.btnAdd.TabIndex = 3
         Me.btnAdd.Text = "&Add New Item"
         Me.btnAdd.UseVisualStyleBackColor = True
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(338, 291)
+        Me.btnDelete.Location = New System.Drawing.Point(671, 465)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.Size = New System.Drawing.Size(75, 33)
         Me.btnDelete.TabIndex = 5
         Me.btnDelete.Text = "&Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'lblTip
         '
-        Me.lblTip.Location = New System.Drawing.Point(12, 231)
+        Me.lblTip.Location = New System.Drawing.Point(12, 398)
         Me.lblTip.Name = "lblTip"
         Me.lblTip.Size = New System.Drawing.Size(404, 23)
         Me.lblTip.TabIndex = 6
@@ -90,7 +90,7 @@ Partial Class FrmManageStock
         '
         'lblItemCount
         '
-        Me.lblItemCount.Location = New System.Drawing.Point(9, 254)
+        Me.lblItemCount.Location = New System.Drawing.Point(12, 421)
         Me.lblItemCount.Name = "lblItemCount"
         Me.lblItemCount.Size = New System.Drawing.Size(112, 23)
         Me.lblItemCount.TabIndex = 7
@@ -100,7 +100,7 @@ Partial Class FrmManageStock
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(446, 373)
+        Me.ClientSize = New System.Drawing.Size(758, 502)
         Me.Controls.Add(Me.lblItemCount)
         Me.Controls.Add(Me.lblTip)
         Me.Controls.Add(Me.btnDelete)

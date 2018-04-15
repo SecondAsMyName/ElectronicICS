@@ -149,6 +149,7 @@ Partial Class FrmCreateItem
         '
         'txtPriceCen
         '
+        Me.txtPriceCen.CausesValidation = False
         Me.txtPriceCen.Location = New System.Drawing.Point(221, 244)
         Me.txtPriceCen.MaxLength = 2
         Me.txtPriceCen.Name = "txtPriceCen"
@@ -184,9 +185,11 @@ Partial Class FrmCreateItem
         '
         'FrmCreateItem
         '
+        Me.AcceptButton = Me.btnAdd
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(328, 357)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.txtQuantity)
@@ -203,6 +206,7 @@ Partial Class FrmCreateItem
         Me.Controls.Add(Me.labelName)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.KeyPreview = True
         Me.Name = "FrmCreateItem"
         Me.Text = "Add New Item"
