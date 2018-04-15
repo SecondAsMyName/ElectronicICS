@@ -60,12 +60,12 @@ Partial Class PaymentHistoryPage
         Me.dgvPaymentHistory.Location = New System.Drawing.Point(15, 50)
         Me.dgvPaymentHistory.Name = "dgvPaymentHistory"
         Me.dgvPaymentHistory.ReadOnly = True
-        Me.dgvPaymentHistory.Size = New System.Drawing.Size(567, 170)
+        Me.dgvPaymentHistory.Size = New System.Drawing.Size(613, 220)
         Me.dgvPaymentHistory.TabIndex = 3
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(507, 242)
+        Me.btnExit.Location = New System.Drawing.Point(553, 302)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 4
@@ -77,7 +77,7 @@ Partial Class PaymentHistoryPage
         Me.mnuPaymentHistoryMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoBackToolStripMenuItem})
         Me.mnuPaymentHistoryMenu.Location = New System.Drawing.Point(0, 0)
         Me.mnuPaymentHistoryMenu.Name = "mnuPaymentHistoryMenu"
-        Me.mnuPaymentHistoryMenu.Size = New System.Drawing.Size(611, 24)
+        Me.mnuPaymentHistoryMenu.Size = New System.Drawing.Size(657, 24)
         Me.mnuPaymentHistoryMenu.TabIndex = 6
         Me.mnuPaymentHistoryMenu.Text = "MenuStrip1"
         '
@@ -92,7 +92,7 @@ Partial Class PaymentHistoryPage
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(611, 297)
+        Me.ClientSize = New System.Drawing.Size(657, 347)
         Me.Controls.Add(Me.mnuPaymentHistoryMenu)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.dgvPaymentHistory)
