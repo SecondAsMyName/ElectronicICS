@@ -187,7 +187,7 @@ Partial Class FrmCreateItem
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(317, 357)
+        Me.ClientSize = New System.Drawing.Size(328, 357)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.txtQuantity)
         Me.Controls.Add(Me.txtPriceCen)

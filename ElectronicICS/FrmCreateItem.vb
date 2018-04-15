@@ -32,6 +32,10 @@ Public Class FrmCreateItem
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        If Me.ValidateChildren = False Then
+            Return
+        End If
+
 
     End Sub
 
@@ -54,5 +58,49 @@ Public Class FrmCreateItem
     Private Sub TxtQuantity_TextChanged(sender As Object, e As EventArgs) Handles txtQuantity.TextChanged
         Dim digitsOnly As Regex = New Regex("[^\d]")
         txtQuantity.Text = digitsOnly.Replace(txtQuantity.Text, "")
+    End Sub
+
+    Private Sub TxtName_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtName.Validating
+        Dim name As String = txtName.Text
+
+        If name = "" Then
+            err.SetError(txtName, "Please enter item's name.")
+            e.Cancel = True
+        Else
+            err.SetError(txtName, Nothing)
+        End If
+    End Sub
+
+    Private Sub TxtDesc_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtDesc.Validating
+        Dim desc As String = txtDesc.Text
+
+        If name = "" Then
+            err.SetError(txtDesc, "Please enter item's description.")
+            e.Cancel = True
+        Else
+            err.SetError(txtDesc, Nothing)
+        End If
+    End Sub
+
+    Private Sub TxtPrice_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrice.Validating
+        Dim price As String = txtPrice.Text
+
+        If name = "" Then
+            err.SetError(txtPrice, "Please enter item's price.")
+            e.Cancel = True
+        Else
+            err.SetError(txtPrice, Nothing)
+        End If
+    End Sub
+
+    Private Sub TxtQuantity_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtQuantity.Validating
+        Dim qty As String = txtQuantity.Text
+
+        If name = "" Then
+            err.SetError(txtQuantity, "Please enter item's quantity.")
+            e.Cancel = True
+        Else
+            err.SetError(txtQuantity, Nothing)
+        End If
     End Sub
 End Class
