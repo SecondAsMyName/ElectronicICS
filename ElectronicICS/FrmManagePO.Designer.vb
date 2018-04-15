@@ -59,7 +59,7 @@ Partial Class FrmManagePO
         Me.dgvPo.Name = "dgvPo"
         Me.dgvPo.ReadOnly = True
         Me.dgvPo.RowTemplate.Height = 24
-        Me.dgvPo.Size = New System.Drawing.Size(776, 340)
+        Me.dgvPo.Size = New System.Drawing.Size(601, 340)
         Me.dgvPo.TabIndex = 2
         '
         'btnCreate
@@ -73,7 +73,7 @@ Partial Class FrmManagePO
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(713, 434)
+        Me.btnDelete.Location = New System.Drawing.Point(538, 434)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 27)
         Me.btnDelete.TabIndex = 3
@@ -94,7 +94,7 @@ Partial Class FrmManagePO
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
-        Me.ClientSize = New System.Drawing.Size(800, 471)
+        Me.ClientSize = New System.Drawing.Size(623, 471)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnCreate)

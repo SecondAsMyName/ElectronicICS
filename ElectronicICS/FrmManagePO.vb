@@ -1,5 +1,5 @@
 ﻿Public Class FrmManagePO
-    Private selectedItemID As Integer = -1
+    Public selectedPOID As Integer = -1
     Private Sub BindData()
         Dim status As String = cboStatus.Text
 
@@ -12,6 +12,7 @@
     End Sub
     Private Sub FrmManagePO_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         cboStatus.SelectedIndex = 0
+        BindData()
     End Sub
 
     Private Sub BtnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
@@ -20,13 +21,13 @@
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If selectedItemID = -1 Then
+        If selectedPOID = -1 Then
             MessageBox.Show("Please select one of the item from the list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Return
         End If
 
         Dim db As New DBDataContext()
-        Dim i As PurchaseOrder = db.PurchaseOrders.FirstOrDefault(Function(o) o.PoId = selectedItemID)
+        Dim i As PurchaseOrder = db.PurchaseOrders.FirstOrDefault(Function(o) o.PoId = selectedPOID)
 
         If i Is Nothing Then
             MessageBox.Show("PO not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -42,17 +43,17 @@
 
             If response = DialogResult.Yes Then
                 Try
-                    Dim deletePurchaseLine = (From purchaseLine In db.PurchaseLines Where purchaseLine.PoID = selectedItemID)
+                    Dim deletePurchaseLine = (From purchaseLine In db.PurchaseLines Where purchaseLine.PoID = selectedPOID)
                     For Each purchaseLine In deletePurchaseLine
                         db.PurchaseLines.DeleteOnSubmit(purchaseLine)
                     Next
 
-                    Dim deletePO = (From purchaseOrder In db.PurchaseOrders Where purchaseOrder.PoId = selectedItemID).ToList()(0)
+                    Dim deletePO = (From purchaseOrder In db.PurchaseOrders Where purchaseOrder.PoId = selectedPOID).ToList()(0)
                     db.PurchaseOrders.DeleteOnSubmit(deletePO)
 
                     db.SubmitChanges()
 
-                    Dim msgDelete As String = String.Format("Purchase Order [{0}] deleted.", selectedItemID)
+                    Dim msgDelete As String = String.Format("Purchase Order [{0}] deleted.", selectedPOID)
                     MessageBox.Show(msgDelete, "Delete success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
                     MessageBox.Show("Delete fail.", "Unable to delete", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -71,7 +72,7 @@
         Dim i As Integer = e.RowIndex
 
         If i > -1 Then
-            selectedItemID = CInt(dgvPo.Rows(i).Cells(0).Value)
+            selectedPOID = CInt(dgvPo.Rows(i).Cells(0).Value)
         End If
     End Sub
 
