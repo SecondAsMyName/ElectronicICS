@@ -1,13 +1,9 @@
 ﻿Imports System.Text
 
 Public Class PaymentTransReport
-    Private Sub dgvPaymentTransReport_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
 
     Private Sub PaymentTransReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim db As New DBDataContext()
-        dgvReport.DataSource = db.Payments
+
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
@@ -56,5 +52,15 @@ Public Class PaymentTransReport
 
     Private Sub GoBackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoBackToolStripMenuItem.Click
         FrmMainpageStaff.ShowDialog()
+    End Sub
+
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        Dim db As New DBDataContext()
+        Dim payment = From p In db.Payments
+        With dgvReport
+            .DataSource = payment
+            .Columns.Remove("OrderId")
+        End With
+        lblCount.Text = payment.Count.ToString("0 record(s).")
     End Sub
 End Class
