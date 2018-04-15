@@ -91,17 +91,17 @@ Partial Public Class DBDataContext
     End Sub
   Partial Private Sub DeleteOrder(instance As [Order])
     End Sub
-  Partial Private Sub InsertPurchaseOrder(instance As PurchaseOrder)
-    End Sub
-  Partial Private Sub UpdatePurchaseOrder(instance As PurchaseOrder)
-    End Sub
-  Partial Private Sub DeletePurchaseOrder(instance As PurchaseOrder)
-    End Sub
   Partial Private Sub InsertPurchaseLine(instance As PurchaseLine)
     End Sub
   Partial Private Sub UpdatePurchaseLine(instance As PurchaseLine)
     End Sub
   Partial Private Sub DeletePurchaseLine(instance As PurchaseLine)
+    End Sub
+  Partial Private Sub InsertPurchaseOrder(instance As PurchaseOrder)
+    End Sub
+  Partial Private Sub UpdatePurchaseOrder(instance As PurchaseOrder)
+    End Sub
+  Partial Private Sub DeletePurchaseOrder(instance As PurchaseOrder)
     End Sub
   #End Region
 	
@@ -190,15 +190,15 @@ Partial Public Class DBDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property PurchaseOrders() As System.Data.Linq.Table(Of PurchaseOrder)
-		Get
-			Return Me.GetTable(Of PurchaseOrder)
-		End Get
-	End Property
-	
 	Public ReadOnly Property PurchaseLines() As System.Data.Linq.Table(Of PurchaseLine)
 		Get
 			Return Me.GetTable(Of PurchaseLine)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PurchaseOrders() As System.Data.Linq.Table(Of PurchaseOrder)
+		Get
+			Return Me.GetTable(Of PurchaseOrder)
 		End Get
 	End Property
 End Class
@@ -2167,6 +2167,204 @@ Partial Public Class [Order]
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PurchaseLine")>  _
+Partial Public Class PurchaseLine
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ItemID As Integer
+	
+	Private _PoID As Integer
+	
+	Private _Quantity As Integer
+	
+	Private _Price As System.Nullable(Of Decimal)
+	
+	Private _Item As EntityRef(Of Item)
+	
+	Private _PurchaseOrder As EntityRef(Of PurchaseOrder)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnItemIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnItemIDChanged()
+    End Sub
+    Partial Private Sub OnPoIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPoIDChanged()
+    End Sub
+    Partial Private Sub OnQuantityChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnQuantityChanged()
+    End Sub
+    Partial Private Sub OnPriceChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnPriceChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._Item = CType(Nothing, EntityRef(Of Item))
+		Me._PurchaseOrder = CType(Nothing, EntityRef(Of PurchaseOrder))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property ItemID() As Integer
+		Get
+			Return Me._ItemID
+		End Get
+		Set
+			If ((Me._ItemID = value)  _
+						= false) Then
+				If Me._Item.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnItemIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ItemID = value
+				Me.SendPropertyChanged("ItemID")
+				Me.OnItemIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PoID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property PoID() As Integer
+		Get
+			Return Me._PoID
+		End Get
+		Set
+			If ((Me._PoID = value)  _
+						= false) Then
+				If Me._PurchaseOrder.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnPoIDChanging(value)
+				Me.SendPropertyChanging
+				Me._PoID = value
+				Me.SendPropertyChanged("PoID")
+				Me.OnPoIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Int NOT NULL")>  _
+	Public Property Quantity() As Integer
+		Get
+			Return Me._Quantity
+		End Get
+		Set
+			If ((Me._Quantity = value)  _
+						= false) Then
+				Me.OnQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._Quantity = value
+				Me.SendPropertyChanged("Quantity")
+				Me.OnQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Price", DbType:="Decimal(12,2)")>  _
+	Public Property Price() As System.Nullable(Of Decimal)
+		Get
+			Return Me._Price
+		End Get
+		Set
+			If (Me._Price.Equals(value) = false) Then
+				Me.OnPriceChanging(value)
+				Me.SendPropertyChanging
+				Me._Price = value
+				Me.SendPropertyChanged("Price")
+				Me.OnPriceChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Item_PurchaseLine", Storage:="_Item", ThisKey:="ItemID", OtherKey:="ItemID", IsForeignKey:=true)>  _
+	Public Property Item() As Item
+		Get
+			Return Me._Item.Entity
+		End Get
+		Set
+			Dim previousValue As Item = Me._Item.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._Item.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._Item.Entity = Nothing
+					previousValue.PurchaseLines.Remove(Me)
+				End If
+				Me._Item.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PurchaseLines.Add(Me)
+					Me._ItemID = value.ItemID
+				Else
+					Me._ItemID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("Item")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PurchaseOrder_PurchaseLine", Storage:="_PurchaseOrder", ThisKey:="PoID", OtherKey:="PoId", IsForeignKey:=true)>  _
+	Public Property PurchaseOrder() As PurchaseOrder
+		Get
+			Return Me._PurchaseOrder.Entity
+		End Get
+		Set
+			Dim previousValue As PurchaseOrder = Me._PurchaseOrder.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._PurchaseOrder.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._PurchaseOrder.Entity = Nothing
+					previousValue.PurchaseLines.Remove(Me)
+				End If
+				Me._PurchaseOrder.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PurchaseLines.Add(Me)
+					Me._PoID = value.PoId
+				Else
+					Me._PoID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("PurchaseOrder")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PurchaseOrder")>  _
 Partial Public Class PurchaseOrder
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -2374,204 +2572,5 @@ Partial Public Class PurchaseOrder
 	Private Sub detach_PurchaseLines(ByVal entity As PurchaseLine)
 		Me.SendPropertyChanging
 		entity.PurchaseOrder = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PurchaseLine")>  _
-Partial Public Class PurchaseLine
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _ItemID As Integer
-	
-	Private _PoID As Integer
-	
-	Private _Quantity As Integer
-	
-	Private _Price As Decimal
-	
-	Private _Item As EntityRef(Of Item)
-	
-	Private _PurchaseOrder As EntityRef(Of PurchaseOrder)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnItemIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnItemIDChanged()
-    End Sub
-    Partial Private Sub OnPoIDChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPoIDChanged()
-    End Sub
-    Partial Private Sub OnQuantityChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnQuantityChanged()
-    End Sub
-    Partial Private Sub OnPriceChanging(value As Decimal)
-    End Sub
-    Partial Private Sub OnPriceChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._Item = CType(Nothing, EntityRef(Of Item))
-		Me._PurchaseOrder = CType(Nothing, EntityRef(Of PurchaseOrder))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
-	Public Property ItemID() As Integer
-		Get
-			Return Me._ItemID
-		End Get
-		Set
-			If ((Me._ItemID = value)  _
-						= false) Then
-				If Me._Item.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnItemIDChanging(value)
-				Me.SendPropertyChanging
-				Me._ItemID = value
-				Me.SendPropertyChanged("ItemID")
-				Me.OnItemIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PoID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
-	Public Property PoID() As Integer
-		Get
-			Return Me._PoID
-		End Get
-		Set
-			If ((Me._PoID = value)  _
-						= false) Then
-				If Me._PurchaseOrder.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnPoIDChanging(value)
-				Me.SendPropertyChanging
-				Me._PoID = value
-				Me.SendPropertyChanged("PoID")
-				Me.OnPoIDChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Int NOT NULL")>  _
-	Public Property Quantity() As Integer
-		Get
-			Return Me._Quantity
-		End Get
-		Set
-			If ((Me._Quantity = value)  _
-						= false) Then
-				Me.OnQuantityChanging(value)
-				Me.SendPropertyChanging
-				Me._Quantity = value
-				Me.SendPropertyChanged("Quantity")
-				Me.OnQuantityChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Price", DbType:="Decimal(12,2) NOT NULL")>  _
-	Public Property Price() As Decimal
-		Get
-			Return Me._Price
-		End Get
-		Set
-			If ((Me._Price = value)  _
-						= false) Then
-				Me.OnPriceChanging(value)
-				Me.SendPropertyChanging
-				Me._Price = value
-				Me.SendPropertyChanged("Price")
-				Me.OnPriceChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="Item_PurchaseLine", Storage:="_Item", ThisKey:="ItemID", OtherKey:="ItemID", IsForeignKey:=true)>  _
-	Public Property Item() As Item
-		Get
-			Return Me._Item.Entity
-		End Get
-		Set
-			Dim previousValue As Item = Me._Item.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._Item.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._Item.Entity = Nothing
-					previousValue.PurchaseLines.Remove(Me)
-				End If
-				Me._Item.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.PurchaseLines.Add(Me)
-					Me._ItemID = value.ItemID
-				Else
-					Me._ItemID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("Item")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PurchaseOrder_PurchaseLine", Storage:="_PurchaseOrder", ThisKey:="PoID", OtherKey:="PoId", IsForeignKey:=true)>  _
-	Public Property PurchaseOrder() As PurchaseOrder
-		Get
-			Return Me._PurchaseOrder.Entity
-		End Get
-		Set
-			Dim previousValue As PurchaseOrder = Me._PurchaseOrder.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._PurchaseOrder.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._PurchaseOrder.Entity = Nothing
-					previousValue.PurchaseLines.Remove(Me)
-				End If
-				Me._PurchaseOrder.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.PurchaseLines.Add(Me)
-					Me._PoID = value.PoId
-				Else
-					Me._PoID = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("PurchaseOrder")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
 	End Sub
 End Class

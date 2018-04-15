@@ -105,6 +105,16 @@
       <Association Name="User_Order" Member="User" ThisKey="Username" OtherKey="Username" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.PurchaseLine" Member="PurchaseLines">
+    <Type Name="PurchaseLine">
+      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Association Name="Item_PurchaseLine" Member="Item" ThisKey="ItemID" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
+      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseOrder" ThisKey="PoID" OtherKey="PoId" Type="PurchaseOrder" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.PurchaseOrder" Member="PurchaseOrders">
     <Type Name="PurchaseOrder">
       <Column Name="PoId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -114,16 +124,6 @@
       <Association Name="PurchaseOrder_DeliveryOrder" Member="DeliveryOrders" ThisKey="PoId" OtherKey="PoID" Type="DeliveryOrder" />
       <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseLines" ThisKey="PoId" OtherKey="PoID" Type="PurchaseLine" />
       <Association Name="Supplier_PurchaseOrder" Member="Supplier" ThisKey="SupplierID" OtherKey="SupplierId" Type="Supplier" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PurchaseLine" Member="PurchaseLines">
-    <Type Name="PurchaseLine">
-      <Column Name="ItemID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PoID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
-      <Association Name="Item_PurchaseLine" Member="Item" ThisKey="ItemID" OtherKey="ItemID" Type="Item" IsForeignKey="true" />
-      <Association Name="PurchaseOrder_PurchaseLine" Member="PurchaseOrder" ThisKey="PoID" OtherKey="PoId" Type="PurchaseOrder" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
