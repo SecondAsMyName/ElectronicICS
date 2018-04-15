@@ -1,7 +1,16 @@
 ﻿Public Class OrderCart
-    Private OrderID As Integer = 0
+    Public OrderID As Integer = 0
     Private Username As String
     Private TotalPrice As Double = 0.00
+
+    Private Sub OrderCart_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Username = MainPage.customer.Username
+        If OrderID = 0 Then
+            OrderID = getLastID()
+            AddNewOrder()
+        End If
+        ResetForm()
+    End Sub
 
     Private Sub BindData()
         Dim db As New DBDataContext()
@@ -82,32 +91,20 @@
         txtTotal.Text = totalprice.ToString("0.00")
     End Sub
 
-    Private Sub OrderCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Username = MainPage.customer.Username
-        If OrderID = 0 Then
-            OrderID = getLastID()
-            AddNewOrder()
-        End If
-        ResetForm()
-    End Sub
-
     Private Sub cboItem_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboItem.SelectedIndexChanged
         Dim db As New DBDataContext()
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
-        Dim desc = From o In db.Items Where o.ItemID = itemID
-        lstItemDesc.DataSource = desc
-        lstItemDesc.DisplayMember = "ItemDesc"
-        lstItemDesc.ValueMember = "ItemDesc"
-        lstPrice.DataSource = desc
-        lstPrice.DisplayMember = "ItemPrice"
-        lstPrice.ValueMember = "ItemPrice"
+        Dim desc = From o In db.Items Where o.ItemID = itemID Select o.ItemDesc
+        txtDesc.Text = desc.FirstOrDefault()
+        Dim price = From o In db.Items Where o.ItemID = itemID Select o.ItemPrice
+        txtPrice.Text = (price.FirstOrDefault()).ToString()
     End Sub
 
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
         'New order and orderline object
         Dim itemID As Integer = If(TypeOf cboItem.SelectedValue Is Integer, DirectCast(cboItem.SelectedValue, Integer), 0)
         Dim quantity As Integer = Integer.Parse(cboQuan.Text)
-        Dim price As Double = Convert.ToDouble(lstPrice.SelectedValue)
+        Dim price As Double = Convert.ToDouble(txtPrice.Text)
         Dim total As Double = (quantity * price)
         Dim orderline As New OrderLine
         With orderline
@@ -148,6 +145,7 @@
             Catch
                 MessageBox.Show("No order submited.")
             End Try
+            OrderID = 0
             Me.Close()
         End If
 
@@ -174,5 +172,37 @@
             MessageBox.Show("No cart item removed.")
         End Try
         ResetForm()
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        OrderID = 0
+        Me.Close()
+    End Sub
+
+    Private Sub OrderRemarkToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrderRemarkToolStripMenuItem.Click
+        OrderRemark.Activate()
+        OrderRemark.Show()
+    End Sub
+
+    Private Sub OrderCart_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        OrderID = 0
+    End Sub
+
+    Private Sub PendingOrderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PendingOrderToolStripMenuItem.Click
+        PendingOrder.Activate()
+        PendingOrder.Show()
+    End Sub
+
+    Private Sub OrderCart_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        OrderID = 0
+    End Sub
+
+
+    Private Sub OrderCart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        OrderCart_Shown(Nothing, Nothing)
+    End Sub
+
+    Private Sub OrderCart_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        OrderCart_Shown(Nothing, Nothing)
     End Sub
 End Class

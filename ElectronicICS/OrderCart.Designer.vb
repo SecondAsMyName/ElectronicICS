@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class OrderCart
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class OrderCart
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -40,14 +40,17 @@ Partial Class OrderCart
         Me.txtUser = New System.Windows.Forms.TextBox()
         Me.txtSysDate = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.LogOutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrderRemarkToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrderHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PendingOrderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lstItemDesc = New System.Windows.Forms.ListBox()
-        Me.lstPrice = New System.Windows.Forms.ListBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtOrderID = New System.Windows.Forms.TextBox()
         Me.dgvOrderCart = New System.Windows.Forms.DataGridView()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -126,20 +129,20 @@ Partial Class OrderCart
         '
         'btnAddItem
         '
-        Me.btnAddItem.Location = New System.Drawing.Point(143, 333)
+        Me.btnAddItem.Location = New System.Drawing.Point(125, 333)
         Me.btnAddItem.Name = "btnAddItem"
-        Me.btnAddItem.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddItem.Size = New System.Drawing.Size(93, 34)
         Me.btnAddItem.TabIndex = 13
-        Me.btnAddItem.Text = "Add item"
+        Me.btnAddItem.Text = "&Add item"
         Me.btnAddItem.UseVisualStyleBackColor = True
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(554, 351)
+        Me.btnSubmit.Location = New System.Drawing.Point(554, 333)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(100, 34)
         Me.btnSubmit.TabIndex = 14
-        Me.btnSubmit.Text = "Submit Order"
+        Me.btnSubmit.Text = "&Submit Order"
         Me.btnSubmit.UseVisualStyleBackColor = True
         '
         'Label7
@@ -180,18 +183,30 @@ Partial Class OrderCart
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogOutToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrderRemarkToolStripMenuItem, Me.OrderHistoryToolStripMenuItem, Me.PendingOrderToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(678, 24)
         Me.MenuStrip1.TabIndex = 22
         Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'LogOutToolStripMenuItem
+        'OrderRemarkToolStripMenuItem
         '
-        Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
-        Me.LogOutToolStripMenuItem.Text = "Log Out"
+        Me.OrderRemarkToolStripMenuItem.Name = "OrderRemarkToolStripMenuItem"
+        Me.OrderRemarkToolStripMenuItem.Size = New System.Drawing.Size(92, 20)
+        Me.OrderRemarkToolStripMenuItem.Text = "Order Remark"
+        '
+        'OrderHistoryToolStripMenuItem
+        '
+        Me.OrderHistoryToolStripMenuItem.Name = "OrderHistoryToolStripMenuItem"
+        Me.OrderHistoryToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
+        Me.OrderHistoryToolStripMenuItem.Text = "Order History"
+        '
+        'PendingOrderToolStripMenuItem
+        '
+        Me.PendingOrderToolStripMenuItem.Name = "PendingOrderToolStripMenuItem"
+        Me.PendingOrderToolStripMenuItem.Size = New System.Drawing.Size(96, 20)
+        Me.PendingOrderToolStripMenuItem.Text = "Pending Order"
         '
         'Label1
         '
@@ -199,29 +214,6 @@ Partial Class OrderCart
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 23)
         Me.Label1.TabIndex = 0
-        '
-        'lstItemDesc
-        '
-        Me.lstItemDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstItemDesc.FormattingEnabled = True
-        Me.lstItemDesc.HorizontalExtent = 500
-        Me.lstItemDesc.HorizontalScrollbar = True
-        Me.lstItemDesc.ItemHeight = 25
-        Me.lstItemDesc.Location = New System.Drawing.Point(12, 143)
-        Me.lstItemDesc.Name = "lstItemDesc"
-        Me.lstItemDesc.SelectionMode = System.Windows.Forms.SelectionMode.None
-        Me.lstItemDesc.Size = New System.Drawing.Size(206, 54)
-        Me.lstItemDesc.TabIndex = 24
-        '
-        'lstPrice
-        '
-        Me.lstPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstPrice.FormattingEnabled = True
-        Me.lstPrice.ItemHeight = 25
-        Me.lstPrice.Location = New System.Drawing.Point(124, 221)
-        Me.lstPrice.Name = "lstPrice"
-        Me.lstPrice.Size = New System.Drawing.Size(97, 29)
-        Me.lstPrice.TabIndex = 25
         '
         'Label9
         '
@@ -281,18 +273,47 @@ Partial Class OrderCart
         Me.dgvOrderCart.Size = New System.Drawing.Size(270, 332)
         Me.dgvOrderCart.TabIndex = 29
         '
+        'txtPrice
+        '
+        Me.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPrice.Location = New System.Drawing.Point(125, 230)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.ReadOnly = True
+        Me.txtPrice.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrice.TabIndex = 30
+        '
+        'txtDesc
+        '
+        Me.txtDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDesc.Location = New System.Drawing.Point(12, 138)
+        Me.txtDesc.Multiline = True
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.ReadOnly = True
+        Me.txtDesc.Size = New System.Drawing.Size(209, 67)
+        Me.txtDesc.TabIndex = 31
+        '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(554, 391)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(100, 34)
+        Me.btnExit.TabIndex = 32
+        Me.btnExit.Text = "C&lose cart"
+        Me.btnExit.UseVisualStyleBackColor = True
+        '
         'OrderCart
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(678, 445)
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.txtDesc)
+        Me.Controls.Add(Me.txtPrice)
         Me.Controls.Add(Me.dgvOrderCart)
         Me.Controls.Add(Me.txtOrderID)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.lstPrice)
-        Me.Controls.Add(Me.lstItemDesc)
         Me.Controls.Add(Me.txtSysDate)
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label8)
@@ -335,12 +356,15 @@ Partial Class OrderCart
     Friend WithEvents txtUser As TextBox
     Friend WithEvents txtSysDate As TextBox
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
-    Friend WithEvents lstItemDesc As ListBox
-    Friend WithEvents lstPrice As ListBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents txtOrderID As TextBox
     Friend WithEvents dgvOrderCart As DataGridView
+    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents txtDesc As TextBox
+    Friend WithEvents btnExit As Button
+    Friend WithEvents OrderRemarkToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OrderHistoryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PendingOrderToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -104,6 +104,12 @@
     <Compile Include="DeliveryMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmCreateDelivery.Designer.vb">
+      <DependentUpon>FrmCreateDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateDelivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmCreateItem.Designer.vb">
       <DependentUpon>FrmCreateItem.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,12 @@
     <Compile Include="OrderCart.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="OrderRemark.Designer.vb">
+      <DependentUpon>OrderRemark.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrderRemark.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PaymentHistoryPage.Designer.vb">
       <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
     </Compile>
@@ -180,10 +192,19 @@
     <Compile Include="PaymentTransPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PendingOrder.Designer.vb">
+      <DependentUpon>PendingOrder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PendingOrder.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FrmCreateItem.resx">
       <DependentUpon>FrmCreateItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateDelivery.resx">
+      <DependentUpon>FrmCreateDelivery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
@@ -197,11 +218,17 @@
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderRemark.resx">
+      <DependentUpon>OrderRemark.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentHistoryPage.resx">
       <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentTransPage.resx">
       <DependentUpon>PaymentTransPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingOrder.resx">
+      <DependentUpon>PendingOrder.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="DB.dbml.layout">
       <DependentUpon>DB.dbml</DependentUpon>
@@ -268,6 +295,7 @@
     <None Include="Resources\purchase-order.jpg" />
     <None Include="Resources\warehouse-inventory.png" />
     <None Include="Resources\Report.png" />
+    <None Include="Resources\delivery.jpg" />
     <None Include="Resources\creditcard.gif" />
     <None Include="Resources\cash.png" />
   </ItemGroup>
