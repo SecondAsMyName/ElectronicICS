@@ -98,14 +98,15 @@ Partial Class FrmUpdateDelivery
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 87)
+        Me.Label4.Location = New System.Drawing.Point(67, 87)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(107, 20)
+        Me.Label4.Size = New System.Drawing.Size(48, 20)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Delivery Date:"
+        Me.Label4.Text = "Date:"
         '
         'lblDeliveryDate
         '
+        Me.lblDeliveryDate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblDeliveryDate.Location = New System.Drawing.Point(125, 87)
         Me.lblDeliveryDate.Name = "lblDeliveryDate"
         Me.lblDeliveryDate.Size = New System.Drawing.Size(118, 23)
@@ -116,6 +117,7 @@ Partial Class FrmUpdateDelivery
         '
         Me.ddlStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlStatus.FormattingEnabled = True
+        Me.ddlStatus.Items.AddRange(New Object() {"Complete", "Delivering", "Canceled"})
         Me.ddlStatus.Location = New System.Drawing.Point(124, 161)
         Me.ddlStatus.Name = "ddlStatus"
         Me.ddlStatus.Size = New System.Drawing.Size(121, 21)

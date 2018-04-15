@@ -12,4 +12,12 @@
         FrmUpdateDelivery.Show(Me)
         Me.Visible = False
     End Sub
+
+    Private Sub btnCurrentStatus_Click(sender As Object, e As EventArgs) Handles btnCurrentStatus.Click
+
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+
+    End Sub
 End Class
