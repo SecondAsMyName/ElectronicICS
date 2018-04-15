@@ -1,6 +1,14 @@
 ﻿Public Class FrmUpdateDelivery
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-
+        Dim db As New DBDataContext()
+        Dim updateDeliveryStatus = (From d In db.Deliveries Where d.DeliveryId.Equals(ddlDeliveryID.SelectedItem)).ToList()(0)
+        updateDeliveryStatus.Status = ddlStatus.SelectedItem().ToString()
+        Try
+            db.SubmitChanges()
+            MessageBox.Show("Delivery updated")
+        Catch ex As Exception
+            MessageBox.Show("Error!")
+        End Try
         resetForm()
     End Sub
 

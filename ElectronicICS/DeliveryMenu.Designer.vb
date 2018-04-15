@@ -116,7 +116,7 @@ Partial Class DeliveryMenu
         Me.Controls.Add(Me.btnCurrentStatus)
         Me.Controls.Add(Me.btnExit)
         Me.Name = "DeliveryMenu"
-        Me.Text = "Form1"
+        Me.Text = "Delivery"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
