@@ -28,6 +28,7 @@ Partial Class PaymentPage
         Me.GoBackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.PaymentHistoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvOrderCart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuPaymentMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -58,7 +59,7 @@ Partial Class PaymentPage
         '
         'mnuPaymentMenu
         '
-        Me.mnuPaymentMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoBackToolStripMenuItem})
+        Me.mnuPaymentMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GoBackToolStripMenuItem, Me.PaymentHistoryToolStripMenuItem})
         Me.mnuPaymentMenu.Location = New System.Drawing.Point(0, 0)
         Me.mnuPaymentMenu.Name = "mnuPaymentMenu"
         Me.mnuPaymentMenu.Size = New System.Drawing.Size(714, 24)
@@ -89,6 +90,12 @@ Partial Class PaymentPage
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Pick 1 to be able to process tranasction."
         '
+        'PaymentHistoryToolStripMenuItem
+        '
+        Me.PaymentHistoryToolStripMenuItem.Name = "PaymentHistoryToolStripMenuItem"
+        Me.PaymentHistoryToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
+        Me.PaymentHistoryToolStripMenuItem.Text = "Payment History"
+        '
         'PaymentPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -115,4 +122,5 @@ Partial Class PaymentPage
     Friend WithEvents GoBackToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents PaymentHistoryToolStripMenuItem As ToolStripMenuItem
 End Class

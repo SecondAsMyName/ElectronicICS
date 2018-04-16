@@ -258,6 +258,12 @@
     <Compile Include="PaymentHistoryPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PaymentMainPage.Designer.vb">
+      <DependentUpon>PaymentMainPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMainPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PaymentPage.Designer.vb">
       <DependentUpon>PaymentPage.vb</DependentUpon>
     </Compile>
@@ -344,6 +350,9 @@
     <EmbeddedResource Include="PaymentHistoryPage.resx">
       <DependentUpon>PaymentHistoryPage.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PaymentMainPage.resx">
+      <DependentUpon>PaymentMainPage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaymentTransPage.resx">
       <DependentUpon>PaymentTransPage.vb</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +422,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ICSDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\CustomerMainPageLogo.png" />
     <None Include="Resources\summary-report-icon-26.png" />
     <None Include="Resources\Order-now.png" />
     <None Include="Resources\LIMKAHHIM.jpg" />

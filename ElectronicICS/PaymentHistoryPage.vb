@@ -13,4 +13,9 @@
         Else
         End If
     End Sub
+
+    Private Sub GoBackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoBackToolStripMenuItem.Click
+        Me.Hide()
+        PaymentMainPage.Show()
+    End Sub
 End Class

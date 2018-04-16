@@ -77,10 +77,12 @@
     End Sub
 
     Private Sub PaymentHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem.Click
-        PaymentPage.ShowDialog()
+        Me.Hide()
+        PaymentPage.Show()
     End Sub
 
     Private Sub PaymentHistoryToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem1.Click
-        PaymentHistoryPage.ShowDialog()
+        Me.Hide()
+        PaymentHistoryPage.Show()
     End Sub
 End Class

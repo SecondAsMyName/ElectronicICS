@@ -9,10 +9,26 @@
     End Sub
 
     Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
-        PaymentPage.ShowDialog()
+        Me.Hide()
+        PaymentMainPage.Show()
+
     End Sub
 
     Private Sub PaymentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentToolStripMenuItem.Click
-        PaymentPage.ShowDialog()
+        Me.Hide()
+        PaymentMainPage.Show()
+    End Sub
+
+    Private Sub MainPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub mnuAccLogout_Click(sender As Object, e As EventArgs) Handles mnuAccLogout.Click
+        Me.Hide()
+        FrmLogin.Show()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
     End Sub
 End Class

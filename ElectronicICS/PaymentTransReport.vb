@@ -48,7 +48,8 @@ Public Class PaymentTransReport
     End Sub
 
     Private Sub GoBackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoBackToolStripMenuItem.Click
-        FrmMainpageStaff.ShowDialog()
+        Me.Hide()
+        FrmMainpageStaff.Show()
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
