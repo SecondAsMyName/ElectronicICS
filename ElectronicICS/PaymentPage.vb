@@ -11,13 +11,12 @@
 
     Private Sub GoBackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoBackToolStripMenuItem.Click
         Me.Hide()
-        MainPage.Show()
+        PaymentMainPage.Show()
     End Sub
 
 
     Private Sub PaymentHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentHistoryToolStripMenuItem.Click
         Me.Hide()
-        PaymentHistoryPage.ShowDialog()
-        Me.Show()
+        PaymentHistoryPage.Show()
     End Sub
 End Class
