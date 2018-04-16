@@ -9,13 +9,13 @@
         End If
 
         If AuthenticateUser(username, password) Then
-            If String.Compare(user.Role, "Staff", True) = 0 Then
+            If String.Compare(user.Role.Trim, "Staff", True) = 0 Then
                 FrmMainpageStaff.staff = AuthorizeUser()
                 FrmMainpageStaff.Show()
-            ElseIf String.Compare(user.Role, "Customer", True) = 0 Then
+            ElseIf String.Compare(user.Role.Trim, "Customer", True) = 0 Then
                 MainPage.customer = AuthorizeUser()
                 MainPage.Show()
-            ElseIf String.Compare(user.Role, "Admin", True) = 0 Then
+            ElseIf String.Compare(user.Role.Trim, "Admin", True) = 0 Then
                 FrmMainpageStaff.staff = AuthorizeUser()
                 FrmMainpageStaff.Show()
             End If

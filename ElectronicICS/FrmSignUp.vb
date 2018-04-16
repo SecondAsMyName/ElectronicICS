@@ -22,6 +22,12 @@
     Private Sub btnSignUp_Click(sender As Object, e As EventArgs) Handles btnSignUp.Click
         Dim securityAccount As New Security_Account
         Dim role As String
+
+        If (txtUsername.Text = "" And mskPassword.Text = "" And txtName.Text = "" And txtEmail.Text = "" And txtHpno.Text = "" And txtaddress.Text = "") Then
+            MessageBox.Show("Please don't leave the text field blank.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
         role = "Customer"
         With securityAccount
             .Username = txtUsername.Text
@@ -70,7 +76,7 @@
             Catch err As Exception
                 MessageBox.Show("No user created.")
             End Try
-
+            MessageBox.Show("Sign Up success.", "Sign up", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
 
         End If
