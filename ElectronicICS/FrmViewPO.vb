@@ -78,6 +78,7 @@ Public Class FrmViewPO
     End Sub
 
     Private Sub FrmViewPO_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+
         BindData()
 
         Dim db As New DBDataContext()
@@ -86,6 +87,10 @@ Public Class FrmViewPO
         If deliveryOrder Is Nothing Then
             btnCreateDO.Visible = True
             btnCloseDO.Visible = False
+            dtpDeliveryDate.Value = System.DateTime.Now
+            dtpDeliveryDate.Enabled = True
+            txtAddress.Text = ""
+            txtAddress.Enabled = True
         Else
             btnCreateDO.Visible = False
             If deliveryOrder.Remarks = "Delivering" Then
