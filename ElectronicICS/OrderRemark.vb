@@ -29,7 +29,7 @@
         Dim updateOrderRemark = (From ord In db.Orders
                                  Where ord.OrderId = orderid).ToList()(0)
 
-        updateOrderRemark.OrderDesc = txtRemark.Text
+        updateOrderRemark.OrderDesc = txtRemark.Text.Trim()
 
         Try
             db.SubmitChanges()

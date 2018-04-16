@@ -18,7 +18,7 @@ Public Class FrmReportSales
         Dim toDate As Date = dtpTo.Value
 
         Dim db As New DBDataContext()
-        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromDate And o.OrderDate < toDate
+        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromDate And o.OrderDate <= toDate
 
         With dgvReport
             .DataSource = order
