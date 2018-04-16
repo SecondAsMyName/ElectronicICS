@@ -146,6 +146,12 @@
     <Compile Include="FrmManagePO.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmManageStaff.Designer.vb">
+      <DependentUpon>FrmManageStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManageStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmManageStock.Designer.vb">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
     </Compile>
@@ -307,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManagePO.resx">
       <DependentUpon>FrmManagePO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageStaff.resx">
+      <DependentUpon>FrmManageStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManageStock.resx">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
