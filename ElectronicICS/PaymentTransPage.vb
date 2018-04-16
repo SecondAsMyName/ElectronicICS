@@ -36,6 +36,8 @@
         End Try
 
         MessageBox.Show("Payment has been paid", "Payment Transaction Successful.")
+        Me.Hide()
+        PaymentMainPage.Show()
 
 
     End Sub
