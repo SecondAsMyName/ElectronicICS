@@ -19,7 +19,8 @@ Public Class FrmMainpageStaff
     End Sub
 
     Private Sub PaymentTransactionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaymentTransactionToolStripMenuItem.Click
-        PaymentTransReport.ShowDialog()
+        Me.Hide()
+        PaymentTransReport.Show()
     End Sub
 
 
@@ -76,5 +77,14 @@ Public Class FrmMainpageStaff
             .DrawString(subHeader, fontSubHeader, Brushes.Black, 240, 40)
             .DrawString(body.ToString(), fontBody, Brushes.Black, 0, 120)
         End With
+    End Sub
+
+    Private Sub mnusLogout_Click(sender As Object, e As EventArgs) Handles mnusLogout.Click
+        Me.Hide()
+        FrmLogin.Show()
+    End Sub
+
+    Private Sub mnusExit_Click(sender As Object, e As EventArgs) Handles mnusExit.Click
+        Me.Close()
     End Sub
 End Class
