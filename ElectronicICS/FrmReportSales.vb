@@ -51,7 +51,7 @@ Public Class FrmReportSales
 
         ' (3) Prepare body 
         Dim db As New DBDataContext()
-        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromPassDate And o.OrderDate < toPassDate Select o.OrderId, o.OrderDesc, o.OrderDate, o.Username
+        Dim order = From o In db.Orders Where o.OrderStatus = "Complete" And o.OrderDate >= fromPassDate And o.OrderDate <= toPassDate Select o.OrderId, o.OrderDesc, o.OrderDate, o.Username
 
         Dim body As New StringBuilder()
         body.AppendLine("Order ID  Description                 Date                        Customer")
