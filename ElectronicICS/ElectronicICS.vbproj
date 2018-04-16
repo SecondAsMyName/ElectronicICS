@@ -152,10 +152,10 @@
     <Compile Include="FrmManagePO.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmManageStaff.Designer.vb">
-      <DependentUpon>FrmManageStaff.vb</DependentUpon>
+    <Compile Include="FrmManageSupplier.Designer.vb">
+      <DependentUpon>FrmManageSupplier.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmManageStaff.vb">
+    <Compile Include="FrmManageSupplier.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmManageStock.Designer.vb">
@@ -317,6 +317,9 @@
     <EmbeddedResource Include="FrmCreatePO.resx">
       <DependentUpon>FrmCreatePO.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateSupplier.resx">
+      <DependentUpon>FrmCreateSupplier.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -326,8 +329,8 @@
     <EmbeddedResource Include="FrmManagePO.resx">
       <DependentUpon>FrmManagePO.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmManageStaff.resx">
-      <DependentUpon>FrmManageStaff.vb</DependentUpon>
+    <EmbeddedResource Include="FrmManageSupplier.resx">
+      <DependentUpon>FrmManageSupplier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmManageStock.resx">
       <DependentUpon>FrmManageStock.vb</DependentUpon>
@@ -355,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateItem.resx">
       <DependentUpon>FrmUpdateItem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateSupplier.resx">
+      <DependentUpon>FrmUpdateSupplier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmViewPO.resx">
       <DependentUpon>FrmViewPO.vb</DependentUpon>

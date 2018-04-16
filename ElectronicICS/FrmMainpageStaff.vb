@@ -87,4 +87,8 @@ Public Class FrmMainpageStaff
     Private Sub mnusExit_Click(sender As Object, e As EventArgs) Handles mnusExit.Click
         Me.Close()
     End Sub
+
+    Private Sub ManageSupplierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageSupplierToolStripMenuItem.Click
+        FrmManageSupplier.ShowDialog(Me)
+    End Sub
 End Class
