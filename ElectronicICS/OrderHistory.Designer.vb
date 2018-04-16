@@ -31,6 +31,7 @@ Partial Class OrderHistory
         '
         'dgvHistory
         '
+        Me.dgvHistory.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvHistory.Location = New System.Drawing.Point(32, 81)
         Me.dgvHistory.Name = "dgvHistory"
@@ -66,6 +67,7 @@ Partial Class OrderHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(472, 385)
         Me.Controls.Add(Me.dgvHistory)
         Me.Controls.Add(Me.lblCount)

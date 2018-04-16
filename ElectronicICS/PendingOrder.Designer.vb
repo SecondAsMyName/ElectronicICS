@@ -54,6 +54,7 @@ Partial Class PendingOrder
         '
         'dgvPending
         '
+        Me.dgvPending.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPending.Location = New System.Drawing.Point(33, 68)
         Me.dgvPending.Name = "dgvPending"
@@ -65,6 +66,7 @@ Partial Class PendingOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.PaleGreen
         Me.ClientSize = New System.Drawing.Size(484, 383)
         Me.Controls.Add(Me.dgvPending)
         Me.Controls.Add(Me.lblCount)
